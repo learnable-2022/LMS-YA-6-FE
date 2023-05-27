@@ -12,7 +12,7 @@ const SideNavIcon = ({iconName, iconDescription, active}) => {
       }[iconName];
     
       return (
-        <div className={`${active} flex w-full p-2 space-x-4 items-center cursor-pointer`}>
+        <div className={`${active} p-5 flex w-full md:p-10 lg:p-2 space-x-4 items-center cursor-pointer`}>
           <div>
             {IconComponent && <IconComponent />}
           </div>
