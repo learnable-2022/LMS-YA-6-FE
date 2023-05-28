@@ -1,0 +1,29 @@
+.left-component {
+  height: 100vh;
+  width: 300px;
+  min-width: 100px;
+  padding: 20px;
+}
+.home {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(2, 16, 26);
+  color: white;
+}
+.welcome {
+  display: grid;
+  grid-template-columns: repeat(3, 0fr);
+  grid-gap: 0px;
+}
+.check {
+  margin: 4px;
+}
+.play {
+  margin: 4px;
+}
+.topic {
+  margin: 4px;
+}
+.heading {
+  background-color: rgb(235, 167, 178);
+}
