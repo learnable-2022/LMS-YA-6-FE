@@ -4,6 +4,8 @@ import Login from "./components/pages/Login";
 import SignUp from "./components/pages/SignUp";
 import LeftComponent from "./components/Left Component/LeftComponent";
 import MainComponent from "./components/MainComponent/MainComponent";
+import Dashboard from "./components/Dashboard";
+import SecondDashboard from "./components/SecondDashboard/SecondDashboard";
 
 const App = () => {
   return (
@@ -19,6 +21,9 @@ const App = () => {
         <Route exact path="/" element={<Home />} />
         <Route exact path="/left-component" element={<LeftComponent />} />
         <Route exact path="/main-component" element={<MainComponent />} />
+        <Route exact path="/dashboard" element={<Dashboard />} />
+        <Route exact path="/second-dashboard" element={<SecondDashboard />} />
+
         <Route exact path="/login">
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/login/signup" element={<SignUp />} />
