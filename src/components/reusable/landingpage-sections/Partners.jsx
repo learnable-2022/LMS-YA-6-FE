@@ -3,11 +3,11 @@ import partners from '../../../assets/partners.svg'
 const Partners = () => {
     return ( 
         <div className="px-5 md:px-24 w-full lg:flex bg-red-100 py-10 md:space-x-8">
-        <div className='flex flex-col justify-center lg:w-1/2 space-y-5'>
-            <h2 className='text-lg text-orange-600 font-bold w-fit'>
+        <div className='flex flex-col justify-center text-center lg:text-left lg:w-1/2 space-y-5'>
+            <h2 className='text-lg text-orange-600 font-bold lg:w-fit'>
             One on One learnig
             </h2>
-            <h1 className='text-4xl font-bold lg:w-1/2'>
+            <h1 className='text-3xl md:text-4xl font-bold lg:w-1/2'>
             Our live Tutors
             </h1>
             <p className='w-fit'>
