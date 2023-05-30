@@ -22,10 +22,10 @@ const Navbar = () => {
                     
                 </ul>
                 <div className='flex items-center justify-center space-x-10 p-2 h-full'>
-                    <div className='p-2 bg-gray-200/60 rounded-md'>
+                    <div className='p-2 bg-gray-200/60 rounded-md cursor-pointer' onClick={()=>navigate('/login/signup')}>
                         Sign In
                     </div>
-                    <div className='p-2 bg-orange-600 text-white rounded-md'>
+                    <div className='p-2 bg-orange-600 text-white rounded-md cursor-pointer' onClick={()=>navigate('/login')}>
                         Sign Up
                     </div>
                 </div>
@@ -46,10 +46,10 @@ const Navbar = () => {
                                     <li className='p-5'>About Us</li>
                                     <li className='p-5'>Contact Us</li>
                                 </ul>
-                                <div className='p-4 flex justify-center mb-2 bg-purple-950 text-white rounded-md'>
+                                <div className='p-4 flex justify-center mb-2 bg-purple-950 text-white rounded-md cursor-pointer' onClick={()=>navigate('/login')}>
                                 Sign In
                                 </div>
-                                <div className='p-4 flex justify-center bg-orange-600 text-white rounded-md'>
+                                <div className='p-4 flex justify-center bg-orange-600 text-white rounded-md cursor-pointer' onClick={()=>navigate('/login/signup')}>
                                 Sign Up
                                 </div>
                             </div>
