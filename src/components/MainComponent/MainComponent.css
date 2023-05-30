@@ -1,0 +1,175 @@
+.main-component {
+  height: 100vh;
+  width: 100%;
+  min-width: 100px;
+  padding-left: 30px;
+  /* z-index: 1;
+  flex-grow: 1; */
+}
+.previous-continue {
+  display: flex;
+  justify-content: flex-end;
+}
+.previous {
+  display: flex;
+  justify-content: space-evenly;
+  color: #fff;
+  border: none;
+  border-radius: 8px; /* Adjust the value as per your preference */
+  background-color: rgb(
+    9,
+    2,
+    18
+  ); /* Adjust the background color as per your preference */
+  margin-right: 7px;
+  padding: 1px;
+}
+.continue {
+  display: flex;
+  justify-content: space-evenly;
+  color: #fff;
+  border: none;
+  border-radius: 8px; /* Adjust the value as per your preference */
+  background-color: #fc4f13; /* Adjust the background color as per your preference */
+
+  padding: 1px;
+}
+.started {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 4px;
+}
+.next {
+  color: #fff;
+}
+
+.download {
+  background-color: azure;
+}
+.border-container {
+  border: 2px solid #e6d6d6; /* Adjust border properties as desired */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Adjust box shadow properties as desired */
+  padding: 20px; /* Adjust padding as desired */
+  width: 100%; /* Adjust width as desired */
+  height: 400px; /* Adjust height as desired */
+}
+.textarea {
+  display: flex;
+  justify-content: center;
+  height: 50%;
+  width: 100%;
+  padding: 20px;
+}
+/* .content {
+  display: flex;
+  justify-content: space-between;
+} */
+.inner-content {
+  border: 1px solid #000; /* Adjust inner border properties as desired */
+  /* Adjust inner border padding as desired */
+  display: flex;
+  justify-content: center;
+}
+.person-icon {
+  font-size: 40px;
+}
+.post {
+  background-color: #fc4f13;
+  border-radius: 5px;
+  padding: 5px;
+  margin-top: 5px;
+}
+.course {
+  display: flex;
+  justify-content: flex-start;
+}
+@media screen and (max-width: 768px) {
+  .main-component {
+    height: 100vh;
+    width: 270px;
+    padding: 20px;
+    /* z-index: 1;
+    flex-grow: 1; */
+  }
+}
+@media screen and (max-width: 280px) {
+  .main-component {
+    height: 100vh;
+    width: 120px;
+    padding: 20px;
+  }
+}
+@media screen and (max-width: 280px) {
+  .main-component {
+    height: 100vh;
+    width: 120px;
+    padding: 20px;
+  }
+  .border-container {
+    border: 2px solid #e6d6d6; /* Adjust border properties as desired */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Adjust box shadow properties as desired */
+    padding: 5px; /* Adjust padding as desired */
+    width: 120px; /* Adjust width as desired */
+    height: 200px; /* Adjust height as desired */
+  }
+
+  /* .content {
+    display: flex;
+    justify-content: space-between;
+  } */
+  .inner-content {
+    border: 4px solid #000; /* Adjust inner border properties as desired */
+    padding: 4px; /* Adjust inner border padding as desired */
+  }
+}
+@media screen and (max-width: 450px) {
+  .main-component {
+    height: 100vh;
+    width: 220px;
+    padding: 20px;
+  }
+  .border-container {
+    border: 2px solid #e6d6d6; /* Adjust border properties as desired */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Adjust box shadow properties as desired */
+    padding: 5px; /* Adjust padding as desired */
+    width: 120px; /* Adjust width as desired */
+    height: 200px; /* Adjust height as desired */
+  }
+
+  /* .content {
+    display: flex;
+    justify-content: space-between;
+  } */
+  .inner-content {
+    border: 4px solid #000; /* Adjust inner border properties as desired */
+    padding: 4px; /* Adjust inner border padding as desired */
+  }
+}
+@media screen and (max-width: 380px) {
+  .main-component {
+    height: 100vh;
+    width: 200px;
+    padding: 20px;
+    /* z-index: 1;
+    flex-grow: 1; */
+  }
+  .border-container {
+    border: 2px solid #e6d6d6; /* Adjust border properties as desired */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Adjust box shadow properties as desired */
+    padding: 5px; /* Adjust padding as desired */
+    width: 120px; /* Adjust width as desired */
+    height: 200px; /* Adjust height as desired */
+  }
+
+  /* .content {
+    display: flex;
+    justify-content: space-between;
+  } */
+  .inner-content {
+    border: 4px solid #000; /* Adjust inner border properties as desired */
+    padding: 4px; /* Adjust inner border padding as desired */
+  }
+  .person-icon {
+    font-size: 30px;
+  }
+}
