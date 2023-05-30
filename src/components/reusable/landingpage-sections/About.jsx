@@ -7,11 +7,11 @@ const About = () => {
     return ( 
         <div className="px-5 md:px-24 mb-20 w-full relative">
            <div className='w-fit h-fit md:flex'>
-           <div className='flex flex-col lg:w-4/5 space-y-5'>
-                <h2 className='text-lg text-orange-600 font-bold w-2/3'>
+           <div className='flex flex-col text-center lg:text-left lg:w-4/5 space-y-5'>
+                <h2 className='text-lg text-orange-600 font-bold lg:w-2/3'>
                     About Us
                 </h2>
-                <h1 className="text-4xl font-bold">
+                <h1 className="text-3xl md:text-4xl font-bold">
                 Qualified And Highly Equipped Tutors
                 </h1>
                 <p>
