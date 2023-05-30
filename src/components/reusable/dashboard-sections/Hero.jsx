@@ -1,5 +1,5 @@
 import Main from "./Main"
-import StatusCard from "./StatusCard";
+import StatusCard from './StatusCard'
 
 const Hero = () => {
     return ( 
