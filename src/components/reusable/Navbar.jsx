@@ -41,7 +41,17 @@ const Navbar = () => {
                     navDown ? (
                         <div className='w-full h-screen  bg-gray-900/60 shadow-md absolute left-0 top-16 animate-fadeIn'>
                             <div className='w-full h-fit py-3 bg-white/90 shadow-md animate-slideDown'>
-                                
+                                <ul className=''>
+                                    <li className='p-5'>Home</li>
+                                    <li className='p-5'>About Us</li>
+                                    <li className='p-5'>Contact Us</li>
+                                </ul>
+                                <div className='p-4 flex justify-center mb-2 bg-purple-950 text-white rounded-md'>
+                                Sign In
+                                </div>
+                                <div className='p-4 flex justify-center bg-orange-600 text-white rounded-md'>
+                                Sign Up
+                                </div>
                             </div>
                         </div>
                     ):''

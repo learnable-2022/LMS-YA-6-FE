@@ -1,14 +1,14 @@
 const EndSection = () => {
     return ( 
-        <div className="px-24 w-full flex bg-teachBg bg-no-repeat object-cover py-10">
-        <div className='flex flex-col justify-center w-1/2 space-y-5'>
-            <h1 className='text-2xl text-white font-bold w-1/2'>
+        <div className="px-5 md:px-24 w-full lg:flex bg-teachBg bg-no-repeat object-cover space-y-5 md:space-y-0 py-10">
+        <div className='flex flex-col justify-center lg:w-1/2 space-y-5'>
+            <h1 className='text-2xl text-white font-bold lg:w-1/2'>
             We only offer you the best
             </h1>
         </div>
 
-        <div className=' h-fit w-1/2 space-y-2'>
-            <p className="text-white">
+        <div className=' h-fit lg:w-1/2 space-y-2'>
+            <p className="text-white mb-5 md:mb-0">
             Edu_cate, learning becomes flexible and accessible from anywhere with an 
             internet connection. Students can access their course materials, 
             assignments, and resources at their own convenience, allowing for 

@@ -19,8 +19,6 @@ const App = () => {
       */}
       <Routes>
         <Route exact path="/" element={<Home />} />
-        <Route exact path="/left-component" element={<LeftComponent />} />
-        <Route exact path="/main-component" element={<MainComponent />} />
         <Route exact path="/dashboard" element={<Dashboard />} />
         <Route exact path="/second-dashboard" element={<SecondDashboard />} />
 

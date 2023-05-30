@@ -5,20 +5,20 @@ import chat from '../../../assets/chat.svg'
 
 const Offer = () => {
     return ( 
-        <div className='px-24 mb-20 w-full h-fit flex flex-col items-center text-center space-y-8'>
-            <div className='w-1/2 space-y-2 flex flex-col items-center'>
+        <div className='px-5 md:px-24 mb-20 w-full h-fit flex flex-col items-center text-center space-y-8'>
+            <div className='lg:w-1/2 space-y-2 flex flex-col items-center'>
                 <h3 className='font-semibold'>Quality education for you</h3>
                 <h1 className='text-4xl font-bold'>
                 We offer Accessibility with Tons of friendly features 
                 </h1>
-                <p className='w-3/4'>
+                <p className='lg:w-3/4'>
                 Here are some of the interesting features and 
                 experiences powered by Edu_cate.
                 </p>
             </div>  
 
-            <div className='flex mb-5'>
-                <div className='w-1/3 flex flex-col items-center space-y-2'>
+            <div className='lg:flex mb-5 space-y-9 lg:space-y-0'>
+                <div className='lg:w-1/3 flex flex-col items-center space-y-2'>
                     <img src={play} alt="play-icon" />
                     <h2 className='font-bold w-2/3 text-lg'>
                     Personalized Learning Experience
@@ -29,10 +29,10 @@ const Offer = () => {
                     </p>
                 </div>
 
-                <div className='w-1/3 flex flex-col items-center space-y-2'>
+                <div className='lg:w-1/3 flex flex-col items-center space-y-2'>
                     <img src={connect} alt="play-icon" />
                     <h2 className='font-bold w-2/3 text-lg'>
-                    Centralized Learning Platform
+                    Decentralized Learning Platform
                     </h2>
                     <p>
                     We provide a centralized location for accessing educational 
@@ -40,7 +40,7 @@ const Offer = () => {
                     </p>
                 </div>
 
-                <div className='w-1/3 flex flex-col items-center space-y-2'>
+                <div className='lg:w-1/3 flex flex-col items-center space-y-2'>
                     <img src={read} alt="play-icon" />
                     <h2 className='font-bold w-2/3 text-lg'>
                     Automated Assessment & Feedback
@@ -51,7 +51,7 @@ const Offer = () => {
                     </p>
                 </div>
 
-                <div className='w-1/3 flex flex-col items-center space-y-2'>
+                <div className='lg:w-1/3 flex flex-col items-center space-y-2'>
                     <img src={chat} alt="play-icon" />
                     <h2 className='font-bold w-2/3 text-lg'>
                     Enhanced Communication & Collaboration
