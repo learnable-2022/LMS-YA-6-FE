@@ -4,7 +4,7 @@ import courseImg from '../../../assets/Rectangle 14.svg'
 
 const CourseCard = ({courseTitle, courseStatus, progressPercentage}) => {
     return ( 
-        <div className="mb-3 h-fit w-56 p-3 rounded-md shadow-md bg-white space-y-1">
+        <div className="mb-3 h-fit w-48 md:w-56 p-3 rounded-md shadow-md bg-white space-y-1">
             <img src={courseImg} alt="course" className="rounded-md w-full" />
             <div className="w-full h-fit space-y-2">
                 <div className="font-semibold text-sm w-fit h-fit">

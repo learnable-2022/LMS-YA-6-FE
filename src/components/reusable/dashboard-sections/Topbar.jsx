@@ -1,6 +1,8 @@
 import {FaSearch, FaUser} from 'react-icons/fa'
 import { BiLogOut } from 'react-icons/bi';
 import { BsChevronDoubleDown, BsChevronDoubleUp } from 'react-icons/bs';
+import { GiHamburgerMenu } from 'react-icons/gi';
+import { AiOutlineClose } from 'react-icons/ai';
 import Logo from '../../../assets/EducateLogo.png'
 import SideNavIcon from './SideNavIcon';
 import { useState } from 'react';
@@ -14,8 +16,8 @@ const Topbar = () => {
     const navigate = useNavigate()
 
     return ( 
-        <div className='flex h-16 w-full px-6 md:px-14 shadow-md justify-between items-center sticky top-0 bg-white'>
-            <img src={Logo} className='h-12' alt="educate-logo" />
+        <div className='flex h-16 w-full px-6 z-20 md:px-14 shadow-md justify-between items-center sticky top-0 bg-white'>
+            <img src={Logo} className='h-10' alt="educate-logo" />
             <div className='hidden lg:flex w-1/6 justify-between items-center'>
                 <h1>
                     My Course
@@ -27,8 +29,8 @@ const Topbar = () => {
             {/* for small devices */}
             <div className='w-fit h-fit py-4 px-3 lg:hidden' onClick={handleNav}>
                 {
-                    navDown ? <BsChevronDoubleUp className='text-3xl font-bold text-gray-900' />
-                    : <BsChevronDoubleDown className='text-3xl font-bold text-gray-900' />
+                    navDown ? <AiOutlineClose className='text-3xl font-bold text-gray-900' />
+                    : <GiHamburgerMenu className='text-3xl font-bold text-gray-900' />
                 }
                 {
                     navDown ? (
