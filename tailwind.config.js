@@ -20,6 +20,9 @@ module.exports = {
         slideDown: 'slideDown 0.3s ease-in',
       },
     },
+    backgroundImage:{
+      "teachBg": "url('/src/assets/teach.svg')"
+    }
   },
   plugins: [],
 }
