@@ -100,11 +100,6 @@
     font-weight: bold;
   }
 
-  .span-text{
-    text-align: center;
-    margin: 12px 0px 0px;
-    font-size: 16px;
-  }
   
   #btn {
     width: 100%;
@@ -121,24 +116,7 @@
     cursor: pointer;
   }
   
-  #google-btn{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    margin-top: 15px;
-    padding: 8px;
-    background-color: #fff;
-    color: #000;
-    border: 1px solid #fc4f13;
-    font-size: 15px;
-    border-radius: 14px;
-    font-weight: bold;
-  }
-  
-  #google-btn:hover {
-    cursor: pointer;
-  }
+ 
 
   .last-p{
     text-align: center;

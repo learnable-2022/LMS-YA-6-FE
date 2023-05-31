@@ -132,8 +132,6 @@ function Login() {
             Login
           </button>
           {loginError && <p className="error-message">{loginError}</p>}
-          <p className="span-text">or</p>
-          <div id="google-btn"><img src={googlebtn}></img>Sign in with google</div>
           <p className="last-p">Don't have an account? <a href="">Sign Up</a></p>
         </form>
         
