@@ -2,9 +2,9 @@ import students from '../../../assets/students.png'
 
 const Testimonial = () => {
     return ( 
-        <div className='mb-20 flex flex-col justify-center items-center text-center space-y-5 px-5 md:px-24'>
+        <div className='mb-20 flex flex-col  justify-center items-center text-center space-y-5 px-5 md:px-24'>
             <div className='space-y-4'>
-                <h1 className='font-bold text-4xl'>
+                <h1 className='font-bold text-3xl md:text-4xl'>
                 Customer testimonials
                 </h1>
                 <p className='font-semibold'>

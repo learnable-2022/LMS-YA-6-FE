@@ -6,11 +6,11 @@ import HQ from '../../../assets/hq.svg'
 const LiveTutor = () => {
     return ( 
         <div className="px-5 md:px-24 mb-20 w-full md:flex">
-            <div className='flex flex-col justify-center lg:w-1/2 space-y-9 md:space-y-5'>
-                <h2 className='text-lg text-orange-600 font-bold w-fit'>
+            <div className='flex flex-col text-center lg:text-left justify-center lg:w-1/2 space-y-9 md:space-y-5'>
+                <h2 className='text-lg text-orange-600 font-bold lg:w-fit'>
                 One on One learnig
                 </h2>
-                <h1 className='text-4xl font-bold lg:w-1/2'>
+                <h1 className='text-3xl md:text-4xl font-bold lg:w-1/2'>
                 Live Tutoring Sessions
                 </h1>
                 <p className='w-fit'>
