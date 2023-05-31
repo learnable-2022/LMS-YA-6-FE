@@ -1,19 +1,18 @@
 import {FaSearch, FaUser} from 'react-icons/fa'
 import { BiLogOut } from 'react-icons/bi';
-import { BsChevronDoubleDown, BsChevronDoubleUp } from 'react-icons/bs';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { AiOutlineClose } from 'react-icons/ai';
 import Logo from '../../../assets/EducateLogo.png'
 import SideNavIcon from './SideNavIcon';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 
 const Topbar = () => {
     const [navDown, setNavDown] = useState(false)
     const handleNav = ()=>{
         setNavDown(!navDown)
     }
-    const navigate = useNavigate()
+    // const navigate = useNavigate()
 
     return ( 
         <div className='flex h-16 w-full px-6 z-20 md:px-14 shadow-md justify-between items-center sticky top-0 bg-white'>
@@ -54,7 +53,7 @@ const Topbar = () => {
                                 <div className='animate-fadeIn delay-700'>
                                     <SideNavIcon iconName={'setting'} iconDescription={'Settings'} />
                                 </div>
-                                <div className="px-3 cursor-pointer bg-purple-900 rounded-lg text-white mt-5 min-w-fit md:mx-4 h-14 flex justify-center items-center">
+                                <div className="px-3 cursor-pointer rounded-lg text-white mt-5 min-w-fit md:mx-4 h-14 flex justify-center items-center" style={{backgroundColor:'#27153E'}}>
                                     <BiLogOut className='px-1 text-3xl' />
                                     Logout
                                 </div>

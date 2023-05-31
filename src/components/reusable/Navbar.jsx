@@ -46,7 +46,7 @@ const Navbar = () => {
                                     <li className='p-5'>About Us</li>
                                     <li className='p-5'>Contact Us</li>
                                 </ul>
-                                <div className='p-4 flex justify-center mb-2 bg-purple-950 text-white rounded-md cursor-pointer' onClick={()=>navigate('/login')}>
+                                <div className='p-4 flex justify-center mb-2 text-white rounded-md cursor-pointer' style={{backgroundColor:'#27153E'}} onClick={()=>navigate('/login')}>
                                 Sign In
                                 </div>
                                 <div className='p-4 flex justify-center bg-orange-600 text-white rounded-md cursor-pointer' onClick={()=>navigate('/login/signup')}>
