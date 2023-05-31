@@ -2,10 +2,9 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./components/Home";
 import Login from "./components/pages/Login";
 import SignUp from "./components/pages/SignUp";
-import LeftComponent from "./components/Left Component/LeftComponent";
-import MainComponent from "./components/MainComponent/MainComponent";
 import Dashboard from "./components/Dashboard";
 import SecondDashboard from "./components/SecondDashboard/SecondDashboard";
+import AllCourses from "./components/pages/dashboard-pages/AllCourses";
 
 const App = () => {
   return (
@@ -19,8 +18,11 @@ const App = () => {
       */}
       <Routes>
         <Route exact path="/" element={<Home />} />
-        <Route exact path="/dashboard" element={<Dashboard />} />
-        <Route exact path="/second-dashboard" element={<SecondDashboard />} />
+        <Route exact path="/dashboard">
+          <Route exact path="/dashboard" element={<Dashboard />} />
+          <Route exact path="/dashboard/all-courses" element={<AllCourses />} />
+        </Route>
+        <Route exact path="/my-class" element={<SecondDashboard />} />
 
         <Route exact path="/login">
           <Route exact path="/login" element={<Login />} />
