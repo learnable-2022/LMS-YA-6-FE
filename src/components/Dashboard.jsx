@@ -1,6 +1,5 @@
-import CourseCard from "./reusable/dashboard-sections/CourseCard";
+import Footer from "./reusable/Footer";
 import Hero from "./reusable/dashboard-sections/Hero";
-import Main from "./reusable/dashboard-sections/Main";
 import SideNavbar from "./reusable/dashboard-sections/SideNavbar";
 import Topbar from "./reusable/dashboard-sections/Topbar";
 
@@ -12,6 +11,7 @@ const Dashboard = () => {
                 <SideNavbar />
                 <Hero />
             </div>
+            <Footer />
         </div>
      );
 }
