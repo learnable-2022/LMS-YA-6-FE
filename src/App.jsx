@@ -1,8 +1,9 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./components/Home";
 import Login from "./components/pages/Login";
-import SignUp from "./components/pages/SignUp";
+import SignUp from "./components/pages/SignUp/SignUp";
 import Dashboard from "./components/Dashboard";
+import  UserAccess from "./components/pages/userSpecify/userAccess"
 import SecondDashboard from "./components/SecondDashboard/SecondDashboard";
 import AllCourses from "./components/pages/dashboard-pages/AllCourses";
 
@@ -24,10 +25,14 @@ const App = () => {
         </Route>
         <Route exact path="/my-class" element={<SecondDashboard />} />
 
+        <Route exact path="/signup">
+        <Route path ="" element={<SignUp />} />
+            <Route path="userAccess" element={<UserAccess/>} />
+        </Route>
         <Route exact path="/login">
-          <Route exact path="/login" element={<Login />} />
-          <Route exact path="/login/signup" element={<SignUp />} />
-          <Route exact path="/login/signup" element={<SignUp />} />
+            <Route exact path="/login" element={<Login />} />
+          
+
         </Route>
       </Routes>
     </BrowserRouter>
