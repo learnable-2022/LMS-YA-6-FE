@@ -3,9 +3,9 @@ import "./SignUp.css"
 import logo from "../../../assets/logo.png";
 import RegisterImg from "../../../assets/register.png";
 // import google from "../../../assets/google.png";
-import FormInput from "../SignUp/FormInput/FormInput";
+import FormInput from "../../reusable/FormInput/FormInput";
 import { Link, useNavigate } from "react-router-dom";
-import GAuthButton from "../SignUp/GOAuth/GOAuth";
+import GAuthButton from "../../reusable/GOAuth/GOAuth";
 
 export default function SignUp() {
   // *!State Management for the input field
@@ -101,7 +101,7 @@ export default function SignUp() {
   };
 // ! content box body
   return (
-    <section className="App">
+    <section className="sign-up-wrapper">
       <div className="logoContent">
         <img
           src={logo}

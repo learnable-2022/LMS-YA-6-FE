@@ -1,0 +1,68 @@
+.left-component {
+  height: 100vh;
+  width: 300px;
+  min-width: 100px;
+  padding: 10px;
+}
+.home {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(2, 16, 26);
+  color: white;
+}
+.welcome {
+  display: grid;
+  grid-template-columns: repeat(3, 0fr);
+  grid-gap: 0px;
+}
+.check {
+  margin: 4px;
+  background-color: #fc4f13;
+  color: #fff;
+  height: 15px;
+  border-radius: 13px;
+}
+.play {
+  margin: 4px;
+}
+.topic {
+  margin: 4px;
+}
+.heading {
+  background-color: rgba(252, 79, 19, 0.4);
+}
+@media screen and (max-width: 768px) {
+  .left-component {
+    height: 100vh;
+    width: 250px;
+    padding: 20px;
+  }
+}
+@media screen and (max-width: 280px) {
+  .left-component {
+    height: 100vh;
+    width: 140px;
+    padding: 20px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .left-component {
+    height: 100vh;
+    width: 280px;
+    padding: 20px;
+  }
+}
+@media screen and (max-width: 380px) {
+  .left-component {
+    height: 100vh;
+    width: 280px;
+    padding: 20px;
+  }
+}
+@media screen and (max-width: 300px) {
+  .left-component {
+    height: 100vh;
+    width: 120px;
+    padding: 20px;
+  }
+}
