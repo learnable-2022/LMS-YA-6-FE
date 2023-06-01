@@ -93,7 +93,7 @@ export default function SignUp() {
       })
       .then((data) => {
         console.log(data);
-        navigate("/login/signup2")
+        navigate("userAccess")
       })
       .catch((error) => {
         console.error(error);
