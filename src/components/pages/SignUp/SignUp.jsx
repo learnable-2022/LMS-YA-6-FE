@@ -129,12 +129,12 @@ export default function SignUp() {
             {/* </Link> */}
           </div>
           <span className="spanOr">or</span>
-          <a
+          {/* <a
             href="#"
             className="google-btn"
           >
             <GAuthButton />
-          </a>
+          </a> */}
           <span
             className="SignIn"
             style={{ marginTop: "10px", fontSize: "10px" }}
