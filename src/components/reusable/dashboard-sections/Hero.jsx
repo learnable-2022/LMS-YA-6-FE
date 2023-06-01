@@ -12,7 +12,7 @@ const Hero = () => {
                     Welcome back, let’s dive right back in
                 </span>
             </h1>
-            <div className="flex flex-col items-center md:grid md:grid-cols-3 w-full h-fit p-2 md:p-0 md:space-x-8">
+            <div className="flex w-screen overflow-x-auto md:overflow-hidden items-center md:grid md:grid-cols-3 md:w-full h-fit p-2 md:p-0 md:space-x-8">
                 <div className="w-fit">
                     <StatusCard courseNumber={8} courseStatus={'Completed Courses'} iconStatus={'check'} />
                 </div>
