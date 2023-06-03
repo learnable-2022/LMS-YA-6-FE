@@ -14,22 +14,31 @@ export default function UserAccess() {
     e.preventDefault();
   };
 // ! state management for user specification
-  const [userType, setUserType] = useState(null);
+  const [userType, setUserType] = useState("");
+  // const handleUserTypeClick = (type) => {
+  //   setUserType(type);
+  // };
 
-  const handleUserTypeClick = (type) => {
-    setUserType(type);
+  const handleContinue =()=>{
+    navigate(`./signup?type=${userType}`)
+  }
+  const handleStudentButtonClick = () => {
+    setUserType('student');
   };
 
-  const handleContinueClick = () => {
-    if (userType === "Admin") {
+  const handleTeacherButtonClick = () => {
+    setUserType('admin');
+  };
+  // const handleContinueClick = () => {
+  //   if (userType === "Admin") {
 
-       navigate("/Login");
-    } else if (userType === "student") {
+  //      navigate("/signup");
+  //   } else if (userType === "student") {
   
-      navigate("/dashboard")
+  //     navigate("/signup")
       
-    }
-  };
+  //   }
+  // };
 
   return (
     //! form content//*
@@ -54,8 +63,8 @@ export default function UserAccess() {
           <div className="useType">
             <div>
               <button
-                id="button"
-                onClick={() => handleUserTypeClick("student")}
+                className= "s-btn" id="button"
+                onClick={handleStudentButtonClick}
               >
                 <img
                   src={UserEdit}
@@ -67,7 +76,7 @@ export default function UserAccess() {
             <div>
               <button
                 id="button"
-                onClick={() => handleUserTypeClick("Admin")}
+                onClick={handleTeacherButtonClick}
               >
                 <img
                   src={UserEdit}
@@ -81,7 +90,7 @@ export default function UserAccess() {
 
           <button
             className="button1"
-            onClick={handleContinueClick}
+            onClick={handleContinue}
             disabled={!userType}
           >
             Continue

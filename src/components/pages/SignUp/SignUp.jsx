@@ -1,15 +1,16 @@
 import React, { useState } from "react";
-import "./SignUp.css"
+import "./SignUp.css";
 import logo from "../../../assets/logo.png";
 import RegisterImg from "../../../assets/register.png";
 // import google from "../../../assets/google.png";
 import FormInput from "../../reusable/FormInput/FormInput";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, /*useLocation*/} from "react-router-dom";
 // import GAuthButton from "../../reusable/GOAuth/GOAuth";
 
 export default function SignUp() {
   // *!State Management for the input field
   const navigate = useNavigate();
+  // const location = useLocation();
   const [values, setValues] = useState({
     fullname: "",
     email: "",
@@ -56,25 +57,42 @@ export default function SignUp() {
       placeholder: "Confirm Password",
       errorMessage: "Passwords don't match",
       label: "Confirm Password",
-      pattern: values.Password,
+      pattern: values.password,
       required: true,
     },
   ];
 
-  
   const handleSubmit = (e) => {
     e.preventDefault();
     console.dir(e.target[0]);
     passData();
+//     const searchParams = new URLSearchParams(location.search);
+//     const userType = searchParams.get ('type')
+//   if (userType === "Admin") {
+//     navigate("/dashboard1");
+// } else if (userType === "student") {
+//     navigate("/dashboard");
+//  }
+navigate("/login")
   };
   const onChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
   };
   console.log(values);
+  // const handleSignUp = () => {
+  //   // const {fullname, password, email}=values;
+  //   // const userType = location.state;
+
+  //   // if (userType === "Admin") {
+  //   //   navigate("/dashboard");
+  //   // } else if (userType === "student") {
+  //   //   navigate("dashboard");
+  //   // }
+  // };
 
   // *! API call//
   const passData = () => {
-    console.log("passData before fetch")
+    console.log("passData before fetch");
     fetch("https://edu-cate.onrender.com/api/v1/auth/register", {
       method: "POST",
       headers: {
@@ -83,9 +101,9 @@ export default function SignUp() {
       body: JSON.stringify(values),
     })
       .then((response) => {
-        console.log("before response.ok" ,response)
+        console.log("before response.ok", response);
         if (response.ok) {
-          console.log("request successful")
+          console.log("request successful");
           return response.json();
         } else {
           throw new Error("API request failed");
@@ -93,13 +111,13 @@ export default function SignUp() {
       })
       .then((data) => {
         console.log(data);
-        navigate("userAccess")
+        // navigate("./login");
       })
       .catch((error) => {
         console.error(error);
       });
   };
-// ! content box body
+  // ! content box body
   return (
     <section className="sign-up-wrapper">
       <div className="logoContent">
@@ -125,7 +143,13 @@ export default function SignUp() {
           ))}
           <div className="link-btn-wrapper">
             {/* <Link to={`/signup-2`}> */}
-            <button className="button1" type="submit">Sign Up</button>
+            <button
+              // onClick={ handleSignUp }
+              className="button1"
+              type="submit"
+            >
+              Sign Up
+            </button>
             {/* </Link> */}
           </div>
           {/* <span className="spanOr">or</span> */}
@@ -140,7 +164,8 @@ export default function SignUp() {
             style={{ marginTop: "10px", fontSize: "10px" }}
           >
             Already have an account?
-            <Link to={`/Login`}
+            <Link
+              to={`/Login`}
               style={{ color: "orangered", textDecoration: "none" }}
             >
               Sign In
