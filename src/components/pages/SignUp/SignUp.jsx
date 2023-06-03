@@ -5,7 +5,7 @@ import RegisterImg from "../../../assets/register.png";
 // import google from "../../../assets/google.png";
 import FormInput from "../../reusable/FormInput/FormInput";
 import { Link, useNavigate } from "react-router-dom";
-import GAuthButton from "../../reusable/GOAuth/GOAuth";
+// import GAuthButton from "../../reusable/GOAuth/GOAuth";
 
 export default function SignUp() {
   // *!State Management for the input field
@@ -75,7 +75,7 @@ export default function SignUp() {
   // *! API call//
   const passData = () => {
     console.log("passData before fetch")
-    fetch("https://edgegap.onrender.com/api/v1/auth/register", {
+    fetch("https://edu-cate.onrender.com/api/v1/auth/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -128,13 +128,13 @@ export default function SignUp() {
             <button className="button1" type="submit">Sign Up</button>
             {/* </Link> */}
           </div>
-          <span className="spanOr">or</span>
-          <a
+          {/* <span className="spanOr">or</span> */}
+          {/* <a
             href="#"
             className="google-btn"
           >
             <GAuthButton />
-          </a>
+          </a> */}
           <span
             className="SignIn"
             style={{ marginTop: "10px", fontSize: "10px" }}
