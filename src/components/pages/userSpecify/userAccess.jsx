@@ -64,7 +64,7 @@ export default function UserAccess() {
           <div className="flex flex-col mb-10">
             <div className="w-full">
               <button
-                className= {`${userType === 'student' ? 'bg-orange-600 hover:bg-orange-500 focus:bg-orange-500 disabled:bg-orange-400 disabled:cursor-not-allowed px-4 py-2 text-white w-full mb-5 flex justify-center items-center border-2 p-2 rounded-md border-white':'w-full mb-5 flex justify-center items-center border-2 p-2 rounded-md border-gray-600/60 text-gray-600/60'}`} 
+                className= {`${userType === 'student' ? ' hover:bg-orange-500 focus:bg-gray-600/60 disabled:bg-orange-400 disabled:cursor-not-allowed px-4 py-2 text-white w-full mb-5 flex justify-center items-center border-2 p-2 rounded-md border-white':'w-full mb-5 flex justify-center items-center border-2 p-2 rounded-md border-gray-600/60 text-gray-600/60'}`} 
                 // id="button"
                 onClick={handleStudentButtonClick}
               >
@@ -76,7 +76,7 @@ export default function UserAccess() {
             <div>
               <button
                 // id="button"
-                className={`${userType === 'admin' ? 'bg-orange-500 hover:bg-orange-500 focus:bg-orange-500 disabled:bg-orange-400 disabled:cursor-not-allowed px-4 py-2 text-white w-full mb-5 flex justify-center items-center border-2 p-2 rounded-md border-white':'w-full mb-5 flex justify-center items-center border-2 p-2 rounded-md border-gray-600/60 text-gray-600/60'}`} 
+                className={`${userType === 'admin' ? ' hover:bg-orange-500 focus:bg-gray-600/60 disabled:bg-orange-400 disabled:cursor-not-allowed px-4 py-2 text-white w-full mb-5 flex justify-center items-center border-2 p-2 rounded-md border-white':'w-full mb-5 flex justify-center items-center border-2 p-2 rounded-md border-gray-600/60 text-gray-600/60'}`} 
                 onClick={handleTeacherButtonClick}
               >
                 <AiOutlineUserAdd className="text-2xl" /> 
@@ -87,7 +87,7 @@ export default function UserAccess() {
           {/* <button className="button1" onClick={handleContinueClick} disabled={!continueEnabled}>Continue</button> */}
 
           <button
-            className="bg-orange-600 rounded-md p-2 text-white block w-full"
+            className={`${userType === 'student' || userType === 'admin' ? 'bg-orange-600 rounded-md p-2 text-white block w-full': 'hidden'}`}
             onClick={handleContinue}
             disabled={!userType}
           >
