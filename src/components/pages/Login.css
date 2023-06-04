@@ -56,12 +56,11 @@
     width: 500px;
     height: 580px;
     padding: 30px 50px;
-    background-color: #fff;
     color: #000;
   }
   
   .input-group {
-    margin: 20px 0;
+    margin: 10px 0;
   }
   
   #lab {
@@ -86,8 +85,7 @@
 
   .eye-icon{
     position: absolute;
-    top: 45px;
-    bottom: 0;
+    top: 60px;
     right: 12px;
   }
 
@@ -179,6 +177,8 @@
     .container{
       background: url(../../assets/desktop.jpg)no-repeat center ;
       background-size: cover;
+      height: 100vh;
+      width: 100vw;
     }
 
     .grey-bg{
@@ -187,7 +187,8 @@
 
     #login-form {
       margin: auto;
-      width: 70%;
+      width: 100%;
+      height: 50%;
       float: none;
       background: none;
     }

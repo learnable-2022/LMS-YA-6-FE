@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import "./Login.css";
 import img from "../../assets/desktop.jpg";
 import { AiOutlineEyeInvisible, AiOutlineEye} from "react-icons/ai";
-import googlebtn from "../../assets/Google logo.png"
 import { useNavigate } from "react-router-dom";
 
 
@@ -56,7 +55,7 @@ function Login() {
     if(Object.keys(formErrors).length === 0 && isSubmit) {
       console.log(formValues);
     }
-  }, [formErrors])
+  }, [formErrors, isSubmit, formValues])
   const validate = (values) => {
     const errors = {}
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,6}$/;
@@ -78,7 +77,7 @@ function Login() {
 
   const handleAPICall = async () => {
     try {
-      const response = await fetch("https://edgegap.onrender.com/api/v1/auth/login", {
+      const response = await fetch("https://edu-cate.onrender.com/api/v1/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -104,19 +103,18 @@ function Login() {
   };
   return (
 
-      <div className="container">
+      <div className="container w-full">
         <div><img src={ require('../../assets/EducateLogo.png')} className="logo"/></div>
         <form id="login-form" onSubmit={handleSubmit} method="POST" action="/api/v1/auth/login">
           <h1>Login into your account</h1>
-          <p className="first-p">Please select a login method</p>
-          <div className="input-group">
+          <div className="input-group w-full">
             <label htmlFor="email" id="lab">
               Email
             </label>
             <input type="email" id="email" name="email" placeholder="Enter Your Email" value={ formValues.email } onChange={handleChange}/>
           </div>
           <p className="input-response">{ formErrors.email }</p>
-          <div className="input-group flex-input">
+          <div className="input-group flex-input w-full">
             <label htmlFor="password" id="lab">
               Password
             </label>
@@ -132,13 +130,13 @@ function Login() {
             Login
           </button>
           {loginError && <p className="error-message">{loginError}</p>}
-          <p className="last-p">Don't have an account? <a href="">Sign Up</a></p>
+          <p className="text-black">Don't have an account? <span className="text-orange-500 font-bold" onClick={()=>navigate('/signup')}>Sign Up</span></p>
         </form>
         
       <div className="grey-bg">
         <p className="wlc-writeup">
-          <h1>Welcome back to <b>Educate</b></h1>
-          Login into your account to continue your learning journey.
+          Welcome back to <b>Educate</b>
+         <br /> Login into your account to continue your learning journey.
         </p>
         <img src={img} alt="man on laptop" className="grey-img"></img>
       </div>

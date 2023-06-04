@@ -31,8 +31,6 @@ const App = () => {
         </Route>
         <Route exact path="/login">
             <Route exact path="/login" element={<Login />} />
-          
-
         </Route>
       </Routes>
     </BrowserRouter>
