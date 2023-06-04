@@ -51,7 +51,7 @@ function MainComponent() {
         <div class="border-container">
           <div class="content">
             <BsPerson className="person-icon" />
-            <div className="inner-content" >
+            <div className="inner-content">
               <textarea name="" id="" cols="70" rows="10" className="textarea">
                 Leave a comment...
               </textarea>
@@ -60,6 +60,7 @@ function MainComponent() {
           <button className="post">Post a comment</button>
         </div>
       </div>
+     
     </>
   );
 }
