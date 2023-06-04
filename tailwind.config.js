@@ -21,7 +21,9 @@ module.exports = {
       },
     },
     backgroundImage:{
-      "teachBg": "url('/src/assets/teach.svg')"
+      "teachBg": "url('/src/assets/teach.svg')",
+      "loginBg": "url('/src/assets/desktop.jpg')",
+      "registerBg": "url('/src/assets/register.png')"
     }
   },
   plugins: [],
