@@ -7,7 +7,7 @@ const FormInput =(props) =>{
     setFocused(true);
   }
   return (
-    <div className='FormInput'>
+    <div className='FormInput mb-5 lg:mb-0'>
       <label>{label}</label>
         <input {...Ip} onChange={onChange} onBlur={handleFocus} onFocus={()=>Ip.name==="confirmPassword" && setFocused(true)} focused={focused.toString()}/>
         <span className='errorMessage'>{errorMessage}</span>

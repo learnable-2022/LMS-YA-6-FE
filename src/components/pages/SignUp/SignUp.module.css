@@ -61,8 +61,8 @@ section .contentBox {
 form {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  /* justify-content: center;
+  align-items: center; */
   background-color: white;
   padding: 0 60px;
 }
@@ -207,12 +207,12 @@ padding: 10%;
     display: none;
   }
 
-  .SignIn,
+  /* .SignIn,
   .spanOr,
   .formBox h1,
   p {
     color: #fff;
-  }
+  } */
   .formBox p {
     margin-top: 0;
     margin-bottom: 3%;
