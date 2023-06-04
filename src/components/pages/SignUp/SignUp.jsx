@@ -1,11 +1,7 @@
 import React, { useState } from "react";
-import "./SignUp.css";
-import logo from "../../../assets/logo.png";
-import RegisterImg from "../../../assets/register.png";
-// import google from "../../../assets/google.png";
+import Logo from "../../../assets/EducateLogo.png";
 import FormInput from "../../reusable/FormInput/FormInput";
 import { Link, useNavigate, /*useLocation*/} from "react-router-dom";
-// import GAuthButton from "../../reusable/GOAuth/GOAuth";
 
 export default function SignUp() {
   // *!State Management for the input field
@@ -66,29 +62,12 @@ export default function SignUp() {
     e.preventDefault();
     console.dir(e.target[0]);
     passData();
-//     const searchParams = new URLSearchParams(location.search);
-//     const userType = searchParams.get ('type')
-//   if (userType === "Admin") {
-//     navigate("/dashboard1");
-// } else if (userType === "student") {
-//     navigate("/dashboard");
-//  }
 navigate("/login")
   };
   const onChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
   };
   console.log(values);
-  // const handleSignUp = () => {
-  //   // const {fullname, password, email}=values;
-  //   // const userType = location.state;
-
-  //   // if (userType === "Admin") {
-  //   //   navigate("/dashboard");
-  //   // } else if (userType === "student") {
-  //   //   navigate("dashboard");
-  //   // }
-  // };
 
   // *! API call//
   const passData = () => {
@@ -119,72 +98,64 @@ navigate("/login")
   };
   // ! content box body
   return (
-    <section className="sign-up-wrapper">
-      <div className="logoContent">
+    <section className="md:flex md:flex-row-reverse lg:flex lg:flex-row h-screen w-full justify-between">
+      <div className="w-full lg:w-1/2 py-3 px-2 md:px-14">
         <img
-          src={logo}
-          alt="Edu_cate"
+        className="h-10 w-fit"
+        src={Logo}
+        alt="Edu_cate"
         />
-      </div>
-      <div className="contentBox">
-        <form
-          className="formBox"
-          onSubmit={handleSubmit}
-        >
-          <h1>Create an account</h1>
-          <p>Let's get you started</p>
-          {inputs.map((input) => (
-            <FormInput
-              key={input.id}
-              {...input}
-              value={values[input.name]}
-              onChange={onChange}
-            />
-          ))}
-          <div className="link-btn-wrapper">
-            {/* <Link to={`/signup-2`}> */}
-            <button
-              // onClick={ handleSignUp }
-              className="button1"
-              type="submit"
-            >
-              Sign Up
-            </button>
-            {/* </Link> */}
-          </div>
-          {/* <span className="spanOr">or</span> */}
-          {/* <a
-            href="#"
-            className="google-btn"
+      <div className="mt-10 flex flex-col justify-start">
+          <form
+            className="formBox"
+            onSubmit={handleSubmit}
           >
-            <GAuthButton />
-          </a> */}
-          <span
-            className="SignIn"
-            style={{ marginTop: "10px", fontSize: "10px" }}
-          >
-            Already have an account?
-            <Link
-              to={`/Login`}
-              style={{ color: "orangered", textDecoration: "none" }}
+            <h1 className="text-4xl font-semibold">Create an account</h1>
+            <p className="text-lg mt-2">Let's get you started</p>
+            {inputs.map((input) => (
+              <FormInput
+                key={input.id}
+                {...input}
+                value={values[input.name]}
+                onChange={onChange}
+              />
+            ))}
+            <div className="link-btn-wrapper">
+              {/* <Link to={`/signup-2`}> */}
+              <button
+                // onClick={ handleSignUp }
+                className="bg-orange-600 rounded-md p-2 text-white block w-full mt-10"
+                type="submit"
+              >
+                Sign Up
+              </button>
+            </div>
+            <span
+              className="SignIn"
+              style={{ marginTop: "2em" }}
             >
-              Sign In
-            </Link>
-          </span>
-        </form>
-      </div>
-      <div className="imgBox">
-        <div className="BannerText">
-          <h1 style={{ color: "white" }}>
-            Welcome to
-            <span style={{ color: "orangered" }}> Educate</span>
-          </h1>
-          <p>Sign up to find the best courses according to your preferences</p>
+              Already have an account?
+              <Link
+                to={`/Login`}
+                style={{ color: "orangered", textDecoration: "none" }}
+              >
+                Sign In
+              </Link>
+            </span>
+          </form>
         </div>
-        <img
-          src={RegisterImg}
-          alt=""
-        />
+      </div>
+      <div className="hidden md:flex h-screen w-1/2 bg-no-repeat bg-cover bg-registerBg">
+        <div className="flex flex-col justify-end lg:px-10 py-36 text-xl text-white h-full">
+        <h1 
+          style={{ color: "white" }}>
+            <span className="font-bold text-3xl">Welcome to</span>
+            <span 
+            className="font-bold text-3xl"
+            style={{ color: "orangered" }}> Educate</span>
+          </h1>
+          <p className="text-white/90">Sign up to find the best courses according to your preferences</p>
+        </div>
       </div>
     </section>
   );

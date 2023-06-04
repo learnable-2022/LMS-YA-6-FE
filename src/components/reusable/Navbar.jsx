@@ -25,7 +25,7 @@ const Navbar = () => {
                     <div className='p-2 bg-gray-200/60 rounded-md cursor-pointer' onClick={()=>navigate('/login')}>
                         Sign In
                     </div>
-                    <div className='p-2 bg-orange-600 text-white rounded-md cursor-pointer' onClick={()=>navigate('/signup')}>
+                    <div className='p-2 bg-orange-600 text-white rounded-md cursor-pointer' onClick={()=>navigate('/userAccess')}>
                         Sign Up
                     </div>
                 </div>

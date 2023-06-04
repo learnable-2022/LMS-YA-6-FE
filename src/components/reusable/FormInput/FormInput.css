@@ -6,14 +6,13 @@
 }
 input {
   padding: 20px;
-  margin: 10px 0px;
+  margin: auto 0px;
   border-radius: 5px;
   border: 1px solid black;
   outline: none;
 }
 
 input:focus {
-  background-color: rgb(255, 231, 187);
   outline: none;
 }
 input:-webkit-autofill,
