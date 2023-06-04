@@ -3,14 +3,16 @@ import {FaUser} from 'react-icons/fa'
 
 const NewCourseCard = ({ courseName, courseCost}) => {
     return ( 
-        <div className="h-fit mb-3 w-56 p-3 rounded-md shadow-md bg-white space-y-1">
-            <img src={courseImg} alt="course" className="rounded-md w-full" />
+        <div className="h-fit mb-3 w-48 md:w-56 p-3 rounded-md shadow-md bg-white space-y-1">
+            <div className='w-fit h-fit relative'>
+                <img src={courseImg} alt="course" className="rounded-md w-full" />
+                <div className="absolute top-2 left-1 w-fit h-fit bg-orange-600/90 text-white rounded-md p-1 font-semibold">
+                        {courseCost}
+                </div>
+            </div>
             <div className="w-full h-fit space-y-2">
                 <div className="font-semibold text-sm w-fit h-fit">
                     {courseName}
-                </div>
-                <div className=" w-fit h-fit text-orange-600 font-bold">
-                    {courseCost}
                 </div>
             </div>
 

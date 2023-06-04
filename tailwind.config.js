@@ -16,10 +16,15 @@ module.exports = {
         },
       },
       animation: {
-        fadeIn: 'fadeIn .6s ease-in',
+        fadeIn: 'fadeIn .25s ease-in',
         slideDown: 'slideDown 0.3s ease-in',
       },
     },
+    backgroundImage:{
+      "teachBg": "url('/src/assets/teach.svg')",
+      "loginBg": "url('/src/assets/desktop.jpg')",
+      "registerBg": "url('/src/assets/register.png')"
+    }
   },
   plugins: [],
 }
