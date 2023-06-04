@@ -25,9 +25,9 @@ const App = () => {
         </Route>
         <Route exact path="/my-class" element={<SecondDashboard />} />
 
-        <Route exact path="/signup">
-        <Route path ="" element={<SignUp />} />
-            <Route path="userAccess" element={<UserAccess/>} />
+        <Route exact path="/userAccess">
+        <Route path="" element={<UserAccess/>} />
+            <Route path ="signup" element={<SignUp />} />
         </Route>
         <Route exact path="/login">
             <Route exact path="/login" element={<Login />} />
