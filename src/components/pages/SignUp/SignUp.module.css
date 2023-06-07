@@ -34,9 +34,7 @@ section .imgBox .BannerText {
   position: absolute;
   z-index: 2;
   text-align: center;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 55%;
 }
 section .imgBox img {
   width:100%;
@@ -58,30 +56,23 @@ section .contentBox {
   width: 100%;
   height: 100%;
 }
-form {
-  display: flex;
-  flex-direction: column;
-  /* justify-content: center;
-  align-items: center; */
-  background-color: white;
-  padding: 0 60px;
-}
 .logoContent img {
   position: absolute;
-  top: 4%;
-  left: 5%;
+  top: 2%;
+  left: 3%;
+  width: 120px;
 }
 .formBox h1 {
   font-weight: 900;
   font-size: 64px;
-  text-align: center;
+  text-align: left;
   font-family: "Poppins", sans-serif;
   margin: 0;
 }
 .formBox p {
   font-weight: 800;
   font-size: 32px;
-  text-align: center;
+  text-align: left;
   margin: 0;
   font-family: "Poppins", sans-serif;
 }
@@ -104,7 +95,7 @@ form {
 }
 
 .link-btn-wrapper {
-  width: 50%;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -122,13 +113,6 @@ form {
   text-decoration: none;
 }
 
-/* .google-btn div {
-  border: 0;
-  outline: none;
-  background-color: none;
-} */
-
-
 .btn-text p {
   color: black;
   font-size: 20px;
@@ -137,12 +121,9 @@ form {
 
 .useType {
   width: 100%;
-padding: 10%;
+
 }
 
-.s-btn{
-  margin-bottom: 4%;
-}
 
 #button {
   border: 1px solid #5e5e60;
@@ -202,17 +183,21 @@ padding: 10%;
   form {
     background: none;
     padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   }
   .BannerText {
     display: none;
   }
 
-  /* .SignIn,
+  .SignIn,
   .spanOr,
   .formBox h1,
   p {
     color: #fff;
-  } */
+  }
   .formBox p {
     margin-top: 0;
     margin-bottom: 3%;
