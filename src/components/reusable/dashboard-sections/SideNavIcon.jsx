@@ -1,4 +1,4 @@
-import {FaBookOpen, FaBusinessTime, FaChartLine, FaHome, FaPeopleArrows, FaToolbox} from 'react-icons/fa'
+import {FaBookOpen, FaBusinessTime, FaCamera, FaChartLine, FaHome, FaInbox, FaList, FaPeopleArrows, FaSignOutAlt, FaToolbox} from 'react-icons/fa'
 
 const SideNavIcon = ({iconName, iconDescription, active}) => {
     const IconComponent = {
@@ -8,6 +8,10 @@ const SideNavIcon = ({iconName, iconDescription, active}) => {
         forum: FaPeopleArrows,
         support: FaBusinessTime,
         setting: FaToolbox,
+        message: FaInbox,
+        todo: FaList,
+        camera: FaCamera,
+        signout: FaSignOutAlt
         // Add more icon mappings as needed
       }[iconName];
     

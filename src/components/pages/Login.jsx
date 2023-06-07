@@ -70,9 +70,9 @@ const Login = ()=> {
               <div className="hidden md:flex w-1/2 bg-no-repeat bg-loginBg flex-col justify-end lg:px-10 py-36 text-xl text-white h-full">
               <h1 
                 style={{ color: "white" }}>
-                <span className="font-bold text-3xl">Welcome to</span>
+                <span className="font-bold text-4xl">Welcome to</span>
                 <span 
-                className="font-bold text-3xl"
+                className="font-bold text-4xl"
                 style={{ color: "orangered" }}> Educate</span>
               </h1>
           <p className="text-white/90">Sign up to find the best courses according to your preferences</p>

@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Logo from "../../../assets/EducateLogo.png";
 import FormInput from "../../reusable/FormInput/FormInput";
 import { Link, useNavigate, /*useLocation*/} from "react-router-dom";
+
 
 export default function SignUp() {
   // *!State Management for the input field
@@ -13,6 +14,16 @@ export default function SignUp() {
     password: "",
     confirmPassword: "",
   });
+  // useEffect(() => {
+  //   // Get the current URL
+  //   const currentURL = window.location.href;
+
+  //   // Extract the value of 'type' parameter
+  //   const urlSearchParams = new URLSearchParams(currentURL.split('?')[1]);
+  //   const userType = urlSearchParams.get('type');
+
+  //   console.log(userType); // Output: admin
+  // }, []);
 
   //! Input field. Regex code used to validate form/*
   const inputs = [
@@ -105,7 +116,7 @@ navigate("/login")
         src={Logo}
         alt="Edu_cate"
         />
-      <div className="mt-10 flex flex-col justify-start">
+      <div className="mt-10 w-full flex flex-col justify-start">
           <form
             className="formBox"
             onSubmit={handleSubmit}
