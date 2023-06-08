@@ -8,7 +8,7 @@ const AllCourses = () => {
         <div>
             <Topbar />
             <div className="flex h-fit min-h-screen ">
-                <SideNavbar />
+                <SideNavbar studentRoute={'/all-courses'} />
                 <Courses />
             </div>
             <Footer />

@@ -3,11 +3,11 @@ import React from 'react'
 function UpperTxtSec() {
   return (
     <div>
-<div>
-    <h1>
+<div className= "pt-2"> 
+    <h1 className=" text-[#1F3042] text-4xl font-bold">
     Hello Joan
     </h1>
-    <p>
+    <p className='text-black text-xs'>
     Welcome back, here’s what happened with your courses while you were away
     </p>
 </div>

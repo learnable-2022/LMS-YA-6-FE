@@ -8,8 +8,8 @@ import "./LeftComponent.css";
 function LeftComponent() {
   return (
     <>
-      <div className="left-component">
-        <div className="home">
+      <div className="left-component bg-white shadow-md w-fit">
+        <div className="home p-2">
           <i>
             <AiOutlineHome />
           </i>
@@ -33,7 +33,7 @@ function LeftComponent() {
               <BsPlayBtn />
               {/* <BsPlayBtn /> */}
             </i>
-            <h2 className="topic">
+            <h2 className="topic border-b-2 border-gray-600/60">
               Introduction of Public administration(05:20)
             </h2>
 
@@ -45,7 +45,7 @@ function LeftComponent() {
               {" "}
               <BsPlayBtn />
             </i>
-            <h2 className="topic">Element of Public administration(05:20)</h2>
+            <h2 className="topic border-b-2 border-gray-600/60">Element of Public administration(05:20)</h2>
           </div>
         </div>
         <div>
@@ -63,7 +63,7 @@ function LeftComponent() {
               <BsPlayBtn />
               {/* <BsPlayBtn /> */}
             </i>
-            <h2 className="topic">Administrative Law(10:20)</h2>
+            <h2 className="topic border-b-2 border-gray-600/60">Administrative Law(10:20)</h2>
 
             <i className="check">
               {" "}
@@ -73,7 +73,7 @@ function LeftComponent() {
               {" "}
               <BsPlayBtn />
             </i>
-            <h2 className="topic">Constitutional law(05:20)</h2>
+            <h2 className="topic border-b-2 border-gray-600/60">Constitutional law(05:20)</h2>
           </div>
           <div>
             {/* 100 percent completed */}
@@ -119,7 +119,7 @@ function LeftComponent() {
                 {/* <BsPlayBtn /> */}
               </i>
 
-              <h2 className="topic">Entreneurship(05:20)</h2>
+              <h2 className="topic border-b-2 border-gray-600/60">Entreneurship(05:20)</h2>
             </div>
             <div className="welcome">
               <i className="check">
@@ -131,20 +131,7 @@ function LeftComponent() {
                 <BsPlayBtn />
                 {/* <BsPlayBtn /> */}
               </i>
-              <h2 className="topic">Introduction to Computer(05:20)</h2>
-            </div>
-
-            <div className="welcome">
-              <i className="check">
-                {" "}
-                <AiOutlineCheckCircle />
-              </i>
-              <i className="play">
-                {" "}
-                <BsPlayBtn />
-                {/* <BsPlayBtn /> */}
-              </i>
-              <h2 className="topic">Psychology(05:20)</h2>
+              <h2 className="topic border-b-2 border-gray-600/60">Introduction to Computer(05:20)</h2>
             </div>
 
             <div className="welcome">
@@ -157,7 +144,20 @@ function LeftComponent() {
                 <BsPlayBtn />
                 {/* <BsPlayBtn /> */}
               </i>
-              <h2 className="topic">Submit Weekly Test(05:20)</h2>
+              <h2 className="topic border-b-2 border-gray-600/60">Psychology(05:20)</h2>
+            </div>
+
+            <div className="welcome">
+              <i className="check">
+                {" "}
+                <AiOutlineCheckCircle />
+              </i>
+              <i className="play">
+                {" "}
+                <BsPlayBtn />
+                {/* <BsPlayBtn /> */}
+              </i>
+              <h2 className="topic border-b-2 border-gray-600/60">Submit Weekly Test(05:20)</h2>
             </div>
             <hr />
             <h1 className="heading">Week 2</h1>
@@ -173,7 +173,7 @@ function LeftComponent() {
                 <BsPlayBtn />
                 {/* <BsPlayBtn /> */}
               </i>
-              <h2 className="topic">Procurement(05:20)</h2>
+              <h2 className="topic border-b-2 border-gray-600/60">Procurement(05:20)</h2>
             </div>
 
             <div className="welcome">
@@ -187,7 +187,7 @@ function LeftComponent() {
                 {/* <BsPlayBtn /> */}
               </i>
 
-              <h2 className="topic">Marketing(05:20)</h2>
+              <h2 className="topic border-b-2 border-gray-600/60">Marketing(05:20)</h2>
             </div>
 
             <div className="welcome">
@@ -201,7 +201,7 @@ function LeftComponent() {
                 {/* <BsPlayBtn /> */}
               </i>
 
-              <h2 className="topic">Sociology(05:20)</h2>
+              <h2 className="topic border-b-2 border-gray-600/60">Sociology(05:20)</h2>
             </div>
             <div className="welcome">
               <i className="check">
@@ -213,20 +213,7 @@ function LeftComponent() {
                 <BsPlayBtn />
                 {/* <BsPlayBtn /> */}
               </i>
-              <h2 className="topic">Use of English(05:20)</h2>
-            </div>
-
-            <div className="welcome">
-              <i className="check">
-                {" "}
-                <AiOutlineCheckCircle />
-              </i>
-              <i className="play">
-                {" "}
-                <BsPlayBtn />
-                {/* <BsPlayBtn /> */}
-              </i>
-              <h2 className="topic">Human Resource Management</h2>
+              <h2 className="topic border-b-2 border-gray-600/60">Use of English(05:20)</h2>
             </div>
 
             <div className="welcome">
@@ -239,7 +226,7 @@ function LeftComponent() {
                 <BsPlayBtn />
                 {/* <BsPlayBtn /> */}
               </i>
-              <h2 className="topic">Accounting(05:20)</h2>
+              <h2 className="topic border-b-2 border-gray-600/60">Human Resource Management</h2>
             </div>
 
             <div className="welcome">
@@ -252,7 +239,7 @@ function LeftComponent() {
                 <BsPlayBtn />
                 {/* <BsPlayBtn /> */}
               </i>
-              <h2 className="topic">Political Economy</h2>
+              <h2 className="topic border-b-2 border-gray-600/60">Accounting(05:20)</h2>
             </div>
 
             <div className="welcome">
@@ -265,7 +252,20 @@ function LeftComponent() {
                 <BsPlayBtn />
                 {/* <BsPlayBtn /> */}
               </i>
-              <h2 className="topic">Procurement Management(05:20)</h2>
+              <h2 className="topic border-b-2 border-gray-600/60">Political Economy</h2>
+            </div>
+
+            <div className="welcome">
+              <i className="check">
+                {" "}
+                <AiOutlineCheckCircle />
+              </i>
+              <i className="play">
+                {" "}
+                <BsPlayBtn />
+                {/* <BsPlayBtn /> */}
+              </i>
+              <h2 className="topic border-b-2 border-gray-600/60">Procurement Management(05:20)</h2>
             </div>
           </div>
         </div>

@@ -180,7 +180,7 @@ section .contentBox {
     background: rgb(255, 255, 255/0.9);
     margin: 50px;
   }
-  form {
+  #form {
     background: none;
     padding: 0;
   display: flex;
@@ -192,12 +192,12 @@ section .contentBox {
     display: none;
   }
 
-  .SignIn,
+  /* .SignIn,
   .spanOr,
   .formBox h1,
   p {
     color: #fff;
-  }
+  } */
   .formBox p {
     margin-top: 0;
     margin-bottom: 3%;

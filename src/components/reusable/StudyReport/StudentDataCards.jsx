@@ -6,7 +6,7 @@ import TLearners from "../../../assets/TotalLearners.png";
 function studentDataCards() {
   return (
     <div>
-      <section className="grid grid-cols-3 gap-2">
+      <section className="grid grid-cols-2 gap-2 md:grid-cols-3 ">
         <div>
           <img
             className="w-4/4 h-full"

@@ -6,11 +6,11 @@ const studentData = () => {
   return (
     <div>
       <div className="flex justify-between items-center">
-        <div>
-          <h1 className="text-[#1F3042] text-4xl font-bold">Insight Chart</h1>
+        <div >
+          <h1 className="text-[#1F3042] text-2xl font-bold">Insight Chart</h1>
         </div>
 
-        <div className="hidden my-7 md:flex  lg:ml-10 md:space-x-4 bg-white h-fit p-1 md:w-fit rounded-md ">
+        <div className=" hidden my-7 md:flex  lg:ml-10 md:space-x-4 bg-white h-fit p-1 md:w-fit rounded-md ">
           <div className="p-1">
             <DropDownBtn
               filterName={"Courses"}

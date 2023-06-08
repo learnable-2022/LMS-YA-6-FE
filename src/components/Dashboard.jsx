@@ -8,7 +8,7 @@ const Dashboard = () => {
         <div>
             <Topbar />
             <div className="flex h-fit min-h-screen ">
-                <SideNavbar />
+                <SideNavbar studentRoute={''} />
                 <Hero />
             </div>
             <Footer />
