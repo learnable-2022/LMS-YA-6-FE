@@ -1,11 +1,12 @@
+import { useNavigate } from "react-router-dom";
 import ProgressBar from "./ProgressBar";
 import {FaUser} from 'react-icons/fa'
-import courseImg from '../../../assets/Rectangle 14.svg'
 
-const CourseCard = ({courseTitle, courseStatus, progressPercentage}) => {
+const CourseCard = ({courseTitle, courseStatus, progressPercentage, courseImg}) => {
+    const navigate = useNavigate()
     return ( 
-        <div className="mb-3 h-fit w-48 md:w-56 p-3 rounded-md shadow-md bg-white space-y-1">
-            <img src={courseImg} alt="course" className="rounded-md w-full" />
+        <div className="mb-3 h-fit w-48 md:w-56 p-3 rounded-md shadow-md bg-white space-y-1 hover:bg-black/20 cursor-pointer" onClick={()=>navigate('/dashboard/my-class')}>
+            <img src={courseImg} alt="course" className="rounded-md w-full" /> 
             <div className="w-full h-fit space-y-2">
                 <div className="font-semibold text-sm w-fit h-fit">
                     {courseTitle}

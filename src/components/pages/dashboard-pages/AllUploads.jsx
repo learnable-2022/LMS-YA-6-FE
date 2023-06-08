@@ -1,19 +1,19 @@
 import Footer from "../../reusable/Footer";
-import Courses from "../../reusable/all-courses/Courses";
 import SideNavbar from "../../reusable/dashboard-sections/SideNavbar";
 import Topbar from "../../reusable/dashboard-sections/Topbar";
+import Uploads from "../../reusable/instructors-sections/Uploads";
 
-const AllCourses = () => {
+const AllUploads = () => {
     return ( 
-        <div>
+        <>
             <Topbar />
             <div className="flex h-fit min-h-screen ">
-                <SideNavbar studentRoute={'/all-courses'} />
-                <Courses />
+                <SideNavbar instructorsRoute={'/courses'} />
+                <Uploads />
             </div>
             <Footer />
-        </div>
+        </>
      );
 }
  
-export default AllCourses;
+export default AllUploads;
