@@ -60,7 +60,7 @@ const Login = ()=> {
     // Api call for a student
     const fetchStudentData = async (formData)=>{
       try {
-      const response = await fetch('https://edu-cate.onrender.com/api/v1/instructor/login',{
+      const response = await fetch('https://edu-cate.onrender.com/api/v1/auth/login',{
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -72,7 +72,7 @@ const Login = ()=> {
     if(response.ok){
         console.log("request successful");
         localStorage.setItem('userType', 'instructor')
-        navigate("/instructor");
+        navigate("/dashboard");
         return response.json();
       } else {
             throw new Error("API request failed");
