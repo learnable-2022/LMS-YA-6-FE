@@ -4,8 +4,17 @@ import SideNavIcon from "./SideNavIcon";
 const SideNavbar = ({instructorsRoute, studentRoute, courseTitle}) => {
     const location = useLocation()
     const navigate = useNavigate()
-    const handleLogout = ()=>{
-        localStorage.removeItem('token')
+    const handleInstructorLogout = ()=>{
+        localStorage.removeItem('instructor')
+        if(localStorage.getItem('instructor')===null){
+            navigate('/')
+        }
+    }
+    const handleStudentLogout = ()=>{
+        localStorage.removeItem('student')
+        if(localStorage.getItem('student')===null){
+            navigate('/')
+        }
     }
     return ( 
         <div className="hidden lg:flex py-10 shadow-md bg-white flex-col items-center " style={{width: '20%'}}>
@@ -33,7 +42,7 @@ const SideNavbar = ({instructorsRoute, studentRoute, courseTitle}) => {
                             </div>
 
                             {/* Logout Btn */}
-                            <div onClick={handleLogout} className="hover:border-2 hover:border-orange-600 rounded-lg bg-gray-600/60 text-white">
+                            <div onClick={handleStudentLogout} className="hover:border-2 hover:border-orange-600 rounded-lg bg-gray-600/60 text-white">
                             <SideNavIcon iconName={'signout'} iconDescription={'Logout'} />
                             </div>
                         </>
@@ -62,7 +71,7 @@ const SideNavbar = ({instructorsRoute, studentRoute, courseTitle}) => {
                             </div>
 
                             {/* Logout Btn */}
-                            <div onClick={handleLogout} className="hover:border-2 hover:border-orange-600 rounded-lg bg-gray-600/60 text-white">
+                            <div onClick={handleInstructorLogout} className="hover:border-2 hover:border-orange-600 rounded-lg bg-gray-600/60 text-white">
                             <SideNavIcon iconName={'signout'} iconDescription={'Logout'} />
                             </div>
                         </>

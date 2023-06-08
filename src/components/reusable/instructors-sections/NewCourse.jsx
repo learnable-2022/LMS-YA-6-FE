@@ -17,6 +17,7 @@ const NewCourse = () => {
   };
 
   const handleSubmit = async (e) => {
+    // fetchAllCourses()
     e.preventDefault();
     const courseQueryParams = new URLSearchParams({
       title: title,
@@ -45,7 +46,26 @@ const NewCourse = () => {
     }
   };
 
-  useEffect(()=>{},[])
+  // instance of course fetch
+  // const fetchAllCourses = async () => {
+  //   try {
+  //     const response = await fetch(`https://edu-cate.onrender.com/api/v1/courses`, {
+
+  //       method: 'GET',
+  //     });
+  //     if (response.ok) {
+  //       const data = await response.json();
+  //       console.log(data);
+  //       setNewCourse(data)
+  //       // navigate('/instructor/courses')
+  //     }
+  //   } catch (e) {
+  //     console.log(e);
+  //   }
+  // };
+    
+  useEffect(()=>{
+  },[])
 
   const modules = {
     toolbar: [
