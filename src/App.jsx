@@ -6,6 +6,9 @@ import Dashboard from "./components/Dashboard";
 import  UserAccess from "./components/pages/userSpecify/userAccess"
 import SecondDashboard from "./components/SecondDashboard/SecondDashboard";
 import AllCourses from "./components/pages/dashboard-pages/AllCourses";
+import InstructorsDashboard from "./components/InstructorsDashboard";
+import AllUploads from "./components/pages/dashboard-pages/AllUploads";
+import NewCourse from "./components/reusable/instructors-sections/NewCourse";
 
 const App = () => {
   return (
@@ -23,7 +26,14 @@ const App = () => {
           <Route exact path="/dashboard" element={<Dashboard />} />
           <Route exact path="/dashboard/all-courses" element={<AllCourses />} />
         </Route>
-        <Route exact path="/my-class" element={<SecondDashboard />} />
+        <Route exact path="/instructor">
+          <Route exact path="/instructor" element={<InstructorsDashboard />} />
+          <Route exact path="/instructor/courses">
+          <Route exact path="/instructor/courses" element={<AllUploads />} />
+          <Route exact path="/instructor/courses/create-course" element={<NewCourse />} />
+          </Route>
+        </Route>
+        <Route exact path="/dashboard/my-class" element={<SecondDashboard />} />
 
         <Route exact path="/userAccess">
         <Route path="" element={<UserAccess/>} />

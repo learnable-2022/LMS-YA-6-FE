@@ -6,9 +6,11 @@ import RegisterImg from "../../../assets/register.png";
 import FormInput from "../../reusable/FormInput/FormInput";
 import { Link, useNavigate} from "react-router-dom";
 
+
 export default function SignUp() {
   // *!State Management for the input field
   const navigate = useNavigate();
+  const [disabled, setDisabled] = useState(false)
   // const location = useLocation();
   const [values, setValues] = useState({
     fullname: "",
@@ -16,6 +18,16 @@ export default function SignUp() {
     password: "",
     confirmPassword: "",
   });
+  // useEffect(() => {
+  //   // Get the current URL
+  //   const currentURL = window.location.href;
+
+  //   // Extract the value of 'type' parameter
+  //   const urlSearchParams = new URLSearchParams(currentURL.split('?')[1]);
+  //   const userType = urlSearchParams.get('type');
+
+  //   console.log(userType); // Output: admin
+  // }, []);
 
   //! Input field. Regex code used to validate form/*
   const inputs = [
@@ -72,9 +84,9 @@ export default function SignUp() {
   // }, []);
   const handleSubmit = (e) => {
     e.preventDefault();
+    setDisabled(!disabled)
     console.dir(e.target[0]);
     passData();
-    navigate("/login");
   };
   const onChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
@@ -101,6 +113,10 @@ export default function SignUp() {
           console.log("before response.ok", response);
           if (response.ok) {
             console.log("request successful");
+            const data = response.json();
+            console.log(data)
+            localStorage.setItem('userType', 'instructor')
+            navigate("/login");
             return response.json();
           } else {
             throw new Error("API request failed");
@@ -125,6 +141,8 @@ export default function SignUp() {
           console.log("before response.ok", response);
           if (response.ok) {
             console.log("request successful");
+            localStorage.setItem('userType', 'student')
+            // navigate("/login");
             return response.json();
           } else {
             throw new Error("API request failed");
@@ -135,6 +153,7 @@ export default function SignUp() {
         })
         .catch((error) => {
           console.error(error);
+          setDisabled(!disabled)
         });
     }
   };
@@ -152,6 +171,7 @@ export default function SignUp() {
       <div className={signup.contentBox}>
         <form
           className={signup.formBox}
+          id="form"
           onSubmit={handleSubmit}
         >
           <h1>Create an account</h1>
@@ -165,18 +185,29 @@ export default function SignUp() {
             />
           ))}
           <div className={signup["link-btn-wrapper"]}>
-            <button
-              className={signup.button1}
-              type="submit"
-            >
+            {
+              disabled === true ? (
+                <button
+                className={signup.button1}
+                type="submit"
+                >
+                   <div className="inline-block animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-gray-900"></div>
+              </button>
+
+              ):(
+                <button
+                className={signup.button1}
+                type="submit"
+                >
               Sign Up
-            </button>
-          </div>
+              </button>
+              )
+            }
+          </div>   
           <span
             className={signup.SignIn}
             style={{
               marginTop: "10px",
-              fontSize: "10px",
               display: "block",
               textAlign: "center",
             }}
