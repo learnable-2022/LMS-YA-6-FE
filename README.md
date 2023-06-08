@@ -1,6 +1,6 @@
 # LMS-YA-6-FE
 
-# ReactJS App Readme
+# Educate App Readme
 
 This Readme file provides an overview and instructions for setting up and running a ReactJS app. It contains information on the project structure, dependencies, and available scripts to facilitate development and deployment.
 
