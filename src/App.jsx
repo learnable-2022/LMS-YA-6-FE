@@ -33,7 +33,7 @@ const App = () => {
           <Route exact path="/instructor/courses/create-course" element={<NewCourse />} />
           </Route>
         </Route>
-        <Route exact path="/my-class" element={<SecondDashboard />} />
+        <Route exact path="/dashboard/my-class" element={<SecondDashboard />} />
 
         <Route exact path="/userAccess">
         <Route path="" element={<UserAccess/>} />
