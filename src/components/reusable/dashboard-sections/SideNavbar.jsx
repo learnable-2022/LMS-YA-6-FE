@@ -75,12 +75,6 @@ const SideNavbar = ({instructorsRoute, studentRoute, courseTitle}) => {
                             <SideNavIcon iconName={'signout'} iconDescription={'Logout'} />
                             </div>
                         </>
-                    ): location.pathname === `/instructor${instructorsRoute}` ? (
-                        <>
-                            <div>
-                            <SideNavIcon iconName={'home'} iconDescription={`Course-Title: ${courseTitle}`} active={` 'text-orange-500'`} />
-                            </div>
-                        </>
                     ):''
                 }
             </div>

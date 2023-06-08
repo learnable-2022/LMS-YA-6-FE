@@ -142,7 +142,7 @@ export default function SignUp() {
           if (response.ok) {
             console.log("request successful");
             localStorage.setItem('userType', 'student')
-            // navigate("/login");
+            navigate("/login");
             return response.json();
           } else {
             throw new Error("API request failed");
@@ -166,16 +166,18 @@ export default function SignUp() {
         <img
           src={logo}
           alt="Edu_cate"
+          style={{width:'100px', height:'50px'}}
         />
       </div>
       <div className={signup.contentBox}>
         <form
+          method="POST"
           className={signup.formBox}
           id="form"
           onSubmit={handleSubmit}
         >
-          <h1>Create an account</h1>
-          <p>Let's get you started</p>
+          <h1 className="text-white">Create an account</h1>
+          <p className="text-white">Let's get you started</p>
           {inputs.map((input) => (
             <FormInput
               key={input.id}

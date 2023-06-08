@@ -86,7 +86,7 @@ const NewCourse = () => {
     <>
       <Topbar />
       <div className="flex h-fit min-h-screen ">
-        <SideNavbar courseTitle={title} instructorsRoute={'/instructor/courses/create-course'} />
+        <SideNavbar courseTitle={title} instructorsRoute={'/courses/create-course'} />
         <div className="px-10 py-5 space-y-5 h-fit max-w-5xl">
           <h1 className="text-lg font-bold">Add new course</h1>
           <form action="/api/v1/courses/" method="GET" onSubmit={handleSubmit}>

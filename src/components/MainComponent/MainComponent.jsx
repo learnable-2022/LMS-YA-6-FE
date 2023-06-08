@@ -46,8 +46,8 @@ function MainComponent() {
           />
         </div>
         <button className="download p-2 rounded-md mt-2 mb-4 w-fit">Download</button>
-        <div class="border-container">
-          <div class="content">
+        <div className="border-container">
+          <div className="content">
             <BsPerson className="person-icon" />
             <div className="inner-content" >
               <textarea name="" id="" cols="70" rows="10" className="textarea">

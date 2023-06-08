@@ -33,6 +33,7 @@ export default function UserAccess() {
         <img
           src={logo}
           alt="Edu_cate"
+          style={{height:'50px', width:'80px'}}
         />
       </div>
       <div
@@ -44,26 +45,26 @@ export default function UserAccess() {
           className={signup.formBox}
           onSubmit={handleSubmit}
         >
-          <h1>Create an account</h1>
-          <p>Please select type of user</p>
+          <h1 className="lg:text-white">Create an account</h1>
+          <p className="lg:text-white">Please select type of user</p>
           <div className={signup.useType}>
             <div>
               <button 
-                className={`${userType === 'student' ? ' hover:bg-gray-600/60 focus:bg-gray-600/60 disabled:bg-orange-400 disabled:cursor-not-allowed p-5 text-white w-full mb-5 flex justify-center items-center border-2 p-5 rounded-md border-white':'w-full flex justify-center items-center border-2 p-5 mb-5 rounded-md border-gray-600/60 md:text-white lg:text-gray-600/60 text-gray-600/60 '}`} 
+                className={`${userType === 'student' ? ' hover:bg-gray-600/60 focus:bg-gray-600/60 disabled:bg-orange-400 disabled:cursor-not-allowed p-5 text-white w-full mb-5 flex justify-center items-center border-2  rounded-md border-white':'w-full flex justify-center items-center border-2 p-5 mb-5 rounded-md border-gray-600/60 md:text-white lg:text-gray-600/60 text-gray-600/60 '}`} 
                 style={{ marginTop: "61px"}}
                 onClick={handleStudentButtonClick}
               >
-                <AiOutlineUserAdd className="text-2xl" /> 
+                <AiOutlineUserAdd className="text-2xl lg:text-white" /> 
                 Sign up as a student
                 
               </button>
             </div>
             <div>
-              <button className={`${userType === 'admin' ? ' hover:bg-gray-600/60 focus:bg-gray-600/60 disabled:bg-orange-400 disabled:cursor-not-allowed p-5 text-white w-full flex justify-center items-center border-2 p-5 rounded-md border-white':'w-full mt-5 flex justify-center items-center border-2 p-5 rounded-md border-gray-600/60 md:text-white lg:text-gray-600/60  text-gray-600/60'}`}
+              <button className={`${userType === 'admin' ? ' hover:bg-gray-600/60 focus:bg-gray-600/60 disabled:bg-orange-400 disabled:cursor-not-allowed text-white w-full flex justify-center items-center border-2 p-5 rounded-md border-white':'w-full mt-5 flex justify-center items-center border-2 p-5 rounded-md border-gray-600/60 md:text-white lg:text-gray-600/60  text-gray-600/60'}`}
                  style={{ marginBottom: "61px"}}
                 onClick={handleTeacherButtonClick}
               >
-                <AiOutlineUserAdd className="text-2xl" /> 
+                <AiOutlineUserAdd className="text-2xl text-white" /> 
                 Sign up as an Admin
               </button>
             </div>
