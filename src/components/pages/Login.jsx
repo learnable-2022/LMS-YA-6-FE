@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import Logo from "../../assets/EducateLogo.png";
 import { AiOutlineEyeInvisible, AiOutlineEye} from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
-import CryptoJS from 'crypto-js'
 
 
 const Login = ()=> {
@@ -64,14 +63,14 @@ const Login = ()=> {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: ` Bearer `
+          // Authorization: ` Bearer `
         },
         body: JSON.stringify(formData),
       })
     
     if(response.ok){
         console.log("request successful");
-        localStorage.setItem('userType', 'instructor')
+        localStorage.setItem('userType', 'student')
         navigate("/dashboard");
         return response.json();
       } else {
@@ -158,6 +157,7 @@ const Login = ()=> {
                       id="email" 
                       type="email" 
                       name="email" 
+                      required
                       className="mb-5 w-full px-4 py-2 text-gray-700 placeholder-gray-400 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-600 focus:border-transparent" 
                       placeholder="Enter your email address" 
                       onChange={(e)=>setEmail(e.target.value)}
@@ -178,6 +178,7 @@ const Login = ()=> {
                       id="password" 
                       type={`${isPwdVisible ? "password" : "text"}`} 
                       name="password" 
+                      required
                       className="w-full px-4 py-2 text-gray-700 placeholder-gray-400 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-600 focus:border-transparent" 
                       placeholder="Enter your password" 
                       onChange={(e)=>setPassword(e.target.value)}
