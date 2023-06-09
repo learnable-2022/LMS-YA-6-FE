@@ -139,8 +139,8 @@ export default function SignUp() {
           console.log("before response.ok", response);
           if (response.ok) {
             console.log("request successful");
-            localStorage.setItem("userType", "student");
-            // navigate("/login");
+            localStorage.setItem('userType', 'student')
+            navigate("/login");
             return response.json();
           } else {
             throw new Error("API request failed");
@@ -163,9 +163,11 @@ export default function SignUp() {
         <img className="h-10"
           src={logo}
           alt="Edu_cate"
+          style={{width:'100px', height:'50px'}}
         />
         <div className="mt-10 flex flex-col justify-start">
           <form
+          method="POST"
             id="form"
             onSubmit={handleSubmit}
           >

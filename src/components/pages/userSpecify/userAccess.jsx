@@ -32,6 +32,7 @@ export default function UserAccess() {
           className="h-10 w-fit"
           src={logo}
           alt="Edu_cate"
+          style={{height:'50px', width:'80px'}}
         />
         <div
           className="mt-10 flex flex-col justify-start"
