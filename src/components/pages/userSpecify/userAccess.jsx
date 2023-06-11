@@ -26,13 +26,12 @@ export default function UserAccess() {
 
   return (
     //! form content//*
-    <section className="md:flex md:flex-row-reverse lg:flex lg:flex-row h-screen w-full justify-between">
+    <section className="md:flex flex-start md:flex-row-reverse lg:flex lg:flex-row h-screen w-full justify-between">
       <div className="w-full lg:w-1/2 py-3 px-2 md:px-14">
         <img
           className="h-10 w-fit"
           src={logo}
           alt="Edu_cate"
-          style={{height:'50px', width:'80px'}}
         />
         <div
           className="mt-10 flex flex-col justify-start"
@@ -43,15 +42,15 @@ export default function UserAccess() {
             // className={signup.formBox}
             onSubmit={handleSubmit}
           >
-            <h1 className="text-4xl font-bold mb-4">Create an account</h1>
-            <p className="text-xl font-semibold mb-4">Please select type of user</p>
+            <h1 className=" text-3xl md:text-4xl font-bold mb-4">Create an account</h1>
+            <p className=" text-sm md:text-xl font-semibold mb-4">Please select type of user</p>
             <div className={signup.useType}>
               <div>
                 <button
                   className={`${
                     userType === "student"
-                      ? " hover:bg-gray-600/60 focus:bg-gray-600/60 disabled:bg-orange-400 disabled:cursor-not-allowed p-5 text-white w-full mb-5 flex justify-center items-center border-2 p-5 rounded-md border-white"
-                      : "w-full flex justify-center items-center border-2 p-5 mb-5 rounded-md border-gray-600/60 text-gray-600/60 "
+                      ? " hover:bg-gray-600/60 focus:bg-gray-600/60 disabled:bg-orange-400 disabled:cursor-not-allowed p-2 text-white w-full mb-5 flex justify-center items-center border-2 p-2 rounded-md border-white"
+                      : "w-full flex justify-center items-center border-2 p-2 mb-5 rounded-md border-gray-600/60 text-gray-600/60 "
                   }`}
                   style={{ marginTop: "61px" }}
                   onClick={handleStudentButtonClick}
@@ -64,8 +63,8 @@ export default function UserAccess() {
                 <button
                   className={`${
                     userType === "admin"
-                      ? " hover:bg-gray-600/60 focus:bg-gray-600/60 disabled:bg-orange-400 disabled:cursor-not-allowed p-5 text-white w-full flex justify-center items-center border-2 p-5 rounded-md border-white"
-                      : "w-full mt-5 flex justify-center items-center border-2 p-5 rounded-md border-gray-600/60 text-gray-600/60"
+                      ? " hover:bg-gray-600/60 focus:bg-gray-600/60 disabled:bg-orange-400 disabled:cursor-not-allowed p-2 text-white w-full flex justify-center items-center border-2 p-2 rounded-md border-white"
+                      : "w-full mt-5 flex justify-center items-center border-2 p-2 rounded-md border-gray-600/60 text-gray-600/60"
                   }`}
                   style={{ marginBottom: "61px" }}
                   onClick={handleTeacherButtonClick}
@@ -78,7 +77,7 @@ export default function UserAccess() {
             <button
               className={`${
                 userType === "student" || userType === "admin"
-                  ? "bg-orange-600 rounded-md p-4 text-white block w-full"
+                  ? "bg-orange-600 rounded-md p-2 text-white block w-full"
                   : "hidden"
               }`}
               onClick={handleContinue}
@@ -106,7 +105,7 @@ export default function UserAccess() {
         </div>
        
       </div>
-       <div className="hidden md:flex w-1/2 bg-no-repeat bg-registerBg flex-col justify-end lg:px-10 py-36 text-xl text-white h-full">
+       <div className="hidden md:flex flex-end w-1/2 bg-no-repeat bg-uTypeBg bg-absolute inset-0 bg-black backdrop-brightness-55 bg-center bg-cover  flex-col justify-center lg:px-10 py-36 text-xl text-white h-full">
           <div>
             <h1
               className="font-bold text-4xl"
