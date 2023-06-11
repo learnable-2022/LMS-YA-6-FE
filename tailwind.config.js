@@ -23,7 +23,8 @@ module.exports = {
     backgroundImage:{
       "teachBg": "url('/src/assets/teach.svg')",
       "loginBg": "url('/src/assets/desktop.jpg')",
-      "registerBg": "url('/src/assets/register.png')"
+      "registerBg": "url('/src/assets/register.png')",
+      "uTypeBg": "url('/src/assets/uType.png')"
     }
   },
   plugins: [],
