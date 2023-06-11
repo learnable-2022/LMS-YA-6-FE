@@ -199,7 +199,7 @@ const Login = ()=> {
                 </div>
               </div>
 
-              <div className="hidden md:flex w-1/2 bg-no-repeat bg-loginBg flex-col justify-end lg:px-10 py-36 text-xl text-white h-full">
+              <div className="hidden md:flex w-1/2 bg-no-repeat bg-loginBg flex-col justify-center lg:px-10 py-36 text-xl text-white h-full">
               <h1 
                 style={{ color: "white" }}>
                 <span className="font-bold text-4xl">Welcome to</span>

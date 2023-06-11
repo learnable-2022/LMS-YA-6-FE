@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import signup from "./SignUp.module.css";
 import logo from "../../../assets/EducateLogo.png";
-import RegisterImg from "../../../assets/register.png";
-
 import FormInput from "../../reusable/FormInput/FormInput";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -62,7 +60,7 @@ export default function SignUp() {
     },
     {
       id: 4,
-      name: "Confirm Password",
+      name: "confirmPassword",
       type: "password",
       placeholder: "Confirm Password",
       errorMessage: "Passwords don't match",
@@ -158,12 +156,11 @@ export default function SignUp() {
 
   // ! content box body
   return (
-    <section className="md:flex md:flex-row-reverse lg:flex lg:flex-row h-screen w-full justify-between">
+    <section className="md:flex flex-end flex-row-reverse lg:flex lg:flex-row h-screen w-full justify-between">
       <div className="w-full lg:w-1/2 py-3 px-2 md:px-14">
         <img className="h-10"
           src={logo}
           alt="Edu_cate"
-          style={{width:'100px', height:'50px'}}
         />
         <div className="mt-10 flex flex-col justify-start">
           <form
@@ -171,10 +168,10 @@ export default function SignUp() {
             id="form"
             onSubmit={handleSubmit}
           >
-            <h1 className="text-4xl font-bold mb-4">
+            <h1 className=" text-3xl md:text-4xl font-bold mb-4">
               Create an account
             </h1>
-            <p className="text-xl font-semibold mb-10">Let's get you started</p>
+            <p className="text-sm md:text-xl font-semibold mb-2">Let's get you started</p>
             {inputs.map((input) => (
               <FormInput
                 key={input.id}
@@ -219,7 +216,7 @@ export default function SignUp() {
           </form>
         </div>
       </div>
-      <div className="hidden md:flex w-1/2 bg-no-repeat bg-registerBg flex-col justify-end lg:px-10 py-36 text-xl text-white h-full">
+      <div className="hidden md:flex w-1/2 bg-no-repeat bg-center bg-cover bg-registerBg flex-col justify-center lg:px-10 py-36 text-xl text-white h-full">
           <div>
             {/* <img
               src={RegisterImg}
