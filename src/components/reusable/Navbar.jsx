@@ -80,9 +80,31 @@ const Navbar = () => {
           <div className="w-full h-screen  bg-gray-900/60 shadow-md absolute left-0 top-16 animate-fadeIn">
             <div className="w-full h-fit py-3 bg-white/90 shadow-md animate-slideDown">
               <ul className="">
-                <li className="p-5">Home</li>
-                <li className="p-5">About Us</li>
-                <li className="p-5">Contact Us</li>
+                <li className="p-5">
+                <Link
+              to="Home"
+              smooth={true}
+              duration={800}
+            >
+              Home
+            </Link>
+                </li>
+                <li className="p-5"> <Link
+              to="About"
+              smooth={true}
+              duration={800}
+            >
+              About Us
+            </Link></li>
+                <li className="p-5">
+                <Link
+              to="Contact"
+              smooth={true}
+              duration={800}
+            >
+              Contact Us
+            </Link>
+                </li>
               </ul>
               <div
                 className="p-4 flex justify-center mb-2 text-white rounded-md cursor-pointer"
