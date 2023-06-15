@@ -37,12 +37,12 @@ const NewCourse = () => {
       });
       if (response.ok) {
         const data = await response.json();
-        console.log(data);
+        // console.log(data);
         setNewCourse(data)
         // navigate('/instructor/courses')
       }
     } catch (e) {
-      console.log(e);
+      // console.log(e);
     }
   };
 
@@ -109,7 +109,7 @@ const NewCourse = () => {
             <button
               type="submit"
               className="bg-orange-600 w-36 mt-14 text-white rounded-md p-2 h-fit flex justify-center items-center"
-              onClick={() => console.log(description)}
+              // onClick={() => console.log(description)}
             >
               Send
             </button>

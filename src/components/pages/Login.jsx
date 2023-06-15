@@ -13,13 +13,13 @@ const Login = ()=> {
   const handleSubmit = (e)=>{
     e.preventDefault()
     setDisabled(!disabled)
-    console.log('SUBMITED')
+    // console.log('SUBMITED')
     // const encryptedPassword = CryptoJS.SHA256(password).toString();
     const formData = {
       'email':email, 
       'password':password
     }
-    console.log(formData)
+    // console.log(formData)
     const userType = localStorage.getItem('userType')
     if(userType === 'instructor'){
     fetchInstructorData(formData)
@@ -42,9 +42,9 @@ const Login = ()=> {
           })
         
         if(response.ok){
-            console.log("request successful");
+            // console.log("request successful");
             localStorage.setItem('userType', 'instructor')
-            console.log(response)
+            // console.log(response)
             navigate("/instructor");
             return response.json();
           } else {
@@ -69,7 +69,7 @@ const Login = ()=> {
       })
     
     if(response.ok){
-        console.log("request successful");
+        // console.log("request successful");
         localStorage.setItem('userType', 'student')
         navigate("/dashboard");
         return response.json();
@@ -170,7 +170,7 @@ const Login = ()=> {
                           < AiOutlineEyeInvisible className="absolute z-40 text-2xl right-5 top-7 cursor-pointer" onClick={handlePwdVisible} />
                         ):
                         (
-                          < AiOutlineEyeInvisible className="absolute text-2xl right-5 top-7 cursor-pointer" onClick={handlePwdVisible} />
+                          < AiOutlineEyeInvisible className="absolute z-40 text-2xl right-5 top-7 cursor-pointer" onClick={handlePwdVisible} />
                         )
                       }
                     </label>
@@ -195,6 +195,21 @@ const Login = ()=> {
                         </button>
                       )
                     }
+                    <span
+                      style={{
+                        marginTop: "10px",
+                        display: "flex",
+                      }}
+                    >
+              Don't have an account?
+              <p
+                style={{ color: "orangered", textDecoration: "none" }}
+                className="cursor-pointer"
+                onClick={()=>navigate('/userAccess')}
+              >
+                Sign Up
+              </p>
+            </span>
                   </form>
                 </div>
               </div>
