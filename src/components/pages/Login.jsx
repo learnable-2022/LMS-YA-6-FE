@@ -166,11 +166,11 @@ const Login = ()=> {
                       <label htmlFor="password" className="relative block text-sm font-medium text-gray-700">
                       Password
                       {
-                        isPwdVisible ? (
-                          < AiOutlineEyeInvisible className="absolute text-2xl right-5 top-7 cursor-pointer" onClick={handlePwdVisible} />
+                        isPwdVisible===false ? (
+                          < AiOutlineEye className="absolute text-2xl right-5 top-7 cursor-pointer" onClick={handlePwdVisible} />
                         ):
                         (
-                          < AiOutlineEye className="absolute text-2xl right-5 top-7 cursor-pointer" onClick={handlePwdVisible} />
+                          < AiOutlineEyeInvisible className="absolute text-2xl right-5 top-7 cursor-pointer" onClick={handlePwdVisible} />
                         )
                       }
                     </label>
