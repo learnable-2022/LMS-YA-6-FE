@@ -35,8 +35,8 @@ const LiveTutor = () => {
                 </div>
             </div>
 
-            <div className='hidden lg:flex h-fit'>
-                <img src={student} alt="student" className='rounded-sm' />
+            <div className='hidden lg:flex justify-end'>
+                <img src={student} alt="student" className='rounded-sm w-5/6 h-5/6' />
             </div>
         </div>
      );

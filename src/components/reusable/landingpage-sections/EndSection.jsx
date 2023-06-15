@@ -1,4 +1,7 @@
+import { useNavigate } from "react-router";
+
 const EndSection = () => {
+    const navigate = useNavigate()
     return ( 
         <div className="px-5 md:px-24 w-full lg:flex text-center lg:text-left bg-teachBg bg-no-repeat object-cover space-y-5 md:space-y-0 py-10">
         <div className='flex flex-col justify-center lg:w-1/2 space-y-5'>
@@ -15,11 +18,8 @@ const EndSection = () => {
             self-paced learning.
             </p>
             <div className='flex space-x-10 justify-center lg:justify-normal'>
-                <div className='p-2 bg-orange-600 text-white rounded-md'>
+                <div className='p-2 bg-orange-600 text-white rounded-md cursor-pointer' onClick={()=>navigate('/login')}>
                 Enroll Now
-                </div>
-                <div className='p-2 border-2 text-white border-white rounded-md'>
-                Sign In
                 </div>
             </div>
         </div>
