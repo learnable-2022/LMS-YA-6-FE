@@ -88,7 +88,7 @@ export default function SignUp() {
   const onChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
   };
-  console.log(values);
+  // console.log(values);
 
   // *! API call//
   const passData = () => {
@@ -97,7 +97,7 @@ export default function SignUp() {
     const userType = searchParams.get("type");
     if (userType === "admin") {
       // navigate("/dashboard1");
-      console.log("passData after fetch");
+      // console.log("passData after fetch");
       fetch("https://edu-cate.onrender.com/api/v1/instructor/register", {
         method: "POST",
         headers: {
@@ -106,11 +106,11 @@ export default function SignUp() {
         body: JSON.stringify(values),
       })
         .then((response) => {
-          console.log("before response.ok", response);
+          // console.log("before response.ok", response);
           if (response.ok) {
-            console.log("request successful");
+            // console.log("request successful");
             const data = response.json();
-            console.log(data);
+            // console.log(data);
             localStorage.setItem("userType", "instructor");
             navigate("/login");
             return response.json();
@@ -125,7 +125,7 @@ export default function SignUp() {
           console.error(error);
         });
     } else if (userType === "student") {
-      console.log("passData before fetch");
+      // console.log("passData before fetch");
       fetch("https://edu-cate.onrender.com/api/v1/auth/register", {
         method: "POST",
         headers: {
@@ -134,9 +134,9 @@ export default function SignUp() {
         body: JSON.stringify(values),
       })
         .then((response) => {
-          console.log("before response.ok", response);
+          // console.log("before response.ok", response);
           if (response.ok) {
-            console.log("request successful");
+            // console.log("request successful");
             localStorage.setItem('userType', 'student')
             navigate("/login");
             return response.json();
@@ -145,7 +145,7 @@ export default function SignUp() {
           }
         })
         .then((data) => {
-          console.log(data);
+          // console.log(data);
         })
         .catch((error) => {
           console.error(error);
