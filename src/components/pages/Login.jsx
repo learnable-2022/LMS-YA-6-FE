@@ -6,7 +6,7 @@ import CryptoJS from 'crypto-js'
 
 
 const Login = ()=> {
-  const [isPwdVisible, setIsPwdVisible] = useState(false)
+  const [isPwdVisible, setIsPwdVisible] = useState(true)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const navigate = useNavigate();
@@ -43,11 +43,11 @@ const Login = ()=> {
                       <label htmlFor="password" className="relative block text-sm font-medium text-gray-700">
                       Password
                       {
-                        isPwdVisible===false ? (
-                          < AiOutlineEye className="absolute text-2xl right-5 top-7 cursor-pointer" onClick={handlePwdVisible} />
+                        isPwdVisible ? (
+                          < AiOutlineEyeInvisible className="absolute text-2xl right-5 top-7 cursor-pointer" onClick={handlePwdVisible} />
                         ):
                         (
-                          < AiOutlineEyeInvisible className="absolute text-2xl right-5 top-7 cursor-pointer" onClick={handlePwdVisible} />
+                          < AiOutlineEye className="absolute text-2xl right-5 top-7 cursor-pointer" onClick={handlePwdVisible} />
                         )
                       }
                     </label>
