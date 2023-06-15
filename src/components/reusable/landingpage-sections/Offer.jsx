@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router'
 const Offer = () => {
     const navigate = useNavigate()
     return ( 
-        <div className='px-5 md:px-24 mb-20 w-full h-fit flex flex-col items-center text-center space-y-8'>
+        <div id="About" className='px-5 md:px-24 mb-20 w-full h-fit flex flex-col items-center text-center space-y-8'>
             <div className='lg:w-1/2 space-y-2 lg:text-left flex flex-col items-center' style={{textAlign:'center'}}>
                 <h3 className='font-semibold'>Quality education for you</h3>
                 <h1 className='text-3xl md:text-4xl font-bold'>

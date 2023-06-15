@@ -5,7 +5,7 @@ import { AiOutlineArrowRight } from 'react-icons/ai';
 const HeroSection = () => {
     const navigate = useNavigate()
     return ( 
-        <div className="px-5 mt-10 md:px-24 w-full lg:flex mb-20">
+        <div id='Home' className="px-5 mt-10 md:px-24 w-full lg:flex mb-20">
             <div className='flex flex-col text-center lg:text-left justify-center lg:w-3/5 space-y-5'>
                 <h1 className='text-4xl font-bold lg:w-2/3'>
                     Education Without Limits!

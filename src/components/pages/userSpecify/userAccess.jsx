@@ -1,125 +1,124 @@
 import React from "react";
 import { useState } from "react";
-// import "./userAccess.css";
-// import {GoogleLogin} from '@react-oauth/google';
-import Logo from "../../../assets/EducateLogo.png";
-import RegisterImg from "../../../assets/register.png";
-import UserEdit from "../../../assets/user-edit.png";
+
+import signup from "../SignUp/SignUp.module.css";
+import logo from "../../../assets/EducateLogo.png";
 import { Link, useNavigate } from "react-router-dom";
-import { AiOutlineUserAdd } from 'react-icons/ai';
+import { AiOutlineUserAdd } from "react-icons/ai";
 
 export default function UserAccess() {
   const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
   };
-// ! state management for user specification
+  // ! state management for user specification
   const [userType, setUserType] = useState("");
-  // const handleUserTypeClick = (type) => {
-  //   setUserType(type);
-  // };
-
-  const handleContinue =()=>{
-    navigate(`./signup?type=${userType}`)
-  }
+  const handleContinue = () => {
+    navigate(`./signup?type=${userType}`);
+  };
   const handleStudentButtonClick = () => {
-    setUserType('student');
+    setUserType("student");
   };
 
   const handleTeacherButtonClick = () => {
-    setUserType('admin');
+    setUserType("admin");
   };
-  // const handleContinueClick = () => {
-  //   if (userType === "Admin") {
-
-  //      navigate("/signup");
-  //   } else if (userType === "student") {
-  
-  //     navigate("/signup")
-      
-  //   }
-  // };
 
   return (
     //! form content//*
-    <section className="md:flex h-screen">
+    <section className="md:flex flex-start md:flex-row-reverse lg:flex lg:flex-row h-screen w-full justify-between">
       <div className="w-full lg:w-1/2 py-3 px-2 md:px-14">
         <img
-          src={Logo}
           className="h-10 w-fit"
+          src={logo}
           alt="Edu_cate"
         />
-      
-      <div
-        // id="accessContent"
-        className="mt-10 "
-      >
-        <form
-          // id="accessForm"
-          className=""
-          onSubmit={handleSubmit}
+        <div
+          className="mt-10 flex flex-col justify-start"
+          // id={signup.accessContent}
         >
-          <h1 className="text-4xl font-semibold">Create an account</h1>
-          <p className="text-lg font-semibold mt-3 mb-5">Please select type of user</p>
-          <div className="flex flex-col mb-10">
-            <div className="w-full">
-              <button
-                className= {`${userType === 'student' ? 'bg-orange-600 hover:bg-orange-500 focus:bg-orange-500 disabled:bg-orange-400 disabled:cursor-not-allowed px-4 py-2 text-white w-full mb-5 flex justify-center items-center border-2 p-2 rounded-md border-white':'w-full mb-5 flex justify-center items-center border-2 p-2 rounded-md border-gray-600/60 text-gray-600/60'}`} 
-                // id="button"
-                onClick={handleStudentButtonClick}
-              >
-                <AiOutlineUserAdd className="text-2xl" /> 
-                Sign up as a student
-              </button>
-               
-            </div>
-            <div>
-              <button
-                // id="button"
-                className={`${userType === 'admin' ? 'bg-orange-500 hover:bg-orange-500 focus:bg-orange-500 disabled:bg-orange-400 disabled:cursor-not-allowed px-4 py-2 text-white w-full mb-5 flex justify-center items-center border-2 p-2 rounded-md border-white':'w-full mb-5 flex justify-center items-center border-2 p-2 rounded-md border-gray-600/60 text-gray-600/60'}`} 
-                onClick={handleTeacherButtonClick}
-              >
-                <AiOutlineUserAdd className="text-2xl" /> 
-                Sign up as an Admin
-              </button>
-            </div>
-          </div>
-          {/* <button className="button1" onClick={handleContinueClick} disabled={!continueEnabled}>Continue</button> */}
-
-          <button
-            className="bg-orange-600 rounded-md p-2 text-white block w-full"
-            onClick={handleContinue}
-            disabled={!userType}
+          <form
+            // id={signup.accessForm}
+            // className={signup.formBox}
+            onSubmit={handleSubmit}
           >
-            Continue
-          </button>
-          <span
-            className=""
-            style={{ marginTop: "10px" }}
-          >
-            Already have an account?
-            <Link
-              to={`/Login`}
-              style={{ color: "orangered", textDecoration: "none" }}
+            <h1 className=" text-3xl md:text-4xl font-bold mb-4">Create an account</h1>
+            <p className=" text-sm md:text-xl font-semibold mb-4">Please select type of user</p>
+            <div className={signup.useType}>
+              <div>
+                <button
+                  className={`${
+                    userType === "student"
+                      ? " hover:bg-gray-600/60 focus:bg-gray-600/60 disabled:bg-orange-400 disabled:cursor-not-allowed p-2 text-white w-full mb-5 flex justify-center items-center border-2 p-2 rounded-md border-white"
+                      : "w-full flex justify-center items-center border-2 p-2 mb-5 rounded-md border-gray-600/60 text-gray-600/60 "
+                  }`}
+                  style={{ marginTop: "61px" }}
+                  onClick={handleStudentButtonClick}
+                >
+                  <AiOutlineUserAdd className="text-2xl" />
+                  Sign up as a student
+                </button>
+              </div>
+              <div>
+                <button
+                  className={`${
+                    userType === "admin"
+                      ? " hover:bg-gray-600/60 focus:bg-gray-600/60 disabled:bg-orange-400 disabled:cursor-not-allowed p-2 text-white w-full flex justify-center items-center border-2 p-2 rounded-md border-white"
+                      : "w-full mt-5 flex justify-center items-center border-2 p-2 rounded-md border-gray-600/60 text-gray-600/60"
+                  }`}
+                  style={{ marginBottom: "61px" }}
+                  onClick={handleTeacherButtonClick}
+                >
+                  <AiOutlineUserAdd className="text-2xl" />
+                  Sign up as an Admin
+                </button>
+              </div>
+            </div>
+            <button
+              className={`${
+                userType === "student" || userType === "admin"
+                  ? "bg-orange-600 rounded-md p-2 text-white block w-full"
+                  : "hidden"
+              }`}
+              onClick={handleContinue}
+              disabled={!userType}
             >
-              Sign In
-            </Link>
-          </span>
-        </form>
+              Continue
+            </button>
+            <span
+              className={signup.SignIn}
+              style={{
+                marginTop: "10px",
+                display: "block",
+                textAlign: "center",
+              }}
+            >
+              Already have an account?
+              <Link
+                to={`/Login`}
+                style={{ color: "orangered", textDecoration: "none" }}
+              >
+                Sign In
+              </Link>
+            </span>
+          </form>
         </div>
+       
       </div>
-      <div className="hidden md:block bg-registerBg bg-cover lg:w-1/2">
-        <div className="flex flex-col justify-end px-10 py-36 text-xl text-white h-full">
-          <h1 
-          style={{ color: "white" }}>
-            <span className="font-bold text-3xl">Welcome to</span>
-            <span 
-            className="font-bold text-3xl"
-            style={{ color: "orangered" }}> Educate</span>
-          </h1>
-          <p className="text-white/90">Sign up to find the best courses according to your preferences</p>
+       <div className="hidden md:flex flex-end w-1/2 bg-no-repeat bg-uTypeBg bg-absolute inset-0 bg-black backdrop-brightness-55 bg-center bg-cover  flex-col justify-center lg:px-10 py-36 text-xl text-white h-full">
+          <div>
+            <h1
+              className="font-bold text-4xl"
+              style={{ color: "white" }}
+            >
+              Welcome to
+              <span style={{ color: "orangered" }}> Educate</span>
+            </h1>
+            <p>
+              Sign up to find the best courses according to your preferences
+            </p>
+          </div>
         </div>
-      </div>
     </section>
   );
 }

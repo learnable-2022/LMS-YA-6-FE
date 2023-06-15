@@ -9,16 +9,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100%;
+  min-height: 100vh;
   position: relative;
   width: 100%;
 }
 /**!Banner styles */
 section .imgBox {
   position: relative;
-  width: 100%;
+  width: 50%;
   z-index: -1;
-  aspect-ratio: 1/1; 
+  display: flex;
+  /* aspect-ratio: 1/1;  */
 }
 section .imgBox .BannerText h1 {
   font-weight: 900;
@@ -34,13 +35,11 @@ section .imgBox .BannerText {
   position: absolute;
   z-index: 2;
   text-align: center;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 55%;
 }
 section .imgBox img {
   width:100%;
-  aspect-ratio: 4/7;
+  /* aspect-ratio: 4/7; */
   object-fit: cover;
 }
 
@@ -50,38 +49,51 @@ section .contentBox .formBox {
   height: 100%;
   margin-bottom: 5%;
 }
-
+/* 
 section .contentBox {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100%;
+  height: 100vh;
+} */
+.formBox{
+  padding: 0.75rem 3.5rem;
 }
-form {
-  display: flex;
-  flex-direction: column;
-  /* justify-content: center;
-  align-items: center; */
-  background-color: white;
-  padding: 0 60px;
-}
+  section .contentBox {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
 .logoContent img {
   position: absolute;
-  top: 4%;
-  left: 5%;
+  top: 2%;
+  left: 3%;
+  width: 120px;
 }
+/* #form {
+  background: none;
+  padding: 0;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+} */
+
 .formBox h1 {
-  font-weight: 900;
+  font-weight: 600;
   font-size: 64px;
-  text-align: center;
+  text-align: left;
   font-family: "Poppins", sans-serif;
-  margin: 0;
+  margin-top: 20px;
 }
 .formBox p {
   font-weight: 800;
   font-size: 32px;
-  text-align: center;
+  text-align: left;
   margin: 0;
   font-family: "Poppins", sans-serif;
 }
@@ -104,7 +116,7 @@ form {
 }
 
 .link-btn-wrapper {
-  width: 50%;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -122,13 +134,6 @@ form {
   text-decoration: none;
 }
 
-/* .google-btn div {
-  border: 0;
-  outline: none;
-  background-color: none;
-} */
-
-
 .btn-text p {
   color: black;
   font-size: 20px;
@@ -137,12 +142,9 @@ form {
 
 .useType {
   width: 100%;
-padding: 10%;
+
 }
 
-.s-btn{
-  margin-bottom: 4%;
-}
 
 #button {
   border: 1px solid #5e5e60;
@@ -179,29 +181,32 @@ padding: 10%;
     width: 100%;
     top: 0;
     left: 0;
+  
   }
-  section .imgBox img {
-    aspect-ratio: 0;
-  }
+  
 
-  section .contentBox {
+  /* section .contentBox {
     display: flex;
     justify-content: center;
     align-content: center;
     width: 100%;
     height: 100%;
     z-index: 1;
-  }
+  } */
 
   section .contentBox .formBox {
     width: 100%;
-    /* padding: 40px; */
+   
     background: rgb(255, 255, 255/0.9);
     margin: 50px;
   }
-  form {
+  #form {
     background: none;
     padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   }
   .BannerText {
     display: none;
