@@ -170,7 +170,7 @@ const Login = ()=> {
                           < AiOutlineEyeInvisible className="absolute z-40 text-2xl right-5 top-7 cursor-pointer" onClick={handlePwdVisible} />
                         ):
                         (
-                          < AiOutlineEyeInvisible className="absolute z-40 text-2xl right-5 top-7 cursor-pointer" onClick={handlePwdVisible} />
+                          < AiOutlineEye className="absolute z-40 text-2xl right-5 top-7 cursor-pointer" onClick={handlePwdVisible} />
                         )
                       }
                     </label>
