@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 
 const Login = ()=> {
-  const [isPwdVisible, setIsPwdVisible] = useState(false)
+  const [isPwdVisible, setIsPwdVisible] = useState(true)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [disabled, setDisabled] = useState(false)
