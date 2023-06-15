@@ -1,151 +1,84 @@
-import React from "react";
 import { useState, useEffect } from "react";
-import "./Login.css";
-import img from "../../assets/desktop.jpg";
+import Logo from "../../assets/EducateLogo.png";
 import { AiOutlineEyeInvisible, AiOutlineEye} from "react-icons/ai";
-import googlebtn from "../../assets/Google logo.png"
 import { useNavigate } from "react-router-dom";
+import CryptoJS from 'crypto-js'
 
 
-
-
-function Login() {
-  const intialValues = {email: "", password: ""};
-  const [formValues,  setFormValues]= useState(intialValues);
-  const [formErrors,  setFormErrors]= useState({});
-  const [isSubmit,  setIsSubmit]= useState(false);
-  const [visible, setVisible]= useState(false)
-  const [loginError, setLoginError] = useState("");
-
-  // function handleCallbackResponse(response){
-  //   console.log("Encoded JWT ID token: " + response.credential)
-  // }
-  // useEffect(() => {
-  //   /* global google */
-  //   google.accounts.id.initialize({
-  //     client_id: "337279948824-e5uk24qm2cojf9a0avudk2si1gcv1j4r.apps.googleusercontent.com",
-  //     callback: handleCallbackResponse
-  //   })
-
-  //   google.accounts.id.renderButton(
-  //     document.getElementById("google-btn"),
-  //     { theme: "outline", size: "large" }
-  //   )
-  // }, [])
-  
-  const handleChange = (e) => {
-    // console.log(e.target);
-    const {name, value} = e.target;
-    setFormValues({ ...formValues, [name]: value });
-    // console.log(formValues);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // console.log(formValues);
-    setFormErrors(validate(formValues));
-    setIsSubmit(true);
-
-    if (Object.keys(formErrors).length === 0) {
-      handleAPICall();
-    }
-  };
-
-  useEffect(() =>{
-    console.log(formErrors);
-    if(Object.keys(formErrors).length === 0 && isSubmit) {
-      console.log(formValues);
-    }
-  }, [formErrors])
-  const validate = (values) => {
-    const errors = {}
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,6}$/;
-    if (!values.email) {
-      errors.email = "Email is required!";
-    } else if (!regex.test(values.email)) {
-      errors.email = "Invalid email address!";
-    }
-
-    if (!values.password) {
-      errors.password = "password is required!";
-    }
-
-    return errors;
-  };
-
-  // Backend implementation
+const Login = ()=> {
+  const [isPwdVisible, setIsPwdVisible] = useState(false)
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
   const navigate = useNavigate();
+  const handleSubmit = (e)=>{
+    e.preventDefault()
+    const encryptedPassword = CryptoJS.SHA256(password).toString();
+    const formData = {email, encryptedPassword}
+    // console.log(formData)
+  }
+  const handlePwdVisible = ()=>{
+    setIsPwdVisible(!isPwdVisible)
+  }
+      return (
+          <div className="md:flex md:flex-row-reverse lg:flex lg:flex-row h-screen w-full justify-between">
+              <div className="w-full lg:w-1/2 py-3 px-2 md:px-14">
+                <img src={Logo} alt="logo" className="h-10 w-fit" />
+                <div className="mt-10 flex flex-col justify-start">
+                  <form action="" method="POST">
+                    <h1 className="text-4xl font-semibold mb-10">
+                      Login into your account
+                    </h1>
+                    <label htmlFor="email" className="relative block text-sm font-medium text-gray-700">
+                      Email
+                    </label>
+                    <input 
+                      id="email" 
+                      type="email" 
+                      name="email" 
+                      className="mb-5 w-full px-4 py-2 text-gray-700 placeholder-gray-400 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-600 focus:border-transparent" 
+                      placeholder="Enter your email address" 
+                      onChange={(e)=>setEmail(e.target.value)}
+                    />
+                      
+                      <label htmlFor="password" className="relative block text-sm font-medium text-gray-700">
+                      Password
+                      {
+                        isPwdVisible ? (
+                          < AiOutlineEyeInvisible className="absolute text-2xl right-5 top-7 cursor-pointer" onClick={handlePwdVisible} />
+                        ):
+                        (
+                          < AiOutlineEye className="absolute text-2xl right-5 top-7 cursor-pointer" onClick={handlePwdVisible} />
+                        )
+                      }
+                    </label>
+                    <input 
+                      id="password" 
+                      type={`${isPwdVisible ? "password" : "text"}`} 
+                      name="password" 
+                      className="w-full px-4 py-2 text-gray-700 placeholder-gray-400 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-600 focus:border-transparent" 
+                      placeholder="Enter your password" 
+                      onChange={(e)=>setPassword(e.target.value)}
+                    />
 
-  const handleAPICall = async () => {
-    try {
-      const response = await fetch("https://edgegap.onrender.com/api/v1/auth/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formValues),
-      });
+                    <div className='mt-10 p-2 h-12 flex justify-center items-center bg-orange-600 text-white rounded-md cursor-pointer' onClick={handleSubmit}>
+                      Sign In
+                    </div>
+                  </form>
+                </div>
+              </div>
 
-      const data = await response.json();
-
-      if (response.ok) {
-        // Signin successful
-        // Perform desired actions (e.g., redirect, store token)
-        console.log("Signin successful!");
-        navigate("/dashboard");
-      } else {
-        // Signin failed
-        const errorData = await response.json();
-        setLoginError(data.error);
-      }
-    } catch (error) {
-      console.error("Error:", error);
-    }
-  };
-  return (
-
-      <div className="container">
-        <div><img src={ require('../../assets/EducateLogo.png')} className="logo"/></div>
-        <form id="login-form" onSubmit={handleSubmit} method="POST" action="/api/v1/auth/login">
-          <h1>Login into your account</h1>
-          <p className="first-p">Please select a login method</p>
-          <div className="input-group">
-            <label htmlFor="email" id="lab">
-              Email
-            </label>
-            <input type="email" id="email" name="email" placeholder="Enter Your Email" value={ formValues.email } onChange={handleChange}/>
+              <div className="hidden md:flex w-1/2 bg-no-repeat bg-loginBg flex-col justify-end lg:px-10 py-36 text-xl text-white h-full">
+              <h1 
+                style={{ color: "white" }}>
+                <span className="font-bold text-3xl">Welcome to</span>
+                <span 
+                className="font-bold text-3xl"
+                style={{ color: "orangered" }}> Educate</span>
+              </h1>
+          <p className="text-white/90">Sign up to find the best courses according to your preferences</p>
+              </div>
           </div>
-          <p className="input-response">{ formErrors.email }</p>
-          <div className="input-group flex-input">
-            <label htmlFor="password" id="lab">
-              Password
-            </label>
-            <input id="password" name="password" placeholder="Enter Your Password" value={ formValues.password } onChange={handleChange} type={visible ? "text":"password"}/>
-            <div className="eye-icon" onClick={() => setVisible(!visible)}>
-              {
-                visible ? <AiOutlineEye/> : <AiOutlineEyeInvisible/>
-              }
-            </div>
-          </div>
-          <p className="input-response">{ formErrors.password }</p>
-          <button type="submit" id="btn">
-            Login
-          </button>
-          {loginError && <p className="error-message">{loginError}</p>}
-          <p className="last-p">Don't have an account? <a href="">Sign Up</a></p>
-        </form>
-        
-      <div className="grey-bg">
-        <p className="wlc-writeup">
-          <h1>Welcome back to <b>Educate</b></h1>
-          Login into your account to continue your learning journey.
-        </p>
-        <img src={img} alt="man on laptop" className="grey-img"></img>
-      </div>
-      <div className="clr"></div>
-      </div>
-
-  );
+      );
 }
 
 export default Login;
