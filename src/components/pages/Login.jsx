@@ -60,7 +60,7 @@ const Login = ()=> {
     // Api call for a student
     const fetchStudentData = async (formData)=>{
       try {
-      const response = await fetch('https://edu-cate.onrender.com/api/v1/instructor/login',{
+      const response = await fetch('https://edu-cate.onrender.com/api/v1/auth/login',{
         method: "POST",
         headers: {
           "Content-Type": "application/json",

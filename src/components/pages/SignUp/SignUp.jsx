@@ -142,7 +142,7 @@ export default function SignUp() {
           if (response.ok) {
             console.log("request successful");
             localStorage.setItem('userType', 'student')
-            // navigate("/login");
+            navigate("/login");
             return response.json();
           } else {
             throw new Error("API request failed");
