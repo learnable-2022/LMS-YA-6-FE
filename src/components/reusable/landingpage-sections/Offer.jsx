@@ -2,8 +2,10 @@ import play from '../../../assets/play.svg'
 import connect from '../../../assets/connect.svg'
 import read from '../../../assets/read.svg'
 import chat from '../../../assets/chat.svg'
+import { useNavigate } from 'react-router'
 
 const Offer = () => {
+    const navigate = useNavigate()
     return ( 
         <div id="About" className='px-5 md:px-24 mb-20 w-full h-fit flex flex-col items-center text-center space-y-8'>
             <div className='lg:w-1/2 space-y-2 lg:text-left flex flex-col items-center' style={{textAlign:'center'}}>
@@ -17,10 +19,10 @@ const Offer = () => {
                 </p>
             </div>  
 
-            <div className='lg:flex mb-5 space-y-9 lg:space-y-0'>
+            <div className='lg:flex mb-5 space-y-9 md:space-x-7 lg:space-y-0'>
                 <div className='lg:w-1/3 flex flex-col items-center space-y-2'>
                     <img src={play} alt="play-icon" />
-                    <h2 className='font-bold w-2/3 text-lg'>
+                    <h2 className='font-bold w-fit text-lg'>
                     Personalized Learning Experience
                     </h2>
                     <p>
@@ -31,7 +33,7 @@ const Offer = () => {
 
                 <div className='lg:w-1/3 flex flex-col items-center space-y-2'>
                     <img src={connect} alt="play-icon" />
-                    <h2 className='font-bold w-2/3 text-lg'>
+                    <h2 className='font-bold w-fit text-lg'>
                     Decentralized Learning Platform
                     </h2>
                     <p>
@@ -42,7 +44,7 @@ const Offer = () => {
 
                 <div className='lg:w-1/3 flex flex-col items-center space-y-2'>
                     <img src={read} alt="play-icon" />
-                    <h2 className='font-bold w-2/3 text-lg'>
+                    <h2 className='font-bold w-fit text-lg'>
                     Automated Assessment & Feedback
                     </h2>
                     <p>
@@ -53,7 +55,7 @@ const Offer = () => {
 
                 <div className='lg:w-1/3 flex flex-col items-center space-y-2'>
                     <img src={chat} alt="play-icon" />
-                    <h2 className='font-bold w-2/3 text-lg'>
+                    <h2 className='font-bold w-fit text-lg'>
                     Enhanced Communication & Collaboration
                     </h2>
                     <p>
@@ -64,10 +66,10 @@ const Offer = () => {
             </div>
 
             <div className='flex space-x-10'>
-                    <div className='p-2 bg-orange-600 text-white rounded-md'>
+                    <div className='p-2 bg-orange-600 text-white rounded-md cursor-pointer' onClick={()=>navigate('/login')}>
                     Start Now For Free
                     </div>
-                    <div className='p-2 bg-gray-200/60 rounded-md'>
+                    <div className='p-2 bg-gray-200/60 rounded-md cursor-pointer'>
                     Contact Team
                     </div>
             </div>
