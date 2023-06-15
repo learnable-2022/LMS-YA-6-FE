@@ -21,30 +21,33 @@ const Navbar = () => {
       />
       <div className="hidden lg:flex w-3/6 items-center justify-between h-full">
         <ul className="flex items-center justify-center w-fit h-full space-x-4">
-          <li className="h-full flex w-20 items-center justify-center p-2">
+          <li className="h-full flex w-20 items-center justify-center">
             <Link
               to="Home"
               smooth={true}
               duration={800}
+              className="h-full w-full flex items-center justify-center cursor-pointer"
             >
               Home
             </Link>
           </li>
 
-          <li className="h-full flex items-center justify-center p-2">
+          <li className="h-full flex items-center justify-center">
             <Link
               to="About"
               smooth={true}
               duration={800}
+              className="h-full w-full flex items-center justify-center cursor-pointer"
             >
               About Us
             </Link>
           </li>
-          <li className="h-full flex items-center justify-center p-2">
+          <li className="h-full flex items-center justify-center">
             <Link
               to="Contact"
               smooth={true}
               duration={800}
+              className="h-full w-full flex items-center justify-center cursor-pointer"
             >
               Contact Us
             </Link>
