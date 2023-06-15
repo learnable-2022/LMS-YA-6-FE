@@ -1,24 +1,23 @@
+import { useNavigate } from 'react-router';
 import heroTutor from '../../../assets/tutor.png'
 import { AiOutlineArrowRight } from 'react-icons/ai';
 
 const HeroSection = () => {
+    const navigate = useNavigate()
     return ( 
         <div id='Home' className="px-5 mt-10 md:px-24 w-full lg:flex mb-20">
             <div className='flex flex-col text-center lg:text-left justify-center lg:w-3/5 space-y-5'>
                 <h1 className='text-4xl font-bold lg:w-2/3'>
                     Education Without Limits!
                 </h1>
-                <p>
+                <p className='w-5/6'>
                 Bringing amazing opportunities to learn your chosen career and 
                 become a better version of yourself. Yes you can become whatever you 
                 want to be. Be determined and you’ll excel.
                 </p>
                 <div className='md:flex md:space-x-10 space-y-4 md:space-y-0'>
-                    <div className='p-3 flex justify-center bg-orange-600 text-white rounded-md'>
+                    <div className='p-3 flex justify-center bg-orange-600 text-white rounded-md cursor-pointer' onClick={()=> navigate('/login')}>
                     Get Started Now
-                    </div>
-                    <div className='p-3 flex justify-center bg-gray-200/60 rounded-md'>
-                    Sign In
                     </div>
                 </div>
             </div>
