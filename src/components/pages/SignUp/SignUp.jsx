@@ -137,7 +137,7 @@ export default function SignUp() {
           // console.log("before response.ok", response);
           if (response.ok) {
             // console.log("request successful");
-            localStorage.setItem('userType', 'student')
+            localStorage.setItem("userType", "student");
             navigate("/login");
             return response.json();
           } else {
@@ -156,22 +156,29 @@ export default function SignUp() {
 
   // ! content box body
   return (
-    <section className="md:flex flex-end flex-row-reverse lg:flex lg:flex-row h-screen w-full justify-between">
-      <div className="w-full lg:w-1/2 py-3 px-2 md:px-14">
-        <img className="h-10"
-          src={logo}
-          alt="Edu_cate"
-        />
+    <section className="md:flex md:flex-row-reverse lg:flex lg:flex-row h-screen w-full justify-between px-2 md:p-0">
+      <div className="grid w-full lg:w-1/2 py-3 px-2 md:px-14">
+        <div className="w-full justify-self-start">
+          <div className="flex justify-between items-center">
+            <img
+              className="h-10"
+              src={logo}
+              alt="Edu_cate"
+            />
+          </div>
+        </div>
         <div className="mt-10 flex flex-col justify-start">
           <form
-          method="POST"
+            method="POST"
             id="form"
             onSubmit={handleSubmit}
           >
             <h1 className=" text-3xl md:text-4xl font-bold mb-4">
               Create an account
             </h1>
-            <p className="text-sm md:text-xl font-semibold mb-2">Let's get you started</p>
+            <p className="text-sm md:text-xl font-semibold mb-2">
+              Let's get you started
+            </p>
             {inputs.map((input) => (
               <FormInput
                 key={input.id}
@@ -216,21 +223,27 @@ export default function SignUp() {
           </form>
         </div>
       </div>
-      <div className="hidden md:flex w-1/2 bg-no-repeat bg-center bg-cover bg-registerBg flex-col justify-center lg:px-10 py-36 text-xl text-white h-full">
-          <div>
-            {/* <img
-              src={RegisterImg}
-              alt=""
-            /> */}
-            <h1 className="font-bold text-4xl" style={{ color: "white" }}>
-              Welcome to
-              <span style={{ color: "orangered" }}> Educate</span>
-            </h1>
-            <p>
-              Sign up to find the best courses according to your preferences
-            </p>
-          </div>
+      {/* <div className="relative">
+        <div className="absolute top-0 left-0 w-full h-full bg-black opacity-50 z-10"> */}
+      <div className="hidden md:flex w-1/2 bg-no-repeat bg-center bg-cover filter brightness-90 bg-registerBg bg-absolute flex-col justify-center lg:px-10 py-36 text-xl text-white h-full">
+        <div className="md:hidden lg:block">
+          <h1
+            className="font-bold text-4xl filter contrast-125"
+            style={{
+              color: "white",
+              textShadow: "2px 2px 4px rgba(0, 0, 0, 6)",
+            }}
+          >
+            Welcome to
+            <span style={{ color: "orangered" }}> Educate</span>
+          </h1>
+          <p style={{ textShadow: "1px 1px 2px rgba(0, 0, 0, 6)" }}>
+            Sign up to find the best courses according to your preferences
+          </p>
         </div>
+      </div>
+      {/* </div>
+      </div> */}
     </section>
   );
 }

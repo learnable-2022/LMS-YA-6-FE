@@ -153,25 +153,32 @@ const Login = () => {
           </span>
         </div>
       </div>
-
-      <div className="hidden md:flex w-1/2 bg-no-repeat bg-loginBg flex-col justify-center lg:px-10 py-36 text-xl text-white h-full">
-        <h1 style={{ color: "white" }}>
-          <span className="font-bold text-4xl">Welcome to</span>
-          <span
+      <div className="hidden md:flex flex-end w-1/2 bg-no-repeat bg-uTypeBg bg-absolute filter brightness-90 bg-center bg-cover  flex-col justify-center lg:px-10 py-36 text-xl text-white h-full">
+        <div>
+          <h1
             className="font-bold text-4xl"
-            style={{ color: "orangered" }}
+            style={{
+              color: "white",
+              textShadow: "2px 2px 4px rgba(0, 0, 0, 6)",
+            }}
           >
-            {" "}
-            Educate
-          </span>
-        </h1>
-        <p className="text-white/90">
+            Welcome to
+            <span
+              style={{
+                color: "orangered",
+                textShadow: "2px 2px 4px rgba(0, 0, 0, 6)",
+              }}
+            >
+              {" "}
+              Educate
+            </span>
+          </h1>
+          <p style={{ textShadow: "1px 1px 2px rgba(0, 0, 0, 6)" }}>
           Sign up to find the best courses according to your preferences
-        </p>
+          </p>
+        </div>
       </div>
-     
-     
-    </div>
+      </div>
   );
 };
 

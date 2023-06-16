@@ -26,13 +26,17 @@ export default function UserAccess() {
 
   return (
     //! form content//*
-    <section className="md:flex flex-start md:flex-row-reverse lg:flex lg:flex-row h-screen w-full justify-between">
-      <div className="w-full lg:w-1/2 py-3 px-2 md:px-14">
+    <section className="md:flex md:flex-row-reverse lg:flex lg:flex-row h-screen w-full justify-between px-2 md:p-0">
+      <div className="grid w-full lg:w-1/2 py-3 px-2 md:px-14">
+        <div className="w-full justify-self-start">
+          <div className="flex justify-between items-center">
         <img
           className="h-10 w-fit"
           src={logo}
           alt="Edu_cate"
         />
+        </div>
+        </div>
         <div
           className="mt-10 flex flex-col justify-start"
           // id={signup.accessContent}
@@ -42,8 +46,12 @@ export default function UserAccess() {
             // className={signup.formBox}
             onSubmit={handleSubmit}
           >
-            <h1 className=" text-3xl md:text-4xl font-bold mb-4">Create an account</h1>
-            <p className=" text-sm md:text-xl font-semibold mb-4">Please select type of user</p>
+            <h1 className=" text-3xl md:text-4xl font-bold mb-4">
+              Create an account
+            </h1>
+            <p className=" text-sm md:text-xl font-semibold mb-4">
+              Please select type of user
+            </p>
             <div className={signup.useType}>
               <div>
                 <button
@@ -103,22 +111,32 @@ export default function UserAccess() {
             </span>
           </form>
         </div>
-       
       </div>
-       <div className="hidden md:flex flex-end w-1/2 bg-no-repeat bg-uTypeBg bg-absolute inset-0 bg-black backdrop-brightness-55 bg-center bg-cover  flex-col justify-center lg:px-10 py-36 text-xl text-white h-full">
-          <div>
-            <h1
-              className="font-bold text-4xl"
-              style={{ color: "white" }}
+      <div className="hidden md:flex flex-end w-1/2 bg-no-repeat bg-uTypeBg bg-absolute filter brightness-90 bg-center bg-cover  flex-col justify-center lg:px-10 py-36 text-xl text-white h-full">
+        <div className="md:hidden lg:block">
+          <h1
+            className="font-bold text-4xl"
+            style={{
+              color: "white",
+              textShadow: "2px 2px 4px rgba(0, 0, 0, 6)",
+            }}
+          >
+            Welcome to
+            <span
+              style={{
+                color: "orangered",
+                textShadow: "2px 2px 4px rgba(0, 0, 0, 6)",
+              }}
             >
-              Welcome to
-              <span style={{ color: "orangered" }}> Educate</span>
-            </h1>
-            <p>
-              Sign up to find the best courses according to your preferences
-            </p>
-          </div>
+              {" "}
+              Educate
+            </span>
+          </h1>
+          <p style={{ textShadow: "1px 1px 2px rgba(0, 0, 0, 6)" }}>
+            Sign up to find the best courses according to your preferences
+          </p>
         </div>
+      </div>
     </section>
   );
 }
