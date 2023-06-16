@@ -2,11 +2,10 @@ import { useState, useEffect } from "react";
 import Logo from "../../assets/EducateLogo.png";
 import { AiOutlineEyeInvisible, AiOutlineEye} from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
-import CryptoJS from 'crypto-js'
 
 
 const Login = ()=> {
-  const [isPwdVisible, setIsPwdVisible] = useState(false)
+  const [isPwdVisible, setIsPwdVisible] = useState(true)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [disabled, setDisabled] = useState(false)
@@ -64,15 +63,15 @@ const Login = ()=> {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: ` Bearer `
+          // Authorization: ` Bearer `
         },
         body: JSON.stringify(formData),
       })
     
     if(response.ok){
         console.log("request successful");
-        localStorage.setItem('userType', 'instructor')
-        navigate("/instructor");
+        localStorage.setItem('userType', 'student')
+        navigate("/dashboard");
         return response.json();
       } else {
             throw new Error("API request failed");
@@ -158,6 +157,7 @@ const Login = ()=> {
                       id="email" 
                       type="email" 
                       name="email" 
+                      required
                       className="mb-5 w-full px-4 py-2 text-gray-700 placeholder-gray-400 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-600 focus:border-transparent" 
                       placeholder="Enter your email address" 
                       onChange={(e)=>setEmail(e.target.value)}
@@ -167,10 +167,10 @@ const Login = ()=> {
                       Password
                       {
                         isPwdVisible ? (
-                          < AiOutlineEyeInvisible className="absolute text-2xl right-5 top-7 cursor-pointer" onClick={handlePwdVisible} />
+                          < AiOutlineEyeInvisible className="absolute z-40 text-2xl right-5 top-7 cursor-pointer" onClick={handlePwdVisible} />
                         ):
                         (
-                          < AiOutlineEye className="absolute text-2xl right-5 top-7 cursor-pointer" onClick={handlePwdVisible} />
+                          < AiOutlineEyeInvisible className="absolute text-2xl right-5 top-7 cursor-pointer" onClick={handlePwdVisible} />
                         )
                       }
                     </label>
@@ -178,6 +178,7 @@ const Login = ()=> {
                       id="password" 
                       type={`${isPwdVisible ? "password" : "text"}`} 
                       name="password" 
+                      required
                       className="w-full px-4 py-2 text-gray-700 placeholder-gray-400 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-600 focus:border-transparent" 
                       placeholder="Enter your password" 
                       onChange={(e)=>setPassword(e.target.value)}
@@ -198,7 +199,7 @@ const Login = ()=> {
                 </div>
               </div>
 
-              <div className="hidden md:flex w-1/2 bg-no-repeat bg-loginBg flex-col justify-end lg:px-10 py-36 text-xl text-white h-full">
+              <div className="hidden md:flex w-1/2 bg-no-repeat bg-loginBg flex-col justify-center lg:px-10 py-36 text-xl text-white h-full">
               <h1 
                 style={{ color: "white" }}>
                 <span className="font-bold text-4xl">Welcome to</span>
