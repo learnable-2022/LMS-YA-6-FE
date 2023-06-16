@@ -5,31 +5,31 @@ import TLearners from "../../../assets/TotalLearners.png";
 
 function studentDataCards() {
   return (
-    <div>
-      <section className="grid grid-cols-2 gap-2 md:grid-cols-3 ">
+    <>
+      <section className="grid grid-cols-2 gap-2 md:grid-cols-3 h-fit ">
         <div>
           <img
-            className="w-4/4 h-full"
+            className=" h-4/6"
             src={TContent}
             alt=""
           />
         </div>
         <div>
           <img
-            className="w-4/4 h-full"
+            className=" h-4/6"
             src={TLearners}
             alt=""
           />
         </div>
         <div>
           <img
-            className="w-4/4"
+            className="h-5/6"
             src={RActivity}
             alt=""
           />
         </div>
       </section>
-    </div>
+    </>
   );
 }
 

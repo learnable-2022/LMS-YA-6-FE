@@ -7,7 +7,7 @@ function StudentOverview() {
     <div
 className="lg:px-10 px-2 py-6 overflow-hidden">
             <UpperTxtSec />
-            <div className="mt-10">
+            <div className="">
             <StudentDataCards />
             < StudentData/>
             </div>

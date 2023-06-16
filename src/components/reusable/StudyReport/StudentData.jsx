@@ -42,7 +42,7 @@ const studentData = () => {
         </div>
       </div>
       <div>
-        <img src={BarChart} alt="" />
+        <img src={BarChart} alt="" className="w-4/5" />
       </div>
     </div>
   );
