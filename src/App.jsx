@@ -19,7 +19,7 @@ const App = () => {
 
       If you need to display your component on the browser, Kindly add a path to the codes
       below if not exists, then navigate to the exact path in your browser. 
-      eg: http://localhost:3000/login or http://localhost:3000/login/signup
+      eg: http://localhost:3000/login or http://localhost:3000/login/userAccess
       */}
       <Routes>
         <Route exact path="/" element={<Home />} />
