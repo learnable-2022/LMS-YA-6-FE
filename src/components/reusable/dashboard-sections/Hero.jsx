@@ -1,12 +1,42 @@
 import Main from "./Main"
 import StatusCard from "./StatusCard";
+// import DynamicUsername from "./DynamicUsername/DynamicUsername"
+import React,{useEffect}from "react" ;
+import {studentProfile} from "./../../../api";
+
 
 const Hero = () => {
+        useEffect(() => {
+        const fetchUsername = async () => {
+            const config = {
+                headers: {
+                  Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDhiNjBiYzZiOGQxMjIwNTRiMTkwMzkiLCJyb2xlIjoic3R1ZGVudCIsImlhdCI6MTY4NzAwODczMCwiZXhwIjoxNjg3NDQwNzMwfQ.XVNPGlm5Tb23WdoQ1GgW-o06Ln7RFI1RcPxoJJpn9TIs`,
+            
+                },
+              };
+              
+              try {
+                const { data } = await studentProfile(config);
+                console.log(data)
+                return data;
+              } catch (error) {
+                console.log(error);
+              }
+              
+          
+        };
+        
+        fetchUsername()
+    
+      }, [])
     return ( 
         <div className="lg:mx-10 w-full overflow-x-hidden">
             <h1 className="py-5 flex flex-col p-2">
                 <span className="font-bold text-4xl">
-                    Hello Kate
+                    {/* Hello Kate <DynamicUsername/> */}
+
+                    
+                    
                 </span>
                 <span>
                     Welcome back, let’s dive right back in

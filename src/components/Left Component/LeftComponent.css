@@ -3,6 +3,7 @@
   width: 300px;
   min-width: 100px;
   padding: 10px;
+  overflow-y: scroll;
 }
 .home {
   display: flex;
