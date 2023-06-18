@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Logo from "../../assets/EducateLogo.png";
 import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
-import { useNavigate } from "react-router-dom";
 import CryptoJS from "crypto-js";
 
 const Login = () => {
