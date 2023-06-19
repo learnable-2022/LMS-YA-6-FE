@@ -1,0 +1,28 @@
+.comment-input{
+    height: 250px;
+    width: 800px;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.submit-btn{
+    display: block;
+    background-color: aliceblue;
+    padding: 8px 10px;
+    border-radius: 3px;
+}
+
+.comments{
+    background-color: aqua;
+    width: 600px;
+    padding: 12px;
+    border-radius: 10px;
+    margin: 12px 0;
+    overflow: hidden;
+}
+
+.commentor{
+    background-color: orange;
+    padding: 6px;
+    width: 130px;
+}
