@@ -33,7 +33,7 @@
     font-weight: bold;
 }
 
-@media screen and (max-width:390px){
+@media screen and (max-width: 500px){
     .comment-input{
         width: 100%;
         margin-bottom: 24px;

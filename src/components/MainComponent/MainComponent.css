@@ -56,14 +56,14 @@
 } */
 
 
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 500px) {
   .main-component{
     margin: 0;
   }
 
-  .h-full{
+  /* .h-full{
     width: 100%;
-  }
+  } */
   
 }
   
