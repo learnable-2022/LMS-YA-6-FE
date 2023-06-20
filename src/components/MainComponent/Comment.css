@@ -1,5 +1,5 @@
 .form{
-    margin-bottom: 12px;
+    margin-top: 50px;
 }
 
 .comment-input{
@@ -7,6 +7,7 @@
     width: 800px;
     border: 1px solid black;
     padding: 10px;
+    margin-bottom: 12px;
 }
 
 .submit-btn{
@@ -22,7 +23,7 @@
     width: 600px;
     padding: 12px;
     border-radius: 10px;
-    margin: 12px 0;
+    margin: 24px 0 12px;
     overflow: hidden;
 }
 
@@ -30,4 +31,21 @@
     padding: 6px 0;
     width: 130px;
     font-weight: bold;
+}
+
+@media screen and (max-width:390px){
+    .comment-input{
+        width: 100%;
+        margin-bottom: 24px;
+    }
+
+    .submit-btn{
+        margin-bottom: 12px;
+        width: 100%;
+    }
+
+    .comments{
+        width: 100%;
+        bottom: 12px;
+    }
 }

@@ -1,22 +1,41 @@
+// import { useState } from 'react';
 import React from "react";
-import { AiOutlineHome } from "react-icons/ai";
-import { CiSettings } from "react-icons/ci";
+// import { AiOutlineHome } from "react-icons/ai";
+// import { CiSettings } from "react-icons/ci";
 import { AiOutlineCheckCircle } from "react-icons/ai";
 import { BsPlayBtn } from "react-icons/bs";
 import "./LeftComponent.css";
 
 function LeftComponent() {
+  // const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  // const openNav = () => {
+  //   setIsSidebarOpen(true);
+  // };
+
+  // const closeNav = () => {
+  //   setIsSidebarOpen(false);
+  // };
+  
   return (
     <>
-      <div className="left-component bg-white shadow-md w-fit">
-        <div className="home p-2">
+      {/* <div>
+      <span onClick={openNav} className="span">&#9776;</span>
+      </div> */}
+      <div
+        id="mySidenav"
+        className={`left-component bg-white shadow-md w-fit`}>
+        {/* <div className="home p-2">
           <i>
             <AiOutlineHome />
           </i>
           <i>
             <CiSettings />
           </i>
-        </div>
+        </div> */}
+         {/* <a href="javascript:void(0)" className="closebtn" onClick={closeNav}>
+          &times;
+        </a> */}
 
         <div>
           {/* 100 percent completed */}
