@@ -1,26 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+* {
+  font-family: 'Poppins', sans-serif;
+}
 .scroll-container {
-    width: 100%;
-    overflow-x: auto;
-    scrollbar-width: thin;
-    
-  }
-  
-  .scroll-container::-webkit-scrollbar {
-    width: 6px;
-  }
-  
-  .scroll-container::-webkit-scrollbar-track {
-    background-color: rgb(237, 235, 235);
-    border-radius: 2em;
+  width: 100%;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
 
-  }
-  
-  .scroll-container::-webkit-scrollbar-thumb {
-    background-color: #27153E;
-    border-radius: 2em;
+.scroll-container::-webkit-scrollbar {
+  width: 6px;
+}
 
+.scroll-container::-webkit-scrollbar-track {
+  background-color: rgb(237, 235, 235);
+  border-radius: 2em;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+  background-color: #27153e;
+  border-radius: 2em;
+}
+
+@layer components {
+  .form-input {
+    @apply text-sm lg:text-base shadow border w-full py-2 md:py-3 px-2 md:px-4 text-gray-700 focus:outline-none;
   }
+  .btn {
+    @apply text-sm lg:text-base text-center text-white px-6 py-2 lg:px-8 cursor-pointer capitalize;
+  }
+  .btn-lg {
+    @apply text-base lg:text-lg text-center text-white px-8 py-3 lg:px-12 cursor-pointer capitalize;
+  }
+  .btn-outline {
+    @apply text-sm lg:text-base text-center border border-white px-6 py-2 lg:px-8 cursor-pointer capitalize;
+  }
+  .small {
+    @apply text-xs lg:text-sm font-extralight md:font-light;
+  }
+}

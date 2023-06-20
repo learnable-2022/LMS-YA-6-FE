@@ -1,6 +1,6 @@
-import React from 'react';
+import React from 'react'
 
-function StudentOverview() {
+const InstructorDashboard = () => {
   return (
     <div className='lg:px-10 px-2 py-6'>
       <div>
@@ -11,4 +11,4 @@ function StudentOverview() {
   );
 }
 
-export default StudentOverview;
+export default InstructorDashboard

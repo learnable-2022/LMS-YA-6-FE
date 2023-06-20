@@ -3,7 +3,7 @@ import { BiLogOut } from 'react-icons/bi';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { AiOutlineClose } from 'react-icons/ai';
 import Logo from '../../../assets/EducateLogo.png';
-import SideNavIcon from './SideNavIcon';
+import SideNavIcon from '../../../components/reusable/dashboard-sections/SideNavIcon';
 import { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
@@ -18,9 +18,7 @@ const Topbar = () => {
   return (
     <div className='flex h-16 w-full px-6 z-20 md:px-14 shadow-md justify-between items-center sticky top-0 bg-white'>
       <img src={Logo} className='h-10' alt='educate-logo' />
-      <div className='hidden lg:flex w-1/6 justify-between items-center'>
-        <h1>My Course</h1>
-        <FaSearch />
+      <div className='hidden lg:flex justify-between items-center'>
         <FaUser />
       </div>
 
@@ -64,13 +62,6 @@ const Topbar = () => {
                   iconName={'forum'}
                   iconDescription={'Forum'}
                   active={`${location.pathname === '/dashboard/forum' ? 'text-orange-500' : ''}`}
-                />
-              </div>
-              <div onClick={() => navigate('/dashboard/support')}>
-                <SideNavIcon
-                  iconName={'support'}
-                  iconDescription={'24/7 Support'}
-                  active={`${location.pathname === '/dashboard/support' ? 'text-orange-500' : ''}`}
                 />
               </div>
               <div onClick={() => navigate('/dashboard/settings')}>

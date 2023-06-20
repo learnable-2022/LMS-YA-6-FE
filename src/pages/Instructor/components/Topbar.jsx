@@ -3,7 +3,7 @@ import { BiLogOut } from 'react-icons/bi';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { AiOutlineClose } from 'react-icons/ai';
 import Logo from '../../../assets/EducateLogo.png';
-import SideNavIcon from './SideNavIcon';
+import SideNavIcon from '../../../components/reusable/dashboard-sections/SideNavIcon';
 import { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
@@ -16,11 +16,9 @@ const Topbar = () => {
   const location = useLocation();
 
   return (
-    <div className='flex h-16 w-full px-6 z-20 md:px-14 shadow-md justify-between items-center sticky top-0 bg-white'>
+    <div className='flex h-16 w-full px-6 z-20 md:px-14 shadow-md justify-between items-center bg-white'>
       <img src={Logo} className='h-10' alt='educate-logo' />
-      <div className='hidden lg:flex w-1/6 justify-between items-center'>
-        <h1>My Course</h1>
-        <FaSearch />
+      <div className='hidden lg:flex '>
         <FaUser />
       </div>
 
