@@ -1,0 +1,33 @@
+.form{
+    margin-bottom: 12px;
+}
+
+.comment-input{
+    height: 250px;
+    width: 800px;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.submit-btn{
+    display: block;
+    background-color: #fc4f13;
+    padding: 6px 10px;
+    border-radius: 3px;
+    
+}
+
+.comments{
+    background-color: rgba(252, 79, 19, 0.2);
+    width: 600px;
+    padding: 12px;
+    border-radius: 10px;
+    margin: 12px 0;
+    overflow: hidden;
+}
+
+.commentor{
+    padding: 6px 0;
+    width: 130px;
+    font-weight: bold;
+}

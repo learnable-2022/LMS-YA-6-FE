@@ -5,6 +5,7 @@ import { BsPerson } from "react-icons/bs";
 import ReactPlayer from 'react-player';
 import course from "../../Images/course.png";
 import "./MainComponent.css";
+import Comment from "./Comment"
 
 function MainComponent() {
   return (
@@ -46,7 +47,7 @@ function MainComponent() {
           />
         </div>
         <button className="download p-2 rounded-md mt-2 mb-4 w-fit">Download</button>
-        <div className="border-container">
+        {/* <div className="border-container">
           <div className="content">
             <BsPerson className="person-icon" />
             <div className="inner-content">
@@ -56,7 +57,8 @@ function MainComponent() {
             </div>
           </div>
           <button className="post">Post a comment</button>
-        </div>
+        </div> */}
+        <Comment />
       </div>
      
     </>
