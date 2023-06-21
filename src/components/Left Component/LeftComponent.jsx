@@ -9,15 +9,6 @@ function LeftComponent() {
   return (
     <>
       <div className="left-component bg-white shadow-md w-fit">
-        <div className="home p-2">
-          <i>
-            <AiOutlineHome />
-          </i>
-          <i>
-            <CiSettings />
-          </i>
-        </div>
-
         <div>
           {/* 100 percent completed */}
           <hr />
