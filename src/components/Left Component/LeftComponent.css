@@ -5,6 +5,7 @@
   overflow: auto;
   min-width: 100px;
   padding: 10px;
+  overflow: auto;
 }
 .home {
   display: flex;
@@ -38,3 +39,4 @@
   display: none;
  }
 }
+  
