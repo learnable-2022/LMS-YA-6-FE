@@ -1,9 +1,9 @@
 import React from "react";
-import { GrNext } from "react-icons/gr";
+// import { GrNext } from "react-icons/gr";
 import { FaChevronRight, FaChevronLeft, FaPlay } from 'react-icons/fa';
 import { BsPerson } from "react-icons/bs";
 import ReactPlayer from 'react-player';
-import course from "../../Images/course.png";
+// import course from "../../Images/course.png";
 import "./MainComponent.css";
 
 function MainComponent() {
