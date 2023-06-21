@@ -5,7 +5,7 @@ import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
 import * as api from "../../api";
 
 const Login = () => {
-  const [isPwdVisible, setIsPwdVisible] = useState(true);
+  const [isPwdVisible, setIsPwdVisible] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [disabled, setDisabled] = useState(false);
