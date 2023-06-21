@@ -29,11 +29,12 @@ function MainComponent() {
           <ReactPlayer
           url="https://youtu.be/GK-VbhToLEI"
           controls
-          width="80%"
+          width="100%"
           className="h-full"
           />
         </div>
           <Comment />
+          <br />
       </div>
     </>
   );
