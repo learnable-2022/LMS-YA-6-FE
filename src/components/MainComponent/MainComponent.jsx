@@ -33,6 +33,8 @@ function MainComponent() {
           className="h-full"
           />
         </div>
+          <br />
+          <br />
           <Comment />
           <br />
       </div>
