@@ -1,10 +1,9 @@
 .main-component {
-  height: 100vh;
+  height: 100%;
   width: 100%;
+  margin-left: 300px;
   min-width: 100px;
   padding-left: 30px;
-  /* z-index: 1;
-  flex-grow: 1; */
 }
 .previous-continue {
   display: flex;
@@ -83,93 +82,10 @@
   display: flex;
   justify-content: flex-start;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 500px) {
   .main-component {
-    height: 100vh;
-    width: 270px;
-    padding: 20px;
-    /* z-index: 1;
-    flex-grow: 1; */
-  }
-}
-@media screen and (max-width: 280px) {
-  .main-component {
-    height: 100vh;
-    width: 120px;
-    padding: 20px;
-  }
-}
-@media screen and (max-width: 280px) {
-  .main-component {
-    height: 100vh;
-    width: 120px;
-    padding: 20px;
-  }
-  .border-container {
-    border: 2px solid #e6d6d6; /* Adjust border properties as desired */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Adjust box shadow properties as desired */
-    padding: 5px; /* Adjust padding as desired */
-    width: 120px; /* Adjust width as desired */
-    height: 200px; /* Adjust height as desired */
-  }
-
-  /* .content {
-    display: flex;
-    justify-content: space-between;
-  } */
-  .inner-content {
-    border: 4px solid #000; /* Adjust inner border properties as desired */
-    padding: 4px; /* Adjust inner border padding as desired */
-  }
-}
-@media screen and (max-width: 450px) {
-  .main-component {
-    height: 100vh;
-    width: 220px;
-    padding: 20px;
-  }
-  .border-container {
-    border: 2px solid #e6d6d6; /* Adjust border properties as desired */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Adjust box shadow properties as desired */
-    padding: 5px; /* Adjust padding as desired */
-    width: 120px; /* Adjust width as desired */
-    height: 200px; /* Adjust height as desired */
-  }
-
-  /* .content {
-    display: flex;
-    justify-content: space-between;
-  } */
-  .inner-content {
-    border: 4px solid #000; /* Adjust inner border properties as desired */
-    padding: 4px; /* Adjust inner border padding as desired */
-  }
-}
-@media screen and (max-width: 380px) {
-  .main-component {
-    height: 100vh;
-    width: 200px;
-    padding: 20px;
-    /* z-index: 1;
-    flex-grow: 1; */
-  }
-  .border-container {
-    border: 2px solid #e6d6d6; /* Adjust border properties as desired */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Adjust box shadow properties as desired */
-    padding: 5px; /* Adjust padding as desired */
-    width: 120px; /* Adjust width as desired */
-    height: 200px; /* Adjust height as desired */
-  }
-
-  /* .content {
-    display: flex;
-    justify-content: space-between;
-  } */
-  .inner-content {
-    border: 4px solid #000; /* Adjust inner border properties as desired */
-    padding: 4px; /* Adjust inner border padding as desired */
-  }
-  .person-icon {
-    font-size: 30px;
+   width: 100%;
+   margin: 0;
+   padding: 12px;
   }
 }
