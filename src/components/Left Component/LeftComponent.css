@@ -1,6 +1,8 @@
 .left-component {
-  height: 100vh;
+  height: 100%;
   width: 300px;
+  position: fixed;
+  overflow: auto;
   min-width: 100px;
   padding: 10px;
 }
@@ -31,38 +33,8 @@
 .heading {
   background-color: rgba(252, 79, 19, 0.4);
 }
-@media screen and (max-width: 768px) {
-  .left-component {
-    height: 100vh;
-    width: 250px;
-    padding: 20px;
-  }
-}
-@media screen and (max-width: 280px) {
-  .left-component {
-    height: 100vh;
-    width: 140px;
-    padding: 20px;
-  }
-}
-@media screen and (max-width: 450px) {
-  .left-component {
-    height: 100vh;
-    width: 280px;
-    padding: 20px;
-  }
-}
-@media screen and (max-width: 380px) {
-  .left-component {
-    height: 100vh;
-    width: 280px;
-    padding: 20px;
-  }
-}
-@media screen and (max-width: 300px) {
-  .left-component {
-    height: 100vh;
-    width: 120px;
-    padding: 20px;
-  }
+@media screen and (max-width: 500px) {
+ .left-component{
+  display: none;
+ }
 }

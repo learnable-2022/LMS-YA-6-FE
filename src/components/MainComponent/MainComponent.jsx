@@ -1,28 +1,16 @@
 import React from "react";
-import { GrNext } from "react-icons/gr";
+// import { GrNext } from "react-icons/gr";
 import { FaChevronRight, FaChevronLeft, FaPlay } from 'react-icons/fa';
 import { BsPerson } from "react-icons/bs";
 import ReactPlayer from 'react-player';
-import course from "../../Images/course.png";
+// import course from "../../Images/course.png";
 import "./MainComponent.css";
+import Comment from "./Comment"
 
 function MainComponent() {
   return (
     <>
       <div className="main-component">
-        <div className=" p-2 flex justify-end mr-2">
-          <div className="flex mx-2 bg-black p-2 rounded-md w-fit justify-center items-center text-white">
-            <h1 className=" flex items-center justify-center">
-            <FaChevronLeft className="mx-2" />
-            Previous Lesson</h1>
-          </div>
-          <div className="flex mx-2 bg-orange-600 p-2 rounded-md w-fit justify-center items-center text-white">
-            <h1 className="flex items-center justify-center">
-              Complete and Continue
-                <FaChevronRight className="mx-2" />
-            </h1>
-          </div>
-        </div>
         <div>
           <h1 className="started">Getting Started</h1>
 
@@ -41,22 +29,14 @@ function MainComponent() {
           <ReactPlayer
           url="https://youtu.be/GK-VbhToLEI"
           controls
-          width="80%"
+          width="100%"
           className="h-full"
           />
         </div>
-        <button className="download p-2 rounded-md mt-2 mb-4 w-fit">Download</button>
-        <div className="border-container">
-          <div className="content">
-            <BsPerson className="person-icon" />
-            <div className="inner-content" >
-              <textarea name="" id="" cols="70" rows="10" className="textarea">
-                Leave a comment...
-              </textarea>
-            </div>
-          </div>
-          <button className="post">Post a comment</button>
-        </div>
+          <br />
+          <br />
+          <Comment />
+          <br />
       </div>
     </>
   );
