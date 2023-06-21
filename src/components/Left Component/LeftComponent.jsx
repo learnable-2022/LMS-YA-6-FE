@@ -19,12 +19,7 @@ function LeftComponent() {
   
   return (
     <>
-      {/* <div>
-      <span onClick={openNav} className="span">&#9776;</span>
-      </div> */}
-      <div
-        id="mySidenav"
-        className={`left-component bg-white shadow-md w-fit`}>
+      <div id="mySidenav" className={`left-component bg-white shadow-md w-fit`}>
         {/* <div className="home p-2">
           <i>
             <AiOutlineHome />
