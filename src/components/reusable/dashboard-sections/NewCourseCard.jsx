@@ -1,7 +1,6 @@
-import courseImg from '../../../assets/Rectangle 14.svg'
 import {FaUser} from 'react-icons/fa'
 
-const NewCourseCard = ({ courseName, courseCost}) => {
+const NewCourseCard = ({ courseName, courseCost, courseImg}) => {
     return ( 
         <div className="h-fit mb-3 w-48 md:w-56 p-3 rounded-md shadow-md bg-white space-y-1">
             <div className='w-fit h-fit relative'>
@@ -16,10 +15,14 @@ const NewCourseCard = ({ courseName, courseCost}) => {
                 </div>
             </div>
 
-            <div className="flex w-fit max-w-full min-h-fit items-center space-x-1">
+            <div className="flex flex-col w-fit max-w-full min-h-fit space-x-1">
+                
+                <div className="w-fit flex justify-center items-center h-fit font-semibold">
                 <FaUser />
-                <div className="w-fit h-fit font-semibold">
                  By Alphouse Joan
+                </div>
+                <div className='bg-yellow-600/90 w-fit p-2 mt-2 rounded-md cursor-pointer'>
+                    Enroll
                 </div>
             </div>
         </div>
