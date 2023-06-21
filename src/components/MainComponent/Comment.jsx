@@ -9,10 +9,10 @@ const Comments = () => {
     const commentText = event.target.comment.value;
     const newComment = {
       text: commentText,
-      author: 'Anonymous', 
+      author: 'Anonymous', // You can customize the author field
     };
     setComments([...comments, newComment]);
-    event.target.comment.value = ''; 
+    event.target.comment.value = ''; // Clear the input field
   };
 
   const Comment = ({ text, author }) => {
@@ -29,7 +29,7 @@ const Comments = () => {
       {comments.map((comment, index) => (
         <Comment key={index} text={comment.text} author={comment.author} />
       ))}
-      <form onSubmit={handleSubmit} className='form'>
+      <form onSubmit={handleSubmit}>
       <textarea typeof='text' name="comment" placeholder='Leave a comment...' cols="70" rows="10" className="comment-input"></textarea>
         {/* <input type="text" name="comment"  className=''/> */}
         <button type="submit" className='submit-btn'>Post a Comment</button>

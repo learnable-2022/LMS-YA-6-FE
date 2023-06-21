@@ -1,7 +1,8 @@
 .left-component {
   height: 100%;
-  position: fixed;
   width: 300px;
+  position: fixed;
+  overflow: auto;
   min-width: 100px;
   padding: 10px;
   overflow: auto;
@@ -33,12 +34,9 @@
 .heading {
   background-color: rgba(252, 79, 19, 0.4);
 }
-
-
-
 @media screen and (max-width: 500px) {
-  .left-component{
-    display: none;
-  }
+ .left-component{
+  display: none;
+ }
 }
   

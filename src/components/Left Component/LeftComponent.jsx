@@ -19,19 +19,7 @@ function LeftComponent() {
   
   return (
     <>
-      <div id="mySidenav" className={`left-component bg-white shadow-md w-fit`}>
-        {/* <div className="home p-2">
-          <i>
-            <AiOutlineHome />
-          </i>
-          <i>
-            <CiSettings />
-          </i>
-        </div> */}
-         {/* <a href="javascript:void(0)" className="closebtn" onClick={closeNav}>
-          &times;
-        </a> */}
-
+      <div className="left-component bg-white shadow-md w-fit">
         <div>
           {/* 100 percent completed */}
           <hr />

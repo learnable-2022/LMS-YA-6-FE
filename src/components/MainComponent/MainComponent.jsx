@@ -11,21 +11,6 @@ function MainComponent() {
   return (
     <>
       <div className="main-component">
-        {/* <div className=" p-2 flex justify-end mr-2">
-          <div className="flex mx-2 bg-black p-2 rounded-md w-fit justify-center items-center text-white">
-            <h1 className=" flex items-center justify-center">
-            <FaChevronLeft className="mx-2" />
-            Previous Lesson</h1>
-          </div>
-          <div className="flex mx-2 bg-orange-600 p-2 rounded-md w-fit justify-center items-center text-white">
-            <h1 className="flex items-center justify-center">
-              Complete and Continue
-                <FaChevronRight className="mx-2" />
-            </h1>
-          </div>
-        </div> */}
-
-        {/* intro section */}
         <div>
           <h1 className="started">Getting Started</h1>
 
@@ -49,8 +34,10 @@ function MainComponent() {
           className="h-full"
           />
         </div>
-        <Comment />
-        <br />
+          <br />
+          <br />
+          <Comment />
+          <br />
       </div>
     </>
   );
