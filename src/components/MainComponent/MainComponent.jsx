@@ -1,16 +1,47 @@
-import React from "react";
+import React, { useState, useEffect } from 'react';
 // import { GrNext } from "react-icons/gr";
 import { FaChevronRight, FaChevronLeft, FaPlay } from 'react-icons/fa';
 import { BsPerson } from "react-icons/bs";
 import ReactPlayer from 'react-player';
+import { FaBars } from 'react-icons/fa';
 // import course from "../../Images/course.png";
 import "./MainComponent.css";
 import Comment from "./Comment"
+import MobileSidebar from "../Left Component/MobileSidebar";
 
-function MainComponent() {
+const MainComponent = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isMobileView, setIsMobileView] = useState(window.innerWidth <= 500);
+
+
+  const toggleSidebar = () => {
+    setIsOpen(!isOpen);
+  };
+
+  useEffect(() => {
+    const checkIsMobileView = () => {
+      setIsMobileView(window.innerWidth <= 500);
+    };
+
+    // checkIsMobileView();
+
+    window.addEventListener('resize', checkIsMobileView);
+
+    return () => {
+      window.removeEventListener('resize', checkIsMobileView);
+    };
+  }, []);
+
+
   return (
     <>
       <div className="main-component">
+      {isMobileView && (
+        <div className="menu-icon" onClick={toggleSidebar}>
+          <FaBars />
+        </div>
+      )}
+      <MobileSidebar isOpen={isOpen} toggleSidebar={toggleSidebar} />
         <div>
           <h1 className="started">Getting Started</h1>
 
@@ -21,7 +52,10 @@ function MainComponent() {
           </p>
           <br />
           <div className="course flex justify-center items-center">
-            <FaPlay /> <h2 className="started"> Public administration </h2>
+            <div className='play-icon'>
+            <FaPlay /> 
+            </div>
+            <h2 className="started"> Public administration </h2>
           </div>
         </div>
         <div className="course-video">
