@@ -5,7 +5,7 @@ import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
 import CryptoJS from "crypto-js";
 
 const Login = () => {
-  const [isPwdVisible, setIsPwdVisible] = useState(true);
+  const [isPwdVisible, setIsPwdVisible] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
