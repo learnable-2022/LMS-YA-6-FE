@@ -37,14 +37,14 @@ const App = () => {
         </Route>
 
         <Route exact path='/my-class' element={<SecondDashboard />} />
-
+{/* 
         <Route exact path="/instructor">
           <Route exact path="/instructor" element={<InstructorsDashboard />} />
           <Route exact path="/instructor/courses">
           <Route exact path="/instructor/courses" element={<AllUploads />} />
           <Route exact path="/instructor/courses/create-course" element={<NewCourse />} />
           </Route>
-        </Route>
+        </Route> */}
 
         <Route path='/instructor' element={<InstructorLayout />}>
           <Route path='/instructor' element={<Navigate replace to='dashboard' />} />
