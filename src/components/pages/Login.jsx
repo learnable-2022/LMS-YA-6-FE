@@ -3,19 +3,25 @@ import { Link, useNavigate } from "react-router-dom";
 import Logo from "../../assets/EducateLogo.png";
 import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
 import * as api from "../../api";
+import { AxiosError } from "axios";
 
 const Login = () => {
-  const [isPwdVisible, setIsPwdVisible] = useState(false);
+  // const token = localStorage.getItem("token")
+  const [isPwdVisible, setIsPwdVisible] = useState(true);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [disabled, setDisabled] = useState(false);
   const [role, setRole] = useState("student");
+  // const [terror, setError] = useState(""); // New state for error message
+  const [passwordError, setPasswordError] = useState("");
+  const [emailError, setEmailError] = useState("")
+  
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setDisabled(!disabled);
-
+console.log(disabled)
     const formData = {
       email,
       password,
@@ -28,8 +34,14 @@ const Login = () => {
       } else if (role === "instructor") {
         data = await api.loginInstructor(formData);
       }
+      
+      // else {
+      //   setError("Invalid credentials"); // Set a generic error message for invalid credentials
+      // }
 
       console.log(data);
+  localStorage.setItem("token", data.data.data);
+  localStorage.setItem("role", data.data.role);
       if (data.data.role === "student") {
         navigate("/dashboard");
       } else if (data.data.role === "instructor") {
@@ -37,10 +49,34 @@ const Login = () => {
       }
       return data.data;
     } catch (error) {
+   
+      // setError(error.response.data.message);
+      //  // Set the error message
+       console.log(typeof error)
+       console.log(error instanceof AxiosError)
       console.log(error);
+      if (error instanceof AxiosError ){
+        const errorMessage =error.response.data.message
+        console.log(errorMessage)
+        if (errorMessage.toLowerCase().includes("email")){
+          setEmailError(errorMessage)
+        }
+        if(errorMessage.toLowerCase().includes("password")){
+          setPasswordError(errorMessage)
+        }
+      }
+setDisabled(false)
+console.log(disabled)
+
     }
   };
-  useEffect(() => {}, [email, password]);
+  useEffect(() => {}, [disabled]);
+  useEffect(() => {
+    passwordError && setPasswordError("");
+    emailError && setEmailError("");
+     // Clear the error message when email or password changes
+  }, [email, password]);
+
 
   const handlePwdVisible = () => {
     setIsPwdVisible(!isPwdVisible);
@@ -79,6 +115,7 @@ const Login = () => {
               htmlFor="email"
               className="relative block text-sm font-medium text-gray-700"
             >
+
               Email
             </label>
             <input
@@ -86,14 +123,16 @@ const Login = () => {
               type="email"
               name="email"
               required
-              className="mb-5 w-full px-4 py-2 text-gray-700 placeholder-gray-400 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-600 focus:border-transparent"
+              className="w-full px-4 py-2 text-gray-700 placeholder-gray-400 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-600 focus:border-transparent"
               placeholder="Enter your email address"
               onChange={(e) => setEmail(e.target.value)}
             />
-
+             {passwordError && ( // Render the error message if it exists
+            <div className="text-red-500 text-xs">{emailError}</div>
+          )}
             <label
               htmlFor="password"
-              className="relative block text-sm font-medium text-gray-700"
+              className=" mt-5 relative block text-sm font-medium text-gray-700"
             >
               Password
               {isPwdVisible ? (
@@ -117,6 +156,11 @@ const Login = () => {
               placeholder="Enter your password"
               onChange={(e) => setPassword(e.target.value)}
             />
+            {passwordError && ( // Render the error message if it exists
+            <div className="text-red-500 text-xs">{passwordError}</div>
+          )}
+      
+
 
             {disabled === true ? (
               <div
@@ -153,7 +197,7 @@ const Login = () => {
           </span>
         </div>
       </div>
-      <div className="hidden md:flex flex-end w-1/2 bg-no-repeat bg-uTypeBg bg-absolute filter brightness-90 bg-center bg-cover  flex-col justify-center lg:px-10 py-36 text-xl text-white h-full">
+      <div className="hidden md:flex flex-end w-1/2 bg-no-repeat bg-loginBg bg-absolute filter brightness-90 bg-center bg-cover  flex-col justify-center lg:px-10 py-36 text-xl text-white h-full">
         <div>
           <h1
             className="font-bold text-4xl"
