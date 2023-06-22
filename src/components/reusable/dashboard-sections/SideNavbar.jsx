@@ -16,6 +16,10 @@ const SideNavbar = ({instructorsRoute, studentRoute, courseTitle}) => {
             navigate('/')
         }
     }
+    const handleClick = () => {
+        alert('This page is still under construction!');
+      };
+    
     return ( 
         <div className="hidden lg:flex py-10 shadow-md bg-white flex-col items-center " style={{width: '20%'}}>
             <div className="w-fit h-fit sticky top-24 space-y-10">
@@ -28,16 +32,16 @@ const SideNavbar = ({instructorsRoute, studentRoute, courseTitle}) => {
                             <div onClick={()=>navigate('/dashboard/all-courses')}>
                             <SideNavIcon iconName={'courses'} iconDescription={'All Courses'} active={`${location.pathname==='/dashboard/all-courses' ? 'text-orange-500':''}`} />
                             </div>
-                            <div onClick={()=>navigate('/dashboard/study-report')}>
-                            <SideNavIcon iconName={'study_report'} iconDescription={'Study Report'} active={`${location.pathname==='/dashboard/study-report' ? 'text-orange-500':''}`} />
+                            <div /*onClick={()=>navigate('/dashboard/study-report')}*/ onClick={handleClick}>
+                            <SideNavIcon iconName={'study_report'} iconDescription={'Study Report'} active={`${location.pathname==='/dashboard/study-report' ? 'text-orange-500':''}`}/>
                             </div>
-                            <div onClick={()=>navigate('/dashboard/forum')}>
+                            <div /*onClick={()=>navigate('/dashboard/forum')}*/ onClick={handleClick}>
                             <SideNavIcon iconName={'forum'} iconDescription={'Forum'} active={`${location.pathname==='/dashboard/forum' ? 'text-orange-500':''}`} />
                             </div>
-                            <div onClick={()=>navigate('/dashboard/support')}>
+                            <div /*onClick={()=>navigate('/dashboard/support')}*/ onClick={handleClick}>
                             <SideNavIcon iconName={'support'} iconDescription={'24/7 Support'} active={`${location.pathname==='/dashboard/support' ? 'text-orange-500':''}`} />
                             </div>
-                            <div onClick={()=>navigate('/dashboard/settings')}>
+                            <div /*onClick={()=>navigate('/dashboard/settings')}*/ onClick={handleClick}>
                             <SideNavIcon iconName={'setting'} iconDescription={'Settings'} active={`${location.pathname==='/dashboard/settings' ? 'text-orange-500':''}`} />
                             </div>
 
