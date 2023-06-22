@@ -11,7 +11,7 @@ const UpperSection = () => {
                     <h1 className="text-4xl font-bold">
                     <span className="text-orange-500">You </span> 
                     Can Be Whatever You Want To 
-                    <span className="text-orange-500">Be</span>
+                    <span className="text-orange-500"> Be</span>
                     </h1>
                     <p>
                     Explore all our other courses, try something new
