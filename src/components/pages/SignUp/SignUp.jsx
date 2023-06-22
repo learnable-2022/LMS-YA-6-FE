@@ -1,14 +1,17 @@
-import React, { useState } from "react";
+import React, { useState , useEffect } from "react";
 import signup from "./SignUp.module.css";
 import logo from "../../../assets/EducateLogo.png";
 import FormInput from "../../reusable/FormInput/FormInput";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate} from "react-router-dom";
+import {AxiosError} from 'axios'
 
 export default function SignUp() {
   // *!State Management for the input field
   const navigate = useNavigate();
   const [disabled, setDisabled] = useState(false);
   // const location = useLocation();
+  const [emailError, setEmailError] = useState("");
+  const [role, setRole] = useState('student');
   const [values, setValues] = useState({
     fullname: "",
     email: "",
@@ -88,7 +91,7 @@ export default function SignUp() {
   const onChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
   };
-  // console.log(values);
+  console.log(values);
 
   // *! API call//
   const passData = () => {
@@ -106,25 +109,33 @@ export default function SignUp() {
         body: JSON.stringify(values),
       })
         .then((response) => {
-          // console.log("before response.ok", response);
+          console.log("before response.ok", response);
           if (response.ok) {
-            // console.log("request successful");
+            console.log("request successful");
             const data = response.json();
-            // console.log(data);
+            console.log(data);
             localStorage.setItem("userType", "instructor");
             navigate("/login");
             return response.json();
-          } else {
-            throw new Error("API request failed");
-          }
+      } else if (response.status === 409) {
+        // Email already exists, display specific error message
+        throw new Error("Email already exists");
+      } else {
+        throw new Error("API request failed");
+      }
         })
         .then((data) => {
           console.log(data);
         })
         .catch((error) => {
           console.error(error);
+          setDisabled(false);
+          if (error instanceof AxiosError && error.response && error.response.status === 409) {
+            setEmailError("Email is already registered"); // Set the error message for email duplication
+          }
+          
         });
-    } else if (userType === "student") {
+    } else if (userType=== "student") {
       // console.log("passData before fetch");
       fetch("https://edu-cate.onrender.com/api/v1/auth/register", {
         method: "POST",
@@ -134,37 +145,58 @@ export default function SignUp() {
         body: JSON.stringify(values),
       })
         .then((response) => {
-          // console.log("before response.ok", response);
+          console.log("before response.ok", response);
           if (response.ok) {
-            // console.log("request successful");
+            console.log("request successful");
             localStorage.setItem("userType", "student");
             navigate("/login");
             return response.json();
-          } else {
-            throw new Error("API request failed");
-          }
+      } else if (response.status === 409) {
+        // Email already exists, display specific error message
+        throw new Error("Email already exists");
+      } else {
+        throw new Error("API request failed");
+      }
         })
         .then((data) => {
-          // console.log(data);
+          console.log(data);
         })
         .catch((error) => {
           console.error(error);
-          setDisabled(!disabled);
+          setDisabled(false);
+          if (error instanceof AxiosError && error.response && error.response.status === 409) {
+            setEmailError("Email is already registered"); // Set the error message for email duplication
+          }
         });
     }
+
   };
+  useEffect(() => {}, [disabled]);
+  // useEffect(() => {
+  //   emailError && setEmailError("");
+  //    // Clear the error message when email or password changes
+  // }, [email]);
 
   // ! content box body
   return (
     <section className="md:flex md:flex-row-reverse lg:flex lg:flex-row h-screen w-full justify-between px-2 md:p-0">
       <div className="grid w-full lg:w-1/2 py-3 px-2 md:px-14">
-        <div className="w-full justify-self-start">
-          <div className="flex justify-between items-center">
-            <img
-              className="h-10"
-              src={logo}
-              alt="Edu_cate"
-            />
+        
+      <div className='w-full justify-self-start'>
+          <div className='flex justify-between items-center'>
+            <Link to='/'>
+              <img src={logo} alt='logo' className='h-10 w-fit' />
+            </Link>
+            <div>
+              <select
+                value={role}
+                onChange={(e) => setRole(e.target.value)}
+                class='px-4 py-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  block w-full'
+              >
+                <option value='student'>Student</option>
+                <option value='instructor'>Instructor</option>
+              </select>
+            </div>
           </div>
         </div>
         <div className="mt-10 flex flex-col justify-start">
@@ -185,6 +217,7 @@ export default function SignUp() {
                 {...input}
                 value={values[input.name]}
                 onChange={onChange}
+                error={input.name === "email" ? emailError : null} // Pass the emailError as an error prop
               />
             ))}
             <div className={signup["link-btn-wrapper"]}>
