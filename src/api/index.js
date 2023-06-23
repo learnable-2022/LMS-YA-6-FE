@@ -1,7 +1,6 @@
 import axios from 'axios';
 
 const API = axios.create({
-  // baseURL: 'http://localhost:1337/api/v1'
   baseURL: 'https://edu-cate.onrender.com/api/v1'
 });
 
@@ -12,7 +11,10 @@ export const progressodule = (courseId, moduleId, config) => API.patch(`/courses
 
 export const loginStudent = (formData) => API.post('/auth/login', formData);
 export const registerStudent = (formData) => API.post('/auth/register', formData);
-export const studentProfile = (config) => API.get('/student/profile', config);
+
+export const studentProfile = (config) => API.get('/student/profile',config);
+export const instructorProfile= (config) => API.get('/instructor/profile', config);
+
 
 export const loginInstructor = (formData) => API.post('/instructor/login', formData);
 export const registerInstructor = (formData) => API.post('/instructor/register', formData);
@@ -21,17 +23,3 @@ export const createCourse = (formData, config) => API.post('/instructor/courses'
 export const updateCourse = (id, formData, config) => API.patch(`/instructor/courses/${id}`,formData, config);
 export const createModules = (id,formData, config) => API.post(`/instructor/courses/${id}/modules`,formData, config);
 export const updateModules = (courseId, moduleId, formData, config) => API.patch(`/instructor/courses/${courseId}/modules/${moduleId}`,formData, config);
-
-
-//     const config = {
-//       headers: {
-//         Authorization: `Bearer ${token}`,
-//       },
-
-//     try {
-//       const { data } = await api.loginStudent(formData,config);
-
-//       return data;
-//     } catch (error) {
-//       console.log(error)
-//     }
