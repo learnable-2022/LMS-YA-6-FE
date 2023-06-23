@@ -3,14 +3,14 @@ import signup from "./SignUp.module.css";
 import logo from "../../../assets/EducateLogo.png";
 import FormInput from "../../reusable/FormInput/FormInput";
 import { Link, useNavigate} from "react-router-dom";
-import {AxiosError} from 'axios'
+
 
 export default function SignUp() {
   // *!State Management for the input field
   const navigate = useNavigate();
   const [disabled, setDisabled] = useState(false);
   // const location = useLocation();
-  const [emailError, setEmailError] = useState("");
+  // const [emailError, setEmailError] = useState("");
   const [role, setRole] = useState('student');
   const [values, setValues] = useState({
     fullname: "",
@@ -58,7 +58,7 @@ export default function SignUp() {
       errorMessage:
         "Password should be 8-20 characters and should include alphanumeric charcters and a special character",
       label: "Password",
-      pattern: `^(?=.*[0-9])(?=*[a-zA-Z])(?=.*[@$^#!%*&])[a-zA-Z0-9@#^$!%*?&]{8,20}$`,
+      pattern: `^.{8,}$`,
       required: true,
     },
     {
@@ -82,6 +82,8 @@ export default function SignUp() {
 
   //   console.log(userType); // Output: admin
   // }, []);
+
+  
   const handleSubmit = (e) => {
     e.preventDefault();
     setDisabled(!disabled);
@@ -98,77 +100,33 @@ export default function SignUp() {
     const currentURL = window.location.href;
     const searchParams = new URLSearchParams(currentURL.split("?")[1]);
     const userType = searchParams.get("type");
-    if (userType === "admin") {
-      // navigate("/dashboard1");
-      // console.log("passData after fetch");
-      fetch("https://edu-cate.onrender.com/api/v1/instructor/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(values),
+    // const userType = role === "admin" ? "instructor" : "student";
+    const apiUrl = userType === "admin" ? "https://edu-cate.onrender.com/api/v1/instructor/register" : "https://edu-cate.onrender.com/api/v1/auth/register";
+
+    fetch(apiUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(values),
+    })
+      .then((response) => {
+        if (response.ok) {
+          localStorage.setItem("userType", userType);
+          navigate("/login");
+          return response.json();
+        } else if (response.status === 409) {
+          throw new Error("API request failed");
+        }
       })
-        .then((response) => {
-          console.log("before response.ok", response);
-          if (response.ok) {
-            console.log("request successful");
-            const data = response.json();
-            console.log(data);
-            localStorage.setItem("userType", "instructor");
-            navigate("/login");
-            return response.json();
-      } else if (response.status === 409) {
-        // Email already exists, display specific error message
-        throw new Error("Email already exists");
-      } else {
-        throw new Error("API request failed");
-      }
-        })
-        .then((data) => {
-          console.log(data);
-        })
-        .catch((error) => {
-          console.error(error);
-          setDisabled(false);
-          if (error instanceof AxiosError && error.response && error.response.status === 409) {
-            setEmailError("Email is already registered"); // Set the error message for email duplication
-          }
-          
-        });
-    } else if (userType=== "student") {
-      // console.log("passData before fetch");
-      fetch("https://edu-cate.onrender.com/api/v1/auth/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(values),
+      .then((data) => {
+        console.log(data);
       })
-        .then((response) => {
-          console.log("before response.ok", response);
-          if (response.ok) {
-            console.log("request successful");
-            localStorage.setItem("userType", "student");
-            navigate("/login");
-            return response.json();
-      } else if (response.status === 409) {
-        // Email already exists, display specific error message
-        throw new Error("Email already exists");
-      } else {
-        throw new Error("API request failed");
-      }
-        })
-        .then((data) => {
-          console.log(data);
-        })
-        .catch((error) => {
-          console.error(error);
-          setDisabled(false);
-          if (error instanceof AxiosError && error.response && error.response.status === 409) {
-            setEmailError("Email is already registered"); // Set the error message for email duplication
-          }
-        });
-    }
+      .catch((error) => {
+        console.error(error);
+        setDisabled(false);
+      });
+
 
   };
   useEffect(() => {}, [disabled]);
@@ -217,7 +175,7 @@ export default function SignUp() {
                 {...input}
                 value={values[input.name]}
                 onChange={onChange}
-                error={input.name === "email" ? emailError : null} // Pass the emailError as an error prop
+                // error={input.name === "email" ? emailError : null} // Pass the emailError as an error prop
               />
             ))}
             <div className={signup["link-btn-wrapper"]}>

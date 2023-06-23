@@ -198,7 +198,7 @@ console.log(disabled)
         </div>
       </div>
       <div className="hidden md:flex flex-end w-1/2 bg-no-repeat bg-loginBg bg-absolute filter brightness-90 bg-center bg-cover  flex-col justify-center lg:px-10 py-36 text-xl text-white h-full">
-        <div>
+        <div className="md:hidden lg:block">
           <h1
             className="font-bold text-4xl"
             style={{

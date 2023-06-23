@@ -6,6 +6,8 @@ const FormInput = (props) => {
   const [focused, setFocused] = useState(false);
   const [passwordVisible, setPasswordVisible] = useState(false); 
   const { label, errorMessage, onChange, id, ...Ip } = props;
+
+
   const handleFocus = (e) => {
     setFocused(true);
   };
@@ -33,9 +35,7 @@ const FormInput = (props) => {
   {/* {Ip.name === 'email' && errorMessage === 'Valid email is required' && (
         <span className="errorMessage">Valid email is required</span>
       )} */}
-      {Ip.name === 'email' && errorMessage && (
-  <span className="errorMessage">{errorMessage}</span>
-)}
+     <span className="errorMessage">{errorMessage}</span>
     </div>
   );
 };
