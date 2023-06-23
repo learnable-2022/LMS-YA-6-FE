@@ -13,61 +13,60 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="flex h-16 w-full px-6 z-20 md:px-14 justify-between items-center sticky top-0 bg-white">
+    <header className="bg-white flex h-16 w-full px-6 z-20 md:px-14 justify-between items-center sticky top-0 border-b">
       <img
         src={Logo}
         className="h-10"
         alt="educate-logo"
       />
-      <div className="hidden lg:flex w-3/6 items-center justify-between h-full">
-        <ul className="flex items-center justify-center w-fit h-full space-x-4">
-          <li className="h-full flex w-20 items-center justify-center">
-            <Link
-              to="Home"
-              smooth={true}
-              duration={800}
-              className="h-full w-full flex items-center justify-center cursor-pointer"
-            >
-              Home
-            </Link>
-          </li>
+      <ul className="hidden lg:flex items-center justify-between gap-x-6 h-full">
+        <li className="cursor-pointer">
 
-          <li className="h-full flex items-center justify-center">
-            <Link
-              to="About"
-              smooth={true}
-              duration={800}
-              className="h-full w-full flex items-center justify-center cursor-pointer"
-            >
-              About Us
-            </Link>
-          </li>
-          <li className="h-full flex items-center justify-center">
-            <Link
-              to="Contact"
-              smooth={true}
-              duration={800}
-              className="h-full w-full flex items-center justify-center cursor-pointer"
-            >
-              Contact Us
-            </Link>
-          </li>
-        </ul>
-        <div className="flex items-center justify-center space-x-10 p-2 h-full">
-          <div
-            className="p-2 bg-gray-200/60 rounded-md cursor-pointer"
-            onClick={() => navigate("/login")}
+          <Link
+            to="Home"
+            smooth={true}
+            duration={800}
+            className="h-full w-full flex items-center justify-center cursor-pointer"
           >
-            Sign In
-          </div>
-          <div
-            className="p-2 bg-orange-600 text-white rounded-md cursor-pointer"
-            onClick={() => navigate("/userAccess")}
+            Home
+          </Link>
+        </li>
+
+        <li className="cursor-pointer">
+          <Link
+            to="About"
+            smooth={true}
+            duration={800}
+            className="h-full w-full flex items-center justify-center cursor-pointer"
           >
-            Sign Up
-          </div>
-        </div>
-      </div>
+            About Us
+          </Link>
+        </li>
+        <li className="cursor-pointer">
+          {" "}
+          <Link
+            to="Contact"
+            smooth={true}
+            duration={800}
+            className="h-full w-full flex items-center justify-center cursor-pointer"
+          >
+            Contact Us
+          </Link>
+        </li>
+        <li
+          className="p-2 px-4  text-white rounded-md cursor-pointer"
+          style={{ backgroundColor: "#27153E" }}
+          onClick={() => navigate("/login")}
+        >
+          Sign In
+        </li>
+        <li
+          className="p-2 px-4  bg-orange-600 text-white rounded-md cursor-pointer"
+          onClick={() => navigate("/userAccess")}
+        >
+          Sign Up
+        </li>
+      </ul>
 
       {/* for small devices */}
       <div
@@ -84,29 +83,37 @@ const Navbar = () => {
             <div className="w-full h-fit py-3 bg-white/90 shadow-md animate-slideDown">
               <ul className="">
                 <li className="p-5">
-                <Link
-              to="Home"
-              smooth={true}
-              duration={800}
-            >
-              Home
-            </Link>
+                  {" "}
+                  <Link
+                    to="Home"
+                    smooth={true}
+                    duration={800}
+                    className="h-full w-full flex items-center justify-center cursor-pointer"
+                  >
+                    Home
+                  </Link>
                 </li>
-                <li className="p-5"> <Link
-              to="About"
-              smooth={true}
-              duration={800}
-            >
-              About Us
-            </Link></li>
                 <li className="p-5">
-                <Link
-              to="Contact"
-              smooth={true}
-              duration={800}
-            >
-              Contact Us
-            </Link>
+                  {" "}
+                  <Link
+                    to="About"
+                    smooth={true}
+                    duration={800}
+                    className="h-full w-full flex items-center justify-center cursor-pointer"
+                  >
+                    About Us
+                  </Link>
+                </li>
+                <li className="p-5">
+                  {" "}
+                  <Link
+                    to="Contact"
+                    smooth={true}
+                    duration={800}
+                    className="h-full w-full flex items-center justify-center cursor-pointer"
+                  >
+                    Contact Us
+                  </Link>
                 </li>
               </ul>
               <div
@@ -118,7 +125,7 @@ const Navbar = () => {
               </div>
               <div
                 className="p-4 flex justify-center bg-orange-600 text-white rounded-md cursor-pointer"
-                onClick={() => navigate("/userAccess")}
+                onClick={() => navigate("/signup")}
               >
                 Sign Up
               </div>
@@ -128,7 +135,7 @@ const Navbar = () => {
           ""
         )}
       </div>
-    </div>
+    </header>
   );
 };
 

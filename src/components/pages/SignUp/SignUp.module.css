@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
 
-* {
+*{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -18,7 +18,8 @@ section .imgBox {
   position: relative;
   width: 50%;
   z-index: -1;
-  aspect-ratio: 1/1;
+  display: flex;
+  /* aspect-ratio: 1/1;  */
 }
 section .imgBox .BannerText h1 {
   font-weight: 900;
@@ -37,8 +38,8 @@ section .imgBox .BannerText {
   top: 55%;
 }
 section .imgBox img {
-  width: 100%;
-  aspect-ratio: 4/7;
+  width:100%;
+  /* aspect-ratio: 4/7; */
   object-fit: cover;
 }
 
@@ -133,12 +134,6 @@ align-items: center;
   text-decoration: none;
 }
 
-/* .google-btn div {
-  border: 0;
-  outline: none;
-  background-color: none;
-} */
-
 .btn-text p {
   color: black;
   font-size: 20px;
@@ -147,12 +142,9 @@ align-items: center;
 
 .useType {
   width: 100%;
-  padding: 10%;
+
 }
 
-.s-btn {
-  margin-bottom: 4%;
-}
 
 #button {
   border: 1px solid #5e5e60;
@@ -179,8 +171,9 @@ align-items: center;
   }
 }
 #accessContent #accessForm {
-  transform: translateY(-30%);
-}
+  transform: translateY(-30%
+  );
+ }
 /* *!media queries >1334px*/
 @media (max-width: 1334px) {
   section .imgBox {
@@ -233,7 +226,7 @@ align-items: center;
   .formBox h1 {
     /* margin-top: 45%; */
     font-size: 45px;
-    margin-top: 20%;
+      margin-top: 20%;
   }
   .btn-text p {
     font-size: 16px;
@@ -268,8 +261,8 @@ align-items: center;
   .spanOr {
     color: black;
   }
-  .logoContent img {
-    width: 100px;
+  .logoContent img{
+    width: 100px
   }
 }
 /* *!media query > 450px */
@@ -300,7 +293,7 @@ align-items: center;
   .spanOr {
     color: black;
   }
-  .logoContent img {
-    width: 50px;
+  .logoContent img{
+    width: 50px
   }
 }

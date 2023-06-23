@@ -1,8 +1,15 @@
 import logoWhite from "../../assets/logo_white.svg";
 import { FaTwitter, FaYoutube, FaInstagram, FaDiscord, } from "react-icons/fa";
 import { Link, animateScrool as scroll, scroller } from "react-scroll";
+import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/");
+  };
+
   const handleContactClick = () => {
     const phoneNumber = '255774665175'; // Replace with the desired phone number
     const message = 'Hi! Welcome to Educate. Would like to lodge a complaint?'; // Replace with the desired message
@@ -100,16 +107,25 @@ const Footer = () => {
               <h1 className="text-white font-bold w-fit mb-2">Follow us on:</h1>
               <ul className="flex text-gray-200/60 mt-3 md:mt-0 space-x-4">
                 <li>
+                  <Link to="./"  onClick={handleClick}>
                   <FaInstagram className="text-3xl" />
+                  </Link>
+                
                 </li>
                 <li>
-                  <FaYoutube className="text-3xl" />
+                 <Link to="./"  onClick={handleClick}>
+                 <FaYoutube className="text-3xl" />
+                 </Link>
                 </li>
                 <li>
-                  <FaDiscord className="text-3xl" />
+                <Link to ="./"onClick={handleClick} >
+                <FaDiscord className="text-3xl" />
+                </Link>
                 </li>
                 <li>
+                  <Link to="./" onClick={handleClick}>
                   <FaTwitter className="text-3xl" />
+                  </Link>
                 </li>
               </ul>
             </div>
