@@ -1,21 +1,24 @@
 import Main from './Main';
 import StatusCard from './StatusCard';
-// import DynamicUsername from "./DynamicUsername/DynamicUsername"
-import React, { useEffect } from 'react';
+import DynamicUsername from "./DynamicUsername/DynamicUsername"
+import React, { useEffect, useState } from 'react';
 import { studentProfile } from './../../../api';
 
 const Hero = () => {
+    const token = localStorage.getItem("token")
+    const [name, setName] =useState("")
   useEffect(() => {
     const fetchUsername = async () => {
       const config = {
         headers: {
-          Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDhiNjBiYzZiOGQxMjIwNTRiMTkwMzkiLCJyb2xlIjoic3R1ZGVudCIsImlhdCI6MTY4NzAwODczMCwiZXhwIjoxNjg3NDQwNzMwfQ.XVNPGlm5Tb23WdoQ1GgW-o06Ln7RFI1RcPxoJJpn9TIs`,
+          Authorization: `Bearer ${token}`
         },
       };
 
       try {
         const { data } = await studentProfile(config);
         console.log(data);
+        setName(data.data.fullname)
         return data;
       } catch (error) {
         console.log(error);
@@ -27,7 +30,7 @@ const Hero = () => {
   return (
     <div className='lg:mx-10 w-full overflow-x-hidden'>
       <h1 className='py-5 flex flex-col p-2'>
-        <span className='font-bold text-4xl'>{/* Hello Kate <DynamicUsername/> */}</span>
+        <span className='font-bold text-4xl'><DynamicUsername name={name}/></span>
         <span>Welcome back, let’s dive right back in</span>
       </h1>
       <div className='flex w-screen overflow-x-auto md:overflow-hidden items-center md:grid md:grid-cols-3 md:w-full h-fit p-2 md:p-0 md:space-x-8'>
