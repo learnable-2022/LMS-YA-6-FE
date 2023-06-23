@@ -14,7 +14,10 @@ export const progressodule = (courseId, moduleId, config) =>
 
 export const loginStudent = (formData) => API.post('/auth/login', formData);
 export const registerStudent = (formData) => API.post('/auth/register', formData);
-export const studentProfile = (config) => API.get('/student/profile', config);
+
+export const studentProfile = (config) => API.get('/student/profile',config);
+export const instructorProfile= (config) => API.get('/instructor/profile', config);
+
 
 export const loginInstructor = (formData) => API.post('/instructor/login', formData);
 export const registerInstructor = (formData) => API.post('/instructor/register', formData);
