@@ -1,7 +1,9 @@
 import { FaUser } from 'react-icons/fa';
 import { enrollToCourse } from '../../../api';
+import { useNavigate } from 'react-router';
 
 const NewCourseCard = ({ id, title, author, image }) => {
+  const navigate = useNavigate()
   const handleEnroll = async () => {
     const token = localStorage.getItem('token');
     const config = {
@@ -30,9 +32,11 @@ const NewCourseCard = ({ id, title, author, image }) => {
             <FaUser />
             <p className='font-medium text-sm'>{author}</p>
           </div>
-          <div className='bg-orange-600 text-white text-sm w-fit py-2 px-4  rounded-md cursor-pointer'>
+          <button onClick={()=>
+            navigate("/dashboard/my-class")
+          }className='bg-orange-600 text-white text-sm w-fit py-2 px-4  rounded-md cursor-pointer'>
             Enroll
-          </div>
+          </button>
         </div>
       </div>
     </div>
