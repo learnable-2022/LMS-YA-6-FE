@@ -1,36 +1,39 @@
 import Courses from '../all-courses/Courses';
 import Main from './Main';
 import StatusCard from './StatusCard';
-// import DynamicUsername from "./DynamicUsername/DynamicUsername"
-import React, { useEffect } from 'react';
-// import { studentProfile } from './../../../api';
+import DynamicUsername from "./DynamicUsername/DynamicUsername"
+import React, { useEffect, useState } from 'react';
+import { studentProfile } from './../../../api';
 
 const Hero = () => {
-  // useEffect(() => {
-  //   const fetchUsername = async () => {
-  //     const token = localStorage.getItem('token')
+  const token = localStorage.getItem("token")
+  const [name, setName] =useState("")
+useEffect(() => {
+  const fetchUsername = async () => {
+    const config = {
+      headers: {
+        Authorization: `Bearer ${token}`
+      },
+    };
 
-  //     const config = {
-  //       headers: {
-  //         Authorization: `Bearer ${token}`,
-  //       },
-  //     };
+    try {
+      const { data } = await studentProfile(config);
+      console.log(data);
+      setName(data.data.fullname)
+      return data;
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
-  //     try {
-  //       const { data } = await studentProfile(config);
-  //       console.log(data);
-  //       return data;
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   };
-
-  //   fetchUsername();
-  // }, []);
+  fetchUsername();
+}, []);
   return (
     <div className='lg:px-10 w-full '>
       <div className='flex flex-col py-4'>
-        <h1 className='font-bold text-5xl mb-2'>Hello Kate </h1>
+        <h1 className='font-bold text-5xl mb-2'>
+        <DynamicUsername name={name}/>
+        </h1>
         <p className='font-thin text-lg'>Welcome back, let’s dive right back in</p>
       </div>
       <div className='flex md:grid md:grid-cols-2 md:w-full h-fit md:gap-x-8'>
