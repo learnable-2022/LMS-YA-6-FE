@@ -1,9 +1,10 @@
 import { FaUser } from 'react-icons/fa';
 import { enrollToCourse } from '../../../api';
 import { useNavigate } from 'react-router';
+import graphics from '../../../assets/tutor.png';
 
 const NewCourseCard = ({ id, title, author, image }) => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const handleEnroll = async () => {
     const token = localStorage.getItem('token');
     const config = {
@@ -20,9 +21,9 @@ const NewCourseCard = ({ id, title, author, image }) => {
     }
   };
   return (
-    <div className='h-fit mb-3 w-48 md:w-56 rounded-md shadow-md bg-white space-y-1'>
-      <div className='w-fit h-fit relative'>
-        <img src={image} alt='course' className='rounded-t-md w-full' />
+    <div className='rounded-md shadow-md bg-white space-y-1'>
+      <div className='relative h-60 w-full'>
+        <img src={image || graphics} alt='course' className='rounded-t-md h-full w-full max-w-full max-h-full' />
       </div>
       <div className='p-2 space-y-3'>
         <p className='font-semibold text-sm'>{title}</p>
@@ -32,9 +33,10 @@ const NewCourseCard = ({ id, title, author, image }) => {
             <FaUser />
             <p className='font-medium text-sm'>{author}</p>
           </div>
-          <button onClick={()=>
-            navigate("/dashboard/my-class")
-          }className='bg-orange-600 text-white text-sm w-fit py-2 px-4  rounded-md cursor-pointer'>
+          <button
+            onClick={() => navigate('/dashboard/my-class')}
+            className='bg-orange-600 text-white text-sm w-fit py-2 px-4  rounded-md cursor-pointer'
+          >
             Enroll
           </button>
         </div>
