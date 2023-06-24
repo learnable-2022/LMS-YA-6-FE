@@ -1,0 +1,45 @@
+
+@media screen and (max-width:500px){
+    /* MobileSidebar.css */
+.mobile-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 999;
+  }
+  
+  .sidebar-content {
+    padding: 1rem;
+  }
+  
+  .cancel-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1rem;
+    cursor: pointer;
+  }
+  
+  /* Animation styles */
+  .sidebar-enter {
+    transform: translateX(-100%);
+  }
+  
+  .sidebar-enter-active {
+    transform: translateX(0%);
+    transition: transform 300ms ease-in;
+  }
+  
+  .sidebar-exit {
+    transform: translateX(0%);
+  }
+  
+  .sidebar-exit-active {
+    transform: translateX(-100%);
+    transition: transform 300ms ease-in;
+  }
+  
+}

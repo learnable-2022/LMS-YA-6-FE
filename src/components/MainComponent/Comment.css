@@ -8,6 +8,7 @@
     border: 1px solid black;
     padding: 10px;
     margin-bottom: 12px;
+    margin-left: 8px;
 }
 
 .submit-btn{
@@ -15,6 +16,7 @@
     background-color: #fc4f13;
     padding: 6px 10px;
     border-radius: 3px;
+    margin-left: 8px;
     
 }
 
@@ -23,7 +25,7 @@
     width: 600px;
     padding: 12px;
     border-radius: 10px;
-    margin: 24px 0 12px;
+    margin: 24px 0 12px 8px;
     overflow: hidden;
 }
 
@@ -35,18 +37,18 @@
 
 @media screen and (max-width: 500px){
     .comment-input{
-        width: 100%;
+        width: 96%;
         height: 160px;
-        margin-bottom: 24px;
+        margin: 8px;
     }
 
     .submit-btn{
-        margin-bottom: 12px;
-        width: 100%;
+        margin: 8px;
+        width: 96%;
     }
 
     .comments{
-        width: 100%;
+        width: 96%;
         bottom: 12px;
     }
 }
