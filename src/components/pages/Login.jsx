@@ -6,13 +6,11 @@ import * as api from "../../api";
 import { AxiosError } from "axios";
 
 const Login = () => {
-  // const token = localStorage.getItem("token")
   const [isPwdVisible, setIsPwdVisible] = useState(true);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [disabled, setDisabled] = useState(false);
   const [role, setRole] = useState("student");
-  // const [terror, setError] = useState(""); // New state for error message
   const [passwordError, setPasswordError] = useState("");
   const [emailError, setEmailError] = useState("")
   
@@ -34,11 +32,6 @@ console.log(disabled)
       } else if (role === "instructor") {
         data = await api.loginInstructor(formData);
       }
-      
-      // else {
-      //   setError("Invalid credentials"); // Set a generic error message for invalid credentials
-      // }
-
       console.log(data);
   localStorage.setItem("token", data.data.data);
   localStorage.setItem("role", data.data.role);
@@ -49,12 +42,10 @@ console.log(disabled)
       }
       return data.data;
     } catch (error) {
-   
-      // setError(error.response.data.message);
-      //  // Set the error message
-       console.log(typeof error)
-       console.log(error instanceof AxiosError)
-      console.log(error);
+
+       console.log("typeof error ", typeof error)
+       console.log("error instanceof AxiosError ", error instanceof AxiosError)
+      console.log("error ", error);
       if (error instanceof AxiosError ){
         const errorMessage =error.response.data.message
         console.log(errorMessage)
@@ -74,7 +65,6 @@ console.log(disabled)
   useEffect(() => {
     passwordError && setPasswordError("");
     emailError && setEmailError("");
-     // Clear the error message when email or password changes
   }, [email, password]);
 
 
@@ -127,7 +117,7 @@ console.log(disabled)
               placeholder="Enter your email address"
               onChange={(e) => setEmail(e.target.value)}
             />
-             {passwordError && ( // Render the error message if it exists
+             {emailError && ( // Render the error message if it exists
             <div className="text-red-500 text-xs">{emailError}</div>
           )}
             <label

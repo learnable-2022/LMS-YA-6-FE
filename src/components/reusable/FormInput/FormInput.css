@@ -37,8 +37,16 @@ span.eye-icon [name="fullName"]{
 input:invalid[focused="true"] ~ .errorMessage {
   display: block;
 }
+input:invalid[focused="true"] ~ .error {
+  display: none;
+}
 .errorMessage {
   display: none;
+  color: red;
+  font-size: 10px;
+}
+.error {
+  display: block;
   color: red;
   font-size: 10px;
 }
@@ -48,8 +56,8 @@ input:invalid[focused="true"] ~ .errorMessage {
     width: 100%;
   }
   label {
-    font-size: 14px;
-    color: #fff;
+    font-size: 12px;
+    /* color: #fff; */
   }
 }
 /**! media queries 768px */

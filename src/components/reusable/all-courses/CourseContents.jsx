@@ -21,7 +21,7 @@ const CourseContents = () => {
   }, []);
 
   return (
-    <div className='mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4'>
+    <div className='mt-6 grid gap-6 md:gap-6 grid-cols-1 grid-rows-1 md:grid-cols-2 lg:grid-cols-4'>
       {courses.map((course) => {
         return (
           <NewCourseCard

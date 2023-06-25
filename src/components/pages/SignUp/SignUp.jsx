@@ -1,34 +1,23 @@
-import React, { useState , useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import signup from "./SignUp.module.css";
 import logo from "../../../assets/EducateLogo.png";
 import FormInput from "../../reusable/FormInput/FormInput";
-import { Link, useNavigate} from "react-router-dom";
-
+import { Link, useNavigate } from "react-router-dom";
+import { AxiosError } from "axios";
 
 export default function SignUp() {
   // *!State Management for the input field
   const navigate = useNavigate();
   const [disabled, setDisabled] = useState(false);
-  // const location = useLocation();
-  // const [emailError, setEmailError] = useState("");
-  const [role, setRole] = useState('student');
+  const [emailError, setEmailError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
   const [values, setValues] = useState({
     fullname: "",
     email: "",
     password: "",
     confirmPassword: "",
   });
-  // useEffect(() => {
-  //   // Get the current URL
-  //   const currentURL = window.location.href;
-
-  //   // Extract the value of 'type' parameter
-  //   const urlSearchParams = new URLSearchParams(currentURL.split('?')[1]);
-  //   const userType = urlSearchParams.get('type');
-
-  //   console.log(userType); // Output: admin
-  // }, []);
-
+  
   //! Input field. Regex code used to validate form/*
   const inputs = [
     {
@@ -36,9 +25,9 @@ export default function SignUp() {
       name: "fullname",
       type: "text",
       placeholder: "Enter your name",
-      errorMessage: "Username should be 3-16 characters",
+      errorMessage: "Username should be 3-16 alphabets",
       label: "Name",
-      pattern: "^[A-Za-z0-9](?=.*[@$^#!%*&]){3,16}$",
+      pattern: `^[A-Za-z].{2,17}$`,
       required: true,
     },
     {
@@ -46,7 +35,7 @@ export default function SignUp() {
       name: "email",
       type: "email",
       placeholder: "Enter your email",
-      errorMessage: "Valid email is required",
+      errorMessage: "Valid email is required" ,
       label: "Email",
       required: true,
     },
@@ -72,18 +61,7 @@ export default function SignUp() {
       required: true,
     },
   ];
-  // useEffect(() => {
-  //   // Get the current URL
-  //   const currentURL = window.location.href;
 
-  //   // Extract the value of 'type' parameter
-  //   const urlSearchParams = new URLSearchParams(currentURL.split('?')[1]);
-  //   const userType = urlSearchParams.get('type');
-
-  //   console.log(userType); // Output: admin
-  // }, []);
-
-  
   const handleSubmit = (e) => {
     e.preventDefault();
     setDisabled(!disabled);
@@ -96,65 +74,88 @@ export default function SignUp() {
   console.log(values);
 
   // *! API call//
-  const passData = () => {
+  const passData = async () => {
     const currentURL = window.location.href;
     const searchParams = new URLSearchParams(currentURL.split("?")[1]);
     const userType = searchParams.get("type");
     // const userType = role === "admin" ? "instructor" : "student";
-    const apiUrl = userType === "admin" ? "https://edu-cate.onrender.com/api/v1/instructor/register" : "https://edu-cate.onrender.com/api/v1/auth/register";
-
-    fetch(apiUrl, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(values),
-    })
-      .then((response) => {
-        if (response.ok) {
-          localStorage.setItem("userType", userType);
-          navigate("/login");
-          return response.json();
-        } else if (response.status === 409) {
-          throw new Error("API request failed");
-        }
-      })
-      .then((data) => {
-        console.log(data);
-      })
-      .catch((error) => {
-        console.error(error);
-        setDisabled(false);
+    const apiUrl =
+      userType === "admin"
+        ? "https://edu-cate.onrender.com/api/v1/instructor/register"
+        : "https://edu-cate.onrender.com/api/v1/auth/register";
+    let errorMessage = "";
+    try {
+      const response = await fetch(apiUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
       });
-
-
+      console.log("response ", response);
+     const data = await response.json();
+      if (response.ok) {
+        localStorage.setItem("userType", userType);
+        navigate("/login");
+        // return response.json();
+      } else {
+        console.log("response not ok ", response);
+        const message = data.message;
+        throw new Error(message || "API request failed");
+      }
+    } catch (error) {
+      console.log("typeof error ", typeof error);
+      console.log("error instanceof AxiosError ", error instanceof AxiosError);
+      console.log("error ", error);
+      if (error instanceof AxiosError) {
+        errorMessage = error.response.data.message;
+        console.log(errorMessage);
+        if (errorMessage.toLowerCase().includes("email")) {
+          setEmailError(errorMessage);
+        }
+        if (userType === "student") {
+          setEmailError("Student with email already exists");
+        } 
+        else if (userType === "admin") {
+      setEmailError("Instructor with email already exists");
+    }
+    
+      } else {
+        errorMessage = error.message;
+        setEmailError("Email already exists")
+        if (errorMessage.toLowerCase().includes("email")) {
+          setEmailError(errorMessage);
+        }
+        if (userType === "student") {
+          setEmailError("Student with email already exists");
+        }
+        if (userType === "admin") {
+          setEmailError("Instructor with email already exists");
+        }
+        if (errorMessage.toLowerCase().includes("password")) {
+          setPasswordError(errorMessage);
+        }
+      }
+      setDisabled(false);
+    }
   };
   useEffect(() => {}, [disabled]);
-  // useEffect(() => {
-  //   emailError && setEmailError("");
-  //    // Clear the error message when email or password changes
-  // }, [email]);
-
+  useEffect(() => {
+  }, [emailError]);
+  console.log(emailError)
   // ! content box body
   return (
     <section className="md:flex md:flex-row-reverse lg:flex lg:flex-row h-screen w-full justify-between px-2 md:p-0">
       <div className="grid w-full lg:w-1/2 py-3 px-2 md:px-14">
-        
-      <div className='w-full justify-self-start'>
-          <div className='flex justify-between items-center'>
-            <Link to='/'>
-              <img src={logo} alt='logo' className='h-10 w-fit' />
+        <div className="w-full justify-self-start">
+          <div className="flex justify-between items-center">
+            <Link to="/">
+              <img
+                src={logo}
+                alt="logo"
+                className="h-10 w-fit"
+              />
             </Link>
-            <div>
-              <select
-                value={role}
-                onChange={(e) => setRole(e.target.value)}
-                class='px-4 py-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  block w-full'
-              >
-                <option value='student'>Student</option>
-                <option value='instructor'>Instructor</option>
-              </select>
-            </div>
           </div>
         </div>
         <div className="mt-10 flex flex-col justify-start">
@@ -169,15 +170,23 @@ export default function SignUp() {
             <p className="text-sm md:text-xl font-semibold mb-2">
               Let's get you started
             </p>
-            {inputs.map((input) => (
-              <FormInput
-                key={input.id}
-                {...input}
-                value={values[input.name]}
-                onChange={onChange}
-                // error={input.name === "email" ? emailError : null} // Pass the emailError as an error prop
-              />
-            ))}
+            {inputs.map((input) => {
+              console.log(emailError)
+              console.log(input.name)
+              if (emailError && input.name === "email") {
+                input.emailError = emailError;
+                console.log("emailError present")
+              }
+              console.log(input)
+              return (
+                <FormInput
+                  key={input.id}
+                  {...input}
+                  value={values[input.name]}
+                  onChange={onChange}
+                />
+              );
+            })}
             <div className={signup["link-btn-wrapper"]}>
               {disabled === true ? (
                 <button
@@ -233,8 +242,6 @@ export default function SignUp() {
           </p>
         </div>
       </div>
-      {/* </div>
-      </div> */}
     </section>
   );
 }

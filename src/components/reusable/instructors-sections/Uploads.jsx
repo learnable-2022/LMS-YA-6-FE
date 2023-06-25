@@ -66,7 +66,7 @@ const Uploads = () => {
     formData.append('image', image);
     formData.append('status', status);
 
-    const token = localStorage.getItem('token')
+    const token = localStorage.getItem('token');
 
     const config = {
       headers: {
@@ -80,7 +80,7 @@ const Uploads = () => {
       setTitle('');
       setDescription('');
       setImagePath('');
-      setImage('');
+      setImage(null);
       setStatus('');
     } catch (error) {
       console.log(error);

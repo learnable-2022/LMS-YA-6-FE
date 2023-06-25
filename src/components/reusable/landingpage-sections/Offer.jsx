@@ -2,9 +2,9 @@ import play from '../../../assets/play.svg';
 import connect from '../../../assets/connect.svg';
 import read from '../../../assets/read.svg';
 import chat from '../../../assets/chat.svg';
-
+import { useNavigate } from "react-router-dom";
 const Offer = () => {
-
+const navigate = useNavigate();
   const handleContactClick = () => {
     const phoneNumber = '2348168298363'; // Replace with the desired phone number
     const message = 'Hi! Welcome to Educate. Would like to lodge a complaint?'; // Replace with the desired message
@@ -15,7 +15,7 @@ const Offer = () => {
     window.open(url);
   }
   return (
-    <section id='About' className='px-5 md:px-14 mb-20 w-full h-fit flex flex-col items-center text-center space-y-8'>
+    <section id='Feature' className='px-5 md:px-14 mb-20 w-full h-fit flex flex-col items-center text-center space-y-8'>
       <div
         className='lg:w-1/2 space-y-2 flex flex-col items-center text-center'
       >
@@ -67,7 +67,7 @@ const Offer = () => {
       </div>
 
       <div className='flex space-x-10'>
-        <div className='p-3 bg-orange-600 text-white rounded-md'>Start Now For Free</div>
+        <div className='p-3 bg-orange-600 text-white rounded-md'   onClick={() => navigate("/userAccess")}>Start Now For Free</div>
         <div className='p-4 bg-gray-200/60 rounded-md'
         
         onClick={handleContactClick}>

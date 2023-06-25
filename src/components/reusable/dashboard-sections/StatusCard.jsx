@@ -13,7 +13,7 @@ const StatusCard = ({ courseNumber, courseStatus, iconStatus }) => {
     >
       <h1 className='flex flex-col h-full'>
         <span className='h-3/4 flex items-end text-5xl font-bold'>{courseNumber}</span>
-        <span className='flex font-semibold items-center w-40 md:w-auto h-full text-sm pr-3'>
+        <span className='flex font-semibold items-center md:w-auto h-full text-sm pr-3'>
           {courseStatus}
         </span>
       </h1>
