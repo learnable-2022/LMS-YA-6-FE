@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./FormInput.css";
 import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
 
 const FormInput = (props) => {
   const [focused, setFocused] = useState(false);
-  const [passwordVisible, setPasswordVisible] = useState(false); 
-  const { label, errorMessage, onChange, id, ...Ip } = props;
-
+  const [passwordVisible, setPasswordVisible] = useState(false);
+  const { label, errorMessage, onChange, id, emailError, ...Ip } = props;
+  console.log("letter ",props.emailError) 
 
   const handleFocus = (e) => {
     setFocused(true);
@@ -15,6 +15,8 @@ const FormInput = (props) => {
   const togglePasswordVisibility = () => {
     setPasswordVisible(!passwordVisible);
   };
+  // console.log(`forminput ${label}`,emailError)
+
   return (
     <div className="FormInput w-full lg:mb-0">
       <label>{label}</label>
@@ -32,10 +34,10 @@ const FormInput = (props) => {
     <div className="relative" onClick={togglePasswordVisibility}>
       {passwordVisible ? <AiOutlineEye className="absolute text-2xl right-5 bottom-[.58rem] cursor-pointer"  /> : <AiOutlineEyeInvisible className="absolute text-2xl right-5 bottom-[.58rem] cursor-pointer"/>}
   </div>)}
-  {/* {Ip.name === 'email' && errorMessage === 'Valid email is required' && (
-        <span className="errorMessage">Valid email is required</span>
-      )} */}
-     <span className="errorMessage">{errorMessage}</span>
+
+
+        <span className="error">{emailError}</span>
+ <span className="errorMessage">{errorMessage}</span>
     </div>
   );
 };
