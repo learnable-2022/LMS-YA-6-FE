@@ -7,7 +7,7 @@ import InstructorTopbar from "./reusable/dashboard-sections/InstructorTopBar";
 const InstructorsDashboard = () => {
     return ( 
         <>
-            <InstructorTopbar />
+            <InstructorTopbar  />
             <div className="flex h-fit min-h-screen ">
                 <SideNavbar instructorsRoute={''} />
                 <StudentOverview/>
