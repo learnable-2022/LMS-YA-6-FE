@@ -29,15 +29,15 @@ useEffect(() => {
   fetchUsername();
 }, []);
   return (
-    <div className='lg:px-10 w-full '>
+    <div className='px-4 lg:px-10 w-full '>
       <div className='flex flex-col py-4'>
         <h1 className='font-bold text-5xl mb-2'>
         <DynamicUsername name={name}/>
         </h1>
         <p className='font-thin text-lg'>Welcome back, let’s dive right back in</p>
       </div>
-      <div className='flex md:grid md:grid-cols-2 md:w-full h-fit md:gap-x-8'>
-        <div className='w-full'>
+      <div className=' md:grid md:grid-cols-2 md:w-full h-fit md:gap-x-8'>
+        <div className='w-full mx-auto'>
           <StatusCard courseNumber={8} courseStatus={'Completed Courses'} iconStatus={'check'} />
         </div>
         <div className='w-full'>
