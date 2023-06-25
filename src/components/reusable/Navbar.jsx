@@ -125,7 +125,7 @@ const Navbar = () => {
               </div>
               <div
                 className="p-4 flex justify-center bg-orange-600 text-white rounded-md cursor-pointer"
-                onClick={() => navigate("/signup")}
+                onClick={() => navigate("/userAccess")}
               >
                 Sign Up
               </div>
