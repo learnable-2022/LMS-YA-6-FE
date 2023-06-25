@@ -36,8 +36,8 @@ const Hero = () => {
         </h1>
         <p className='font-thin text-lg'>Welcome back, let’s dive right back in</p>
       </div>
-      <div className='grid md:grid-cols-2 md:w-full h-fit gap-4 lg:gap-x-8 mb-6'>
-        <div className='w-full'>
+      <div className=' md:grid md:grid-cols-2 md:w-full h-fit md:gap-x-8'>
+        <div className='w-full mx-auto'>
           <StatusCard courseNumber={8} courseStatus={'Completed Courses'} iconStatus={'check'} />
         </div>
         <div className='w-full'>
