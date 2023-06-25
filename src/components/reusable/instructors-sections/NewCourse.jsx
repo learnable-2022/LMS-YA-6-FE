@@ -5,6 +5,7 @@ import Topbar from '../dashboard-sections/Topbar';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import { useNavigate } from 'react-router-dom';
+import InstructorTopbar from '../dashboard-sections/InstructorTopBar';
 
 const NewCourse = () => {
   const [description, setDescription] = useState('');
@@ -83,7 +84,7 @@ const NewCourse = () => {
 
   return (
     <>
-      <Topbar />
+      <InstructorTopbar />
       <div className='flex h-fit min-h-screen '>
         <SideNavbar courseTitle={title} instructorsRoute={'/courses/create-course'} />
         <div className='px-10 py-5 space-y-5 h-fit max-w-5xl'>
