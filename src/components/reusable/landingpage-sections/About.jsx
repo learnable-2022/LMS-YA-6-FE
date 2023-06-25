@@ -5,7 +5,7 @@ import arc from '../../../assets/arc.svg';
 
 const About = () => {
   return (
-    <section id='about' className='px-5 md:px-14 mb-20 w-full relative'>
+    <section id='About' className='px-5 md:px-14 mb-20 w-full relative'>
       <div className='w-fit h-fit md:flex'>
         <div className='flex flex-col text-center lg:text-left lg:w-4/5 space-y-5'>
           <h2 className='text-lg text-orange-600 font-bold lg:w-2/3'>About Us</h2>

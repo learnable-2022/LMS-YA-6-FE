@@ -6,7 +6,8 @@ import ReactPlayer from 'react-player';
 import { FaBars } from 'react-icons/fa';
 // import course from "../../Images/course.png";
 import "./MainComponent.css";
-import Comment from "./Comment"
+import Comment from "./Comment";
+// import Certificate from "./Certificate";
 import MobileSidebar from "../Left Component/MobileSidebar";
 
 const MainComponent = () => {
@@ -71,6 +72,7 @@ const MainComponent = () => {
           <br />
           <br />
           <Comment />
+          {/* <Certificate/> */}
           <br />
       </div>
     </>

@@ -45,12 +45,12 @@ const Navbar = () => {
         <li className="cursor-pointer">
           {" "}
           <Link
-            to="Contact"
+            to="Feature"
             smooth={true}
             duration={800}
             className="h-full w-full flex items-center justify-center cursor-pointer"
           >
-            Contact Us
+            Features
           </Link>
         </li>
         <li
