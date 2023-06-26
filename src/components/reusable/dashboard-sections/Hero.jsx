@@ -37,10 +37,10 @@ const Hero = () => {
         <p className='font-thin text-lg p-0'>Welcome back, let’s dive right back in</p>
       </div>
       <div className=' md:grid md:grid-cols-2 md:w-full h-fit md:gap-x-8'>
-        <div className='w-full mx-auto'>
+        <div className='w-fit mx-auto'>
           <StatusCard courseNumber={8} courseStatus={'Completed Courses'} iconStatus={'check'} />
         </div>
-        <div className='w-full'>
+        <div className='w-fit'>
           <StatusCard courseNumber={5} courseStatus={'Course In Progress'} iconStatus={'todo'} />
         </div>
       </div>
