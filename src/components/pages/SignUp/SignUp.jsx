@@ -167,7 +167,7 @@ export default function SignUp() {
             <h1 className=" text-3xl md:text-4xl font-bold mb-4">
               Create an account
             </h1>
-            <p className="text-sm md:text-xl font-semibold mb-2">
+            <p className="text-sm md:text-xl font-semibold mb-2 p-0">
               Let's get you started
             </p>
             {inputs.map((input) => {
