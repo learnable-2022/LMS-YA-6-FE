@@ -34,7 +34,7 @@ const Hero = () => {
         <h1 className='font-bold text-5xl mb-2'>
           <DynamicUsername name={name} />
         </h1>
-        <p className='font-thin text-lg'>Welcome back, let’s dive right back in</p>
+        <p className='font-thin text-lg p-0'>Welcome back, let’s dive right back in</p>
       </div>
       <div className=' md:grid md:grid-cols-2 md:w-full h-fit md:gap-x-8'>
         <div className='w-full mx-auto'>

@@ -92,7 +92,7 @@ const SideNavbar = ({ instructorsRoute, studentRoute, courseTitle }) => {
                 active={`${location.pathname === '/instructor' ? 'text-orange-500' : ''}`}
               />
             </div>
-            <div onClick={() => navigate('/instructor/messages')}>
+            <div /*onClick={() => navigate('/instructor/messages')}*/ onClick={handleClick} >
               <SideNavIcon
                 iconName={'message'}
                 iconDescription={'Inbox'}
@@ -106,7 +106,7 @@ const SideNavbar = ({ instructorsRoute, studentRoute, courseTitle }) => {
                 active={`${location.pathname === '/instructor/courses' ? 'text-orange-500' : ''}`}
               />
             </div>
-            <div onClick={() => navigate('/instructor/assessment')}>
+            <div /*onClick={() => navigate('/instructor/assessment')}*/ onClick={handleClick}>
               <SideNavIcon
                 iconName={'todo'}
                 iconDescription={'Assessment'}
@@ -115,21 +115,21 @@ const SideNavbar = ({ instructorsRoute, studentRoute, courseTitle }) => {
                 }`}
               />
             </div>
-            <div onClick={() => navigate('/instructor/support')}>
+            <div /*onClick={() => navigate('/instructor/support')}*/ onClick={handleClick}>
               <SideNavIcon
                 iconName={'support'}
                 iconDescription={'24/7 Support'}
                 active={`${location.pathname === '/instructor/support' ? 'text-orange-500' : ''}`}
               />
             </div>
-            <div onClick={() => navigate('/instructor/live')}>
+            <div /*onClick={() => navigate('/instructor/live')}*/ onClick={handleClick}>
               <SideNavIcon
                 iconName={'camera'}
                 iconDescription={'Live Sessions'}
                 active={`${location.pathname === '/instructor/live' ? 'text-orange-500' : ''}`}
               />
             </div>
-            <div onClick={() => navigate('/instructor/settings')}>
+            <div /*onClick={() => navigate('/instructor/settings')}*/ onClick={handleClick}>
               <SideNavIcon
                 iconName={'setting'}
                 iconDescription={'Settings'}

@@ -49,7 +49,7 @@ export default function UserAccess() {
             <h1 className=" text-3xl md:text-4xl font-bold mb-4">
               Create an account
             </h1>
-            <p className=" text-sm md:text-xl font-semibold mb-4">
+            <p className=" text-sm md:text-xl font-semibold mb-4 p-0">
               Please select type of user
             </p>
             <div className={signup.useType}>

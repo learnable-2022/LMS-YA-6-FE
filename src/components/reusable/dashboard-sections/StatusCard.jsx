@@ -8,7 +8,7 @@ const StatusCard = ({ courseNumber, courseStatus, iconStatus }) => {
   }[iconStatus];
   return (
     <div
-      className=' flex overflow-hidden w-fit  h-36 md:py-0 px-3 mx-1 md:mx-3 md:mt-5 mb-8 rounded-md text-white'
+      className=' flex overflow-hidden w-full  h-36 md:py-0 px-3 mx-1 md:mx-3 md:mt-5 mb-8 rounded-md text-white '
       style={{ backgroundImage: 'linear-gradient(to bottom, #FC4F13, #F39C11)' }}
     >
       <h1 className='flex flex-col h-full'>
