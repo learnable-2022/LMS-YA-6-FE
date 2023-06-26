@@ -6,7 +6,7 @@ const Courses = ({ cancelEvents }) => {
   return (
     <div className='lg:px-10 px-2 py-6 overflow-hidden'>
 {/*       <UpperSection /> */}
-      <div className='mt-10'>
+      <div className=''>
         <Filter />
         <CourseContents />
       </div>
