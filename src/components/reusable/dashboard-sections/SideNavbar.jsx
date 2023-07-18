@@ -60,7 +60,7 @@ const SideNavbar = ({ instructorsRoute, studentRoute, courseTitle }) => {
                 active={`${location.pathname === '/dashboard/forum' ? 'text-orange-500' : ''}`}
               />
             </div>
-            <div /*onClick={()=>navigate('/dashboard/support')}*/ onClick={handleClick}>
+            <div onClick={()=>navigate('/dashboard/support')}>
               <SideNavIcon
                 iconName={'support'}
                 iconDescription={'24/7 Support'}
