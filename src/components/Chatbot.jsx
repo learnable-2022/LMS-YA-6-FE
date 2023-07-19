@@ -5,12 +5,14 @@ import book from '../assets/Layer 2.png';
 import './Chatbot.css';
 import { GrAttachment} from "react-icons/gr"
 import { BsSendFill } from "react-icons/bs"
+import { TiMessages } from "react-icons/ti"
 
 
 const Chatbot = () => {
   const [userInput, setUserInput] = useState('');
   const [chatHistory, setChatHistory] = useState([]);
   const [userName, setUserName] = useState('');
+  const [showInput, setShowInput] = useState(false);
 
   const sendMessage = async () => {
     if (userInput.trim() === '') {
@@ -93,6 +95,26 @@ const Chatbot = () => {
     fetchUsername();
   }, []);
 
+   const handleFileInputChange = (event) => {
+    const file = event.target.files[0];
+    // Perform actions with the selected file (e.g., upload it, read its contents, etc.)
+  };
+
+   useEffect(() => {
+    // Check if the user has started a conversation before
+    const hasStartedConversation = localStorage.getItem('hasStartedConversation');
+    if (hasStartedConversation) {
+      setShowInput(true);
+    } else {
+      setShowInput(false);
+    }
+  }, []);
+
+   const handleStartConversation = () => {
+    localStorage.setItem('hasStartedConversation', 'true');
+    setShowInput(true);
+  };
+
   return (
     <div>
       <Topbar />
@@ -119,6 +141,15 @@ const Chatbot = () => {
         ))}
       </div>
 
+      {/* user begins chat */}
+      {!showInput && (
+        <div className="start-conversation">
+          <button onClick={handleStartConversation} className='start-btn'>
+          <TiMessages className='message-icon'/> Start a conversation
+            </button>
+        </div>
+      )}
+      {showInput && (
       <div className="user-input">
         <input
           type="text"
@@ -128,13 +159,20 @@ const Chatbot = () => {
           onKeyPress={e => e.key === 'Enter' && sendMessage()}
         />
           <div className='icon-cont'>
-            <GrAttachment  className='input-icons'/>
-            <BsSendFill 
-          onClick={sendMessage}
-          className='input-icons'
+          <label htmlFor="fileInput">
+            <GrAttachment className="input-icons" />
+          </label>
+          <input
+            id="fileInput"
+            type="file"
+            accept=".jpg, .jpeg, .png, .pdf" // Specify accepted file types
+            onChange={handleFileInputChange}
+            style={{ display: 'none' }} // Hide the file input visually
           />
+            <BsSendFill onClick={sendMessage}className='input-icons'/>
           </div>
       </div>
+       )}
     </div>
   );
 };
