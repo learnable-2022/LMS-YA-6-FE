@@ -116,5 +116,35 @@
   background: #555;
 }
 
+.start-conversation{
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  margin-bottom: 50px;
+}
+
+.start-btn{
+  background-color: #FC4F13;
+  color: #fff;
+  border-radius: 10px;
+  padding: 12px 120px;
+}
+
+
+.message-icon{
+  display: inline;
+  z-index: 1;
+  padding-right: 8px;
+  height: 30px;
+  width: 30px;
+} 
+
+
 
 
