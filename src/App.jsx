@@ -9,7 +9,7 @@ import AllCourses from "./components/pages/dashboard-pages/AllCourses";
 import InstructorsDashboard from "./components/InstructorsDashboard";
 import AllUploads from "./components/pages/dashboard-pages/AllUploads";
 import NewCourse from "./components/reusable/instructors-sections/NewCourse";
-
+import Chatbot from "./components/Chatbot";
 
 const App = () => {
   return (
@@ -26,6 +26,7 @@ const App = () => {
         <Route exact path="/dashboard">
           <Route exact path="/dashboard" element={<Dashboard />} />
           <Route exact path="/dashboard/all-courses" element={<AllCourses />} />
+          <Route exact path="/dashboard/support" element={<Chatbot />} />
         </Route>
 
         <Route exact path="/my-class" element={<SecondDashboard />} />
